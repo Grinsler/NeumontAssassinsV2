@@ -67,6 +67,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -111,6 +112,9 @@
     <Resource Include="Images\FightMe.jpg" />
     <Resource Include="Images\secretary.jpg" />
     <Resource Include="Images\YouAreDead.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ScreenControls\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
