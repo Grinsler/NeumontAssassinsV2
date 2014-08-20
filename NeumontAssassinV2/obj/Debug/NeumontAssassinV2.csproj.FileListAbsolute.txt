@@ -27,3 +27,6 @@ C:\Users\Mitchel Mendez\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\ob
 C:\Users\Mitchel Mendez\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\NeumontAssassinV2.csproj.GenerateResource.Cache
 C:\Users\Mitchel Mendez\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\bin\Debug\NeumontAssassinV2.exe
 C:\Users\Mitchel Mendez\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\bin\Debug\NeumontAssassinV2.pdb
+C:\Users\Daniel Taylor\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\bin\Debug\NeumontAssassinV2.exe.config
+C:\Users\Daniel Taylor\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\NeumontAssassinV2.exe
+C:\Users\Daniel Taylor\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\NeumontAssassinV2.pdb
