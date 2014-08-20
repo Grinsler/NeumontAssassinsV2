@@ -8,14 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglord/druglordappearance.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglord/druglorddead.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglord/druglordknows.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglord/druglordsuprised.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglord/druglorduncertain.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglord/druglordunspecting.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglord/dumpster.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglord/fightme.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglord/youaredead.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglord/front%20of%20building.jpg")]
 
 

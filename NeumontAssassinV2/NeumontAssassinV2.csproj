@@ -53,6 +53,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ScreenControls\MissionControlTemplate.xaml.cs">
+      <DependentUpon>MissionControlTemplate.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -66,6 +69,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Missions\DrugLord.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ScreenControls\MissionControlTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -104,9 +111,7 @@
   <ItemGroup>
     <Resource Include="Images\secretary.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ScreenControls\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\DrugLord\AngryJames.jpg" />
   </ItemGroup>
@@ -138,6 +143,11 @@
     <Resource Include="Images\DrugLord\Dumpster.jpg" />
     <Resource Include="Images\DrugLord\FightMe.jpg" />
     <Resource Include="Images\DrugLord\YouAreDead.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Front of Building.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
