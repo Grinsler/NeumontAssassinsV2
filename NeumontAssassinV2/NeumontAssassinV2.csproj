@@ -114,6 +114,7 @@
     <Resource Include="Images\YouAreDead.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Images\DrugLord\" />
     <Folder Include="ScreenControls\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

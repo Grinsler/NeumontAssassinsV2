@@ -8,22 +8,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/angryjames.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/charsmasuccess.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/deadjames.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/dexerityjump.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglordandfriend.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglordandfrienddead.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglordandfriendseperate.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglordappearance.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglorddead.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglordknows.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglordsuprised.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglorduncertain.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglordunspecting.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/dumpster.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/fightme.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/secretary.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/youaredead.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglord/druglordappearance.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglord/druglorddead.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglord/druglordknows.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglord/druglordsuprised.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglord/druglorduncertain.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglord/druglordunspecting.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglord/dumpster.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglord/fightme.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/druglord/youaredead.jpg")]
 
 
