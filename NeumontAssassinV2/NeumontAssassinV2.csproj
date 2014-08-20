@@ -95,27 +95,42 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\AngryJames.jpg" />
-    <Resource Include="Images\CharsmaSuccess.jpg" />
-    <Resource Include="Images\DeadJames.jpg" />
-    <Resource Include="Images\DexerityJump.jpg" />
-    <Resource Include="Images\DrugLordAndFriend.jpg" />
-    <Resource Include="Images\DrugLordAndFriendDead.jpg" />
-    <Resource Include="Images\DrugLordAndFriendSeperate.jpg" />
-    <Resource Include="Images\DrugLordAppearance.jpg" />
-    <Resource Include="Images\DrugLordDead.jpg" />
-    <Resource Include="Images\DrugLordKnows.jpg" />
-    <Resource Include="Images\DrugLordSuprised.jpg" />
-    <Resource Include="Images\DrugLordUncertain.jpg" />
-    <Resource Include="Images\DrugLordUnspecting.jpg" />
-    <Resource Include="Images\Dumpster.jpg" />
-    <Resource Include="Images\FightMe.jpg" />
     <Resource Include="Images\secretary.jpg" />
-    <Resource Include="Images\YouAreDead.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\DrugLord\" />
     <Folder Include="ScreenControls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DrugLord\AngryJames.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DrugLord\CharsmaSuccess.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DrugLord\DeadJames.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DrugLord\DexerityJump.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DrugLord\DrugLordAndFriend.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DrugLord\DrugLordAndFriendDead.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DrugLord\DrugLordAndFriendSeperate.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DrugLord\DrugLordAppearance.jpg" />
+    <Resource Include="Images\DrugLord\DrugLordDead.jpg" />
+    <Resource Include="Images\DrugLord\DrugLordKnows.jpg" />
+    <Resource Include="Images\DrugLord\DrugLordSuprised.jpg" />
+    <Resource Include="Images\DrugLord\DrugLordUncertain.jpg" />
+    <Resource Include="Images\DrugLord\DrugLordUnspecting.jpg" />
+    <Resource Include="Images\DrugLord\Dumpster.jpg" />
+    <Resource Include="Images\DrugLord\FightMe.jpg" />
+    <Resource Include="Images\DrugLord\YouAreDead.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
