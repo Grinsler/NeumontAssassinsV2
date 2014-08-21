@@ -7,20 +7,68 @@
              Height="600" Width="800">
     <Grid x:Name="MainGrid" Background="Black">
         <Grid.Resources>
-            <Style TargetType="Button"
-                   BasedOn="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+            <Style TargetType="Button">
                 <Setter Property="Foreground" Value="White" />
                 <Setter Property="Background" Value="Transparent"/>
-                <Setter Property="Focusable" Value="False"/>
-                <Setter Property="Margin" Value="10"/>
+                <Setter Property="Margin" Value="10,10,15,10"/>
                 <Setter Property="Grid.Column" Value="0"/>
                 <Setter Property="Grid.ColumnSpan" Value="3"/>
-                <Setter Property="BorderBrush" Value="Transparent"/>
                 <Setter Property="FontSize" Value="20"/>
-                <Setter Property="HorizontalAlignment" Value="Left"/>
                 <Setter Property="HorizontalContentAlignment" Value="Left"/>
                 <Setter Property="Padding" Value="5,5,5,5"/>
-                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="FontStyle" Value="Normal"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border CornerRadius="5,5,5,5" BorderThickness="1,1,1,1" RenderTransformOrigin="0.5,0.5" x:Name="border" BorderBrush="#FFFFFFFF">
+                                <Border.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                        <SkewTransform AngleX="0" AngleY="0"/>
+                                        <RotateTransform Angle="0"/>
+                                        <TranslateTransform X="0" Y="0"/>
+                                    </TransformGroup>
+                                </Border.RenderTransform>
+                                <Border Background="{TemplateBinding Background}" CornerRadius="5,5,5,5" x:Name="border1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="0.5*"/>
+                                            <RowDefinition Height="0.5*"/>
+                                        </Grid.RowDefinitions>
+                                        <Border Grid.Row="0" CornerRadius="5,5,0,0">
+                                            <Border.Background>
+                                                <LinearGradientBrush EndPoint="1,1" StartPoint="1,0">
+                                                    <GradientStop Color="#00FFFFFF" Offset="0"/>
+                                                    <GradientStop Color="#7EFFFFFF" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Border.Background>
+                                        </Border>
+                                        <ContentPresenter VerticalAlignment="Center"  Grid.RowSpan="2" HorizontalAlignment="Left" x:Name="contentPresenter" Margin="5,0,0,0"/>
+                                    </Grid>
+                                </Border>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter Property="Opacity" TargetName="border1" Value="0.5"/>
+                                    <Setter Property="Opacity" TargetName="border" Value="1"/>
+                                    <Setter Property="Opacity" TargetName="contentPresenter" Value="0.5"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="RenderTransform" TargetName="border">
+                                        <Setter.Value>
+                                            <TransformGroup>
+                                                <ScaleTransform ScaleX="0.9" ScaleY="0.9"/>
+                                                <SkewTransform AngleX="0" AngleY="0"/>
+                                                <RotateTransform Angle="0"/>
+                                                <TranslateTransform X="0" Y="0"/>
+                                            </TransformGroup>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
             </Style>
         </Grid.Resources>
         <Grid.ColumnDefinitions>

@@ -109,13 +109,14 @@ namespace NeumontAssassinV2.ScreenControls
         //=================================Button Style===================================
         private void Button_Choice3_MouseEnter_1(object sender, MouseEventArgs e)
         {
-            if (this.Button_Choice3.Foreground.Equals(Brushes.Black))
+            if (this.Button_Choice3.FontStyle.Equals(FontStyles.Normal))
             {
-                this.Button_Choice3.Foreground = (Brushes.White);
+                this.Button_Choice3.FontStyle.Equals(FontStyles.Italic);
+
             }
             else
             {
-                this.Button_Choice3.Foreground = (Brushes.Black);
+                this.Button_Choice3.FontStyle.Equals(FontStyles.Normal);
             }
         }
         private void Button_Choice2_MouseEnter_1(object sender, MouseEventArgs e)
