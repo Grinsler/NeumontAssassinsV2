@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using NeumontAssassinV2.Missions;
+using NeumontAssassinV2.Models;
 
 namespace NeumontAssassinV2
 {
@@ -23,6 +25,16 @@ namespace NeumontAssassinV2
         public MainWindow()
         {
             InitializeComponent();
+            MainGrid.Children.Clear();
+            Person p = new Person();
+            //for testing purposes:
+            p.Player_Agility = 4;
+            p.Player_Charisma = 3;
+            p.Player_Intellegence = 2;
+            p.Player_Strength = 7;
+            p.Player_Name = "Test1";
+            DrugLord dl = new DrugLord(p);
+            MainGrid.Children.Add(dl);
         }
     }
 }
