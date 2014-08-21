@@ -58,12 +58,32 @@ namespace NeumontAssassinV2.Missions
             "The guard blocks your punches and knocks you in the stomach. Thankfully, before he can finish the job, you run off.",
             //talk success
             "Look, I don’t want any trouble, just let me pass and things will be just fine.",
-            "",
-            "",
-            "",
+            "Gang member: Alright, alright. You can pass, man.",
+            //talk fail
+            "Look, I don’t want any trouble, just let me pass and things will be just fine.",
+            "Gang member: I don’t think so, you’re not goin’ anywhere, chump!",
 
-
-
+            //1st attack chance
+            "choice",
+            "There he is!",
+            "My target, the dealer, is right there walking with another person. I don’t think they’ve noticed me yet.",
+            "I moved like lightning. All this training has payed off",
+            //attack success
+            "I lifted my knife to the man on the right’s neck and raised my silenced pistol the the base of the dealer’s head all within a fraction of a second",
+            "My knife moved smoothly across the mans neck making quick work of him as i pulled the trigger in my left hand.",
+            "I felt my bullet find its mark (Its kinda hard to miss from this close)",
+            "They both fell to the ground, but i did not have time to stand around and admire my handiwork",
+            "I headed back to HQ without a hitch",
+            //attack fail
+            "Oh boy… The dealer definitely knows I’m coming…",
+            "Druglod: Better luck next time, loser.",
+            "At that, the dealer sprints off, and despite you chasing him it seems he vanished within the crowds of people. Only thing to do now is report back.",
+            //attack fail and death
+            "What the-?!",
+            //after waiting
+            "I could ambush him here or i could walk up like a customer...",
+            //strength kill
+            "Hm. He was frailer than I was expecting. One little crack to the head and he’s done for. Well, better head back to base.",
         };
 
         #region logString
@@ -142,10 +162,10 @@ namespace NeumontAssassinV2.Missions
                 switch (choiceCounter)
                 {
                     case 1:
-                        choice1();
+                        //choice1();
                         break;
                     case 2:
-                        choice2();
+                        //choice2();
                         break;
                 }
                 
