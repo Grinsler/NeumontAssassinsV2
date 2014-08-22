@@ -64,7 +64,7 @@ namespace NeumontAssassinV2.Missions
             //fight path=================
             //fight success Starts: Index 15
             "Player: Sorry you gonna have to move bud... *PUNCH*",
-            "Wow, good thing I spent so much time building my muscles. Guy didn’t even know what was coming.",
+            "HAHA floored 'im, good thing I spent so much time building my muscles. \nGuy didn’t even know what was coming.",
             /*Jump to line*/"Line_28",
             //fight fail Starts: Index 18
             "Let see whar you got... HIIYAA",
@@ -102,49 +102,50 @@ namespace NeumontAssassinV2.Missions
             "Your mission has been compromised and you have been killed [Click to return to the beginning of the mission]",
             "DEAD",
              
-            //Wait Path(dealer on his own)===========
-            "Thats right, I should wait...",
+            //Wait Path(dealer on his own) index 41===========
+            "Thats right, I should wait for the other man to leave...",
             "FaultCheck",
             //change scene
             
-            //Fault + 1 Starts: index 
+            //Fault + 1 Starts: index 43
             "Uh-oh, I think the dealer is expecting me. Oh well, guess I should try taking him by surprise.",
             "Choice", //choice3_Faults1
 
-            //Fault = 0
+            //Fault = 0 line 45
             "I could Rush him here or I could walk up like a customer...",
             "Choice", //choice4_Faults0
 
             //Rush Path=============
+            //line 47
             "Player: Lets go!",
             "rush_check",
 
-            //rush success
-            "Hm. He was frailer than I was expecting. One little crack to the head and he’s done for. Well, better head back to base.",
+            //rush success Line 49
+            "*SLICE* \nHm. He was frailer than I was expecting. One knife to the throat and he’s done for. \nWell, better head back to base.",
             "END",
 
-            //rush fail
+            //rush fail Line 51
             "Player: HIYAA...",
             "Druglord: HAHA too slow",
             "The Druglord and his minions jump you.",
             "Your mission has been compromised and you have been killed [Click to return to the beginning of the mission]",
             "DEAD",
 
-            //Walk up Path ==================
-            "Good, he doesn't notice me. Hmm... How should i go about this...",
+            //Walk up Path ================== Line 56
+            "Good, he doesn't notice me.",
             "Choice", //choice5_HowToKill
 
-            //AGIL kill
+            //AGIL kill line 58
             "Your hand moves to you dagger and in the blink of a eye you blade is unshethed and finds its taget,",
             "deep in the druglords chest.",
             "Player: Keep the change.",
             "END",
-            //STR kill
+            //STR kill line 62
             "Bofore he could move, you grab his head with both hands and slammed it onto the wall as hard as you can.",
             "*HRAAGGH*",
             "Player: That finished the job. Better head back.",
             "END",
-            //CHA kill
+            //CHA kill line 66
             "Player: Look man, selling drugs isn't something you should be doin. Youre better than that.",
             "Druglord: Look i dont need you tellin me how to live my life.",
             "Player: Just saying, one day you may end up dyin for it...",
@@ -153,7 +154,7 @@ namespace NeumontAssassinV2.Missions
             "Player: Should have listened to me...",
             "Player: Time to head back",
             "END",
-            //INT kill
+            //INT kill line 74
             "You pull out you silenced pistol and place it against the druglord's head. He's too stunned to move.",
             "*PEW*... He collapses against the wall.",
             "Player: Sorry, you just got put out of bussiness.",
@@ -169,13 +170,13 @@ namespace NeumontAssassinV2.Missions
             {
                 counter = 28;
             }
-            else if (logs[counter].Equals("FaultCheck"))
-            {
-                //make method for fault check
-            }
             else if (logs[counter].Equals("END"))
             {
                 end();
+            }
+            else if (logs[counter].Equals("FaultCheck"))
+            {
+                faultCheck();
             }
             else if (logs[counter].Equals("DEAD"))
             {
@@ -192,6 +193,15 @@ namespace NeumontAssassinV2.Missions
                         break;
                     case 2:
                         choice2_Kill_Or_Wait();
+                        break;
+                    case 3:
+                        choice3_Faults1();
+                        break;
+                    case 4:
+                        choice4_Faults0();
+                        break;
+                    case 5:
+                        choice5_HowToKill();
                         break;
                 }
                 choiceCounter++;
@@ -238,7 +248,7 @@ namespace NeumontAssassinV2.Missions
             testLabe2.Content = "Drugload: You buying?";
             testLabe2.Visibility = Visibility.Visible;
 
-            but1.Content = "No. You’re buying. A one-way ticket to deadville. Population: You";
+            but1.Content = "No. You’re buying. A one-way ticket to deadville. \nPopulation: You";
             but2.Content = "Yeah. How much are you charging";
             but1.Visibility = Visibility.Visible;
             but2.Visibility = Visibility.Visible;
@@ -246,18 +256,20 @@ namespace NeumontAssassinV2.Missions
 
         public void choice4_Faults0()
         {
-            testLabe2.Content = "Now how should i dispatch him...";
+            testLabe2.Content = "Hmm...";
             testLabe2.Visibility = Visibility.Visible;
 
-            but1.Content = "No. You’re buying. A one-way ticket to deadville. Population: You";
-            but2.Content = "Yeah. How much are you charging";
+            but1.Content = "Rush him now!";
+            but2.Content = "Walk up to get closer";
             but1.Visibility = Visibility.Visible;
             but2.Visibility = Visibility.Visible;
         }
 
+        
+
         public void choice5_HowToKill()
         {
-            testLabe2.Content = "Good. He doesn’t notice me. Hmm.. How should I go about this?";
+            testLabe2.Content = "I know what i have to do?";
             testLabe2.Visibility = Visibility.Visible;
             
 
@@ -266,7 +278,7 @@ namespace NeumontAssassinV2.Missions
                 but1.Content = "Knife him";
                 but1.Visibility = Visibility.Visible;
             }
-            else
+            if(player.Player_Intellegence > 5)
             {
                 but2.Visibility = Visibility.Visible;
                 but2.Content = "Quickly pull out a silenced pistol and shoot him in the head";
@@ -294,10 +306,27 @@ namespace NeumontAssassinV2.Missions
             
         }
 
+        public void faultCheck()
+        {
+            if (faultCounter == 0)
+            {
+                counter = 45;
+                choiceCounter = 4;
+                userchoice++;
+            }
+            else
+            {
+                counter = 43;
+                choiceCounter = 3;
+            }
+        }
+
         public void death()
         {
             counter = 0;
             faultCounter = 0;
+            userchoice = 0;
+            choiceCounter = 1;
         }
         //===================--Buttons--===============================================
         private void but1_choice(object sender, RoutedEventArgs e)
@@ -305,8 +334,10 @@ namespace NeumontAssassinV2.Missions
             switch (userchoice)
             {
                 case 0:
-                    if (player.Player_Agility + rand.Next(1, 11) >= 10)
+                    if (player.Player_Agility + rand.Next(0, 10) >= 10)
+                    {
                         counter = 8;
+                    }
                     else
                     {
                         counter = 12;
@@ -315,13 +346,40 @@ namespace NeumontAssassinV2.Missions
                     userchoice++;
                     break;
                 case 1:
-                    //counter = 21;
+                    if (rand.Next(0, 10) >= 5)
+                    {
+                        counter = 31;
+                    }
+                    else
+                    {
+                        counter = 38;
+                    }
+                    userchoice++;
                     break;
                 case 2:
-                    //counter = 21;
+                    if (player.Player_Charisma + rand.Next(0, 10) >= 10)
+                    {
+                        counter = 49;
+                    }
+                    else
+                    {
+                        counter = 51;
+                    }
+                    userchoice++;
                     break;
                 case 3:
-                    //counter = 21;
+                    if (player.Player_Charisma + rand.Next(0, 10) >= 10)
+                    {
+                        counter = 49;
+                    }
+                    else
+                    {
+                        counter = 51;
+                    }
+                    userchoice++;
+                    break;
+                case 4:
+                    counter = 58;
                     break;
             }
 
@@ -332,6 +390,7 @@ namespace NeumontAssassinV2.Missions
             but1.Visibility = Visibility.Hidden;
             but2.Visibility = Visibility.Hidden;
             but3.Visibility = Visibility.Hidden;
+            but4.Visibility = Visibility.Hidden;
             
         }
 
@@ -340,25 +399,39 @@ namespace NeumontAssassinV2.Missions
             switch (userchoice)
             {
                 case 0:
-                    if (player.Player_Strength + rand.Next(10, 11) >= 10)
+                    if (player.Player_Strength + rand.Next(0, 10) >= 10)
+                    {
                         counter = 15;
+                    }
+                        
                     else
                     {
                         counter = 18;
                         faultCounter++;
                     }
-
-
                     userchoice++;
                     break;
                 case 1:
-                    //counter = 21;
+                    counter = 41;
+                    userchoice++;
                     break;
                 case 2:
-                    //counter = 21;
+                    if (player.Player_Charisma + rand.Next(0, 10) >= 10)
+                    {
+                        counter = 49;
+                    }
+                    else
+                    {
+                        counter = 51;
+                    }
+                    userchoice++;
                     break;
                 case 3:
-                    //counter = 21;
+                    counter = 56;
+                    userchoice++;
+                    break;
+                case 4:
+                    counter = 74;
                     break;
             }
 
@@ -369,7 +442,7 @@ namespace NeumontAssassinV2.Missions
             but1.Visibility = Visibility.Hidden;
             but2.Visibility = Visibility.Hidden;
             but3.Visibility = Visibility.Hidden;
-            userchoice++;
+            but4.Visibility = Visibility.Hidden;
         }
 
         private void but3_choice(object sender, RoutedEventArgs e)
@@ -377,7 +450,7 @@ namespace NeumontAssassinV2.Missions
             switch (userchoice)
             {
                 case 0:
-                    if (player.Player_Charisma + rand.Next(1, 11) >= 10)
+                    if (player.Player_Charisma + rand.Next(0, 10) >= 10)
                         counter = 21;
                     else
                     {
@@ -388,14 +461,8 @@ namespace NeumontAssassinV2.Missions
 
                     userchoice++;
                     break;
-                case 1:
-                    //counter = 21;
-                    break;
-                case 2:
-                    //counter = 21;
-                    break;
-                case 3:
-                    //counter = 21;
+                case 4:
+                    counter = 62;
                     break;
             }
 
@@ -406,23 +473,15 @@ namespace NeumontAssassinV2.Missions
             but1.Visibility = Visibility.Hidden;
             but2.Visibility = Visibility.Hidden;
             but3.Visibility = Visibility.Hidden;
-            userchoice++;
+            but4.Visibility = Visibility.Hidden;
         }
 
         private void but4_choice(object sender, RoutedEventArgs e)
         {
             switch (userchoice)
             {
-                
-                case 1:
-                    //counter = 21;
-                    userchoice++;
-                    break;
-                case 2:
-                    //counter = 21;
-                    break;
-                case 3:
-                    //counter = 21;
+                case 4:
+                    counter = 66;
                     break;
             }
 
@@ -433,53 +492,7 @@ namespace NeumontAssassinV2.Missions
             but1.Visibility = Visibility.Hidden;
             but2.Visibility = Visibility.Hidden;
             but3.Visibility = Visibility.Hidden;
-            userchoice++;
+            but4.Visibility = Visibility.Hidden;
         }
-            //Button Styling
-        private void Button_Choice4_MouseEnter_1(object sender, MouseEventArgs e)
-        {
-            if (this.but4.Foreground.Equals(Brushes.Black))
-            {
-                this.but4.Foreground = (Brushes.White);
-            }
-            else
-            {
-                this.but4.Foreground = (Brushes.Black);
-            }
-        }
-        private void Button_Choice3_MouseEnter_1(object sender, MouseEventArgs e)
-        {
-            if (this.but3.Foreground.Equals(Brushes.Black))
-            {
-                this.but3.Foreground = (Brushes.White);
-            }
-            else
-            {
-                this.but3.Foreground = (Brushes.Black);
-            }
-        }
-        private void Button_Choice2_MouseEnter_1(object sender, MouseEventArgs e)
-        {
-            if (this.but2.Foreground.Equals(Brushes.Black))
-            {
-                this.but2.Foreground = (Brushes.White);
-            }
-            else
-            {
-                this.but2.Foreground = (Brushes.Black);
-            }
-        }
-        private void Button_Choice1_MouseEnter_1(object sender, MouseEventArgs e)
-        {
-            if (this.but1.Foreground.Equals(Brushes.Black))
-            {
-                this.but1.Foreground = (Brushes.White);
-            }
-            else
-            {
-                this.but1.Foreground = (Brushes.Black);
-            }
-        }
-        //End Button Styling
     }
 }
