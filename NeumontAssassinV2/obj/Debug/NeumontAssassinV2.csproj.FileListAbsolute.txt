@@ -75,3 +75,11 @@ C:\Users\Daniel Taylor\Documents\Visual Studio 2012\APPDEV PROJECT\NeumontAssass
 C:\Users\Daniel Taylor\Documents\Visual Studio 2012\APPDEV PROJECT\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\NeumontAssassinV2.g.resources
 C:\Users\Daniel Taylor\Documents\Visual Studio 2012\APPDEV PROJECT\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\NeumontAssassinV2.Properties.Resources.resources
 C:\Users\Daniel Taylor\Documents\Visual Studio 2012\APPDEV PROJECT\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\NeumontAssassinV2.csproj.GenerateResource.Cache
+C:\Users\Mitchel Mendez\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\ScreenControls\MainMenu.baml
+C:\Users\Mitchel Mendez\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\ScreenControls\MissionControlTemplate.baml
+C:\Users\Mitchel Mendez\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\ScreenControls\WeeklyTraining.baml
+C:\Users\Mitchel Mendez\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\ScreenControls\MainMenu.g.cs
+C:\Users\Mitchel Mendez\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\ScreenControls\MissionControlTemplate.g.cs
+C:\Users\Mitchel Mendez\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\ScreenControls\WeeklyTraining.g.cs
+C:\Users\Mitchel Mendez\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Mitchel Mendez\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\NeumontAssassinV2_MarkupCompile.lref
