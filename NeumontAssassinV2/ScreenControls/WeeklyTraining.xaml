@@ -1,0 +1,148 @@
+﻿<UserControl x:Class="NeumontAssassinV2.ScreenControls.WeeklyTraining"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Height="600" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/WeeklyTrainingBack.jpg"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.Resources>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="25"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="FontFamily" Value="Matura MT Script Capitals"/>
+            </Style>
+            <Style TargetType="ComboBox">
+                <Setter Property="Height" Value="40"/>
+                <Setter Property="ItemsSource" Value="{Binding Path=_Train}"/>
+                <Setter Property="ScrollViewer.CanContentScroll" Value="False"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="0"/>
+            </Style>
+            <Style TargetType="ColumnDefinition">
+                <Setter Property="Width" Value="1*"/>
+            </Style>
+            <Style TargetType="RowDefinition">
+                <Setter Property="Height" Value="1*"/>
+            </Style>
+        </Grid.Resources>
+            <Label Grid.Column="1"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top">Weekly Training</Label>
+            <ComboBox x:Name="ComboBox1" 
+                      ItemsSource="{Binding Path=_Train}" 
+                      Grid.Row="1"
+                      Grid.Column="1">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                        <Label Content="{Binding _TrainningType}"
+                                   FontFamily="Arial"/>
+                    </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <ComboBox x:Name="ComboBox2" 
+                      ItemsSource="{Binding Path=_Train}" 
+                      ScrollViewer.CanContentScroll="False"
+                      Grid.Row="2"
+                      Grid.Column="1">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                        <Label Content="{Binding _TrainningType}"
+                                   FontFamily="Arial"/>
+                    </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <ComboBox 
+                x:Name="ComboBox3" 
+                ItemsSource="{Binding Path=_Train}" 
+                ScrollViewer.CanContentScroll="False"
+                      Grid.Row="3"
+                      Grid.Column="1">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                        <Label Content="{Binding _TrainningType}"
+                                   FontFamily="Arial"/>
+                    </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <ComboBox x:Name="ComboBox4" 
+                      ItemsSource="{Binding Path=_Train}" 
+                      ScrollViewer.CanContentScroll="False"
+                      Grid.Row="4"
+                      Grid.Column="1">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                        <Label Content="{Binding _TrainningType}"
+                                   FontFamily="Arial"/>
+                    </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <ComboBox x:Name="ComboBox5" 
+                      ItemsSource="{Binding Path=_Train}" 
+                      ScrollViewer.CanContentScroll="False"
+                      Grid.Row="5"
+                      Grid.Column="1">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Label Content="{Binding _TrainningType}"
+                                   FontFamily="Arial"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox x:Name="ComboBox6" 
+                      Grid.Row="6"
+                      Grid.Column="1">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Label Content="{Binding _TrainningType}"
+                                   FontFamily="Arial"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <Button Click="Button_Click_1"
+                Grid.Column="1"
+                Grid.Row="7"
+                Height="35"
+                FontFamily="Matura MT Script Capitals"
+                VerticalAlignment="Center"
+                Background="Transparent"
+                FontSize="25">Train!</Button>
+            <Label Grid.Row="1">Monday</Label>
+            <Label Grid.Row="2">Tuesday</Label>
+            <Label Grid.Row="3">Wednesday</Label>
+            <Label Grid.Row="4">Thursday</Label>
+            <Label Grid.Row="5">Friday</Label>
+            <Label Grid.Row="6">Saturday</Label>
+    </Grid>
+</UserControl>
