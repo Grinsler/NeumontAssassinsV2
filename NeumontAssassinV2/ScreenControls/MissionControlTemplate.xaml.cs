@@ -76,6 +76,10 @@ namespace NeumontAssassinV2.ScreenControls
         {
             UserChoice = 3;
         }
+        private void ButtonChoice4(object sender, RoutedEventArgs e)
+        {
+            //This is for giving questions to the player in the beginning of the game
+        }
         //==============================================================================
 
 
@@ -138,6 +142,17 @@ namespace NeumontAssassinV2.ScreenControls
             else
             {
                 this.Button_Choice1.Foreground = (Brushes.Black);
+            }
+        }
+        private void Button_Choice4_MouseEnter_1(object sender, MouseEventArgs e)
+        {
+            if (this.Button_Choice4.Foreground.Equals(Brushes.Black))
+            {
+                this.Button_Choice4.Foreground = (Brushes.White);
+            }
+            else
+            {
+                this.Button_Choice4.Foreground = (Brushes.Black);
             }
         }
 

@@ -24,20 +24,20 @@ namespace NeumontAssassinV2.ScreenControls
         {
             InitializeComponent();
         }
-
-        private void Exit_Click_1(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
-
+        
         private void New_Click_1(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void Continue_Click_1(object sender, RoutedEventArgs e)
         {
-            //Need James's Load functionality here.
+
+        }
+
+        private void Exit_Click_1(object sender, ExecutedRoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

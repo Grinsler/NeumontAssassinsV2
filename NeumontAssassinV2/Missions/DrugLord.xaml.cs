@@ -435,5 +435,51 @@ namespace NeumontAssassinV2.Missions
             but3.Visibility = Visibility.Hidden;
             userchoice++;
         }
+            //Button Styling
+        private void Button_Choice4_MouseEnter_1(object sender, MouseEventArgs e)
+        {
+            if (this.but4.Foreground.Equals(Brushes.Black))
+            {
+                this.but4.Foreground = (Brushes.White);
+            }
+            else
+            {
+                this.but4.Foreground = (Brushes.Black);
+            }
+        }
+        private void Button_Choice3_MouseEnter_1(object sender, MouseEventArgs e)
+        {
+            if (this.but3.Foreground.Equals(Brushes.Black))
+            {
+                this.but3.Foreground = (Brushes.White);
+            }
+            else
+            {
+                this.but3.Foreground = (Brushes.Black);
+            }
+        }
+        private void Button_Choice2_MouseEnter_1(object sender, MouseEventArgs e)
+        {
+            if (this.but2.Foreground.Equals(Brushes.Black))
+            {
+                this.but2.Foreground = (Brushes.White);
+            }
+            else
+            {
+                this.but2.Foreground = (Brushes.Black);
+            }
+        }
+        private void Button_Choice1_MouseEnter_1(object sender, MouseEventArgs e)
+        {
+            if (this.but1.Foreground.Equals(Brushes.Black))
+            {
+                this.but1.Foreground = (Brushes.White);
+            }
+            else
+            {
+                this.but1.Foreground = (Brushes.Black);
+            }
+        }
+        //End Button Styling
     }
 }
