@@ -4,57 +4,137 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
+             Height="600" Width="800">
+    <Grid x:Name="MainGrid" Background="Black">
+        <Grid.Resources>
+            <Style TargetType="Label">
+                <Setter Property="Grid.ColumnSpan" Value="3"/>
+                <Setter Property="Grid.Column" Value="0"/>
+                <Setter Property="Grid.Row" Value="1"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="Padding" Value="15,20,0,0"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="Grid.Column" Value="0"/>
+                <Setter Property="Grid.ColumnSpan" Value="3"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                <Setter Property="Padding" Value="5,5,5,5"/>
+                <Setter Property="FontStyle" Value="Normal"/>
+                <Setter Property="Height" Value="30"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border CornerRadius="5,5,5,5" BorderThickness="1,1,1,1" RenderTransformOrigin="0.5,0.5" x:Name="border" BorderBrush="#FFFFFFFF">
+                                <Border.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                        <SkewTransform AngleX="0" AngleY="0"/>
+                                        <RotateTransform Angle="0"/>
+                                        <TranslateTransform X="0" Y="0"/>
+                                    </TransformGroup>
+                                </Border.RenderTransform>
+                                <Border Background="{TemplateBinding Background}" CornerRadius="5,5,5,5" x:Name="border1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="0.5*"/>
+                                            <RowDefinition Height="0.5*"/>
+                                        </Grid.RowDefinitions>
+                                        <ContentPresenter VerticalAlignment="Center"  Grid.RowSpan="2" HorizontalAlignment="Left" x:Name="contentPresenter" Margin="5,0,0,0"/>
+                                    </Grid>
+                                </Border>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter Property="Opacity" TargetName="border1" Value="0.5"/>
+                                    <Setter Property="Opacity" TargetName="border" Value="1"/>
+                                    <Setter Property="Opacity" TargetName="contentPresenter" Value="0.5"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="RenderTransform" TargetName="border">
+                                        <Setter.Value>
+                                            <TransformGroup>
+                                                <ScaleTransform ScaleX="0.9" ScaleY="0.9"/>
+                                                <SkewTransform AngleX="0" AngleY="0"/>
+                                                <RotateTransform Angle="0"/>
+                                                <TranslateTransform X="0" Y="0"/>
+                                            </TransformGroup>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
-            <RowDefinition Height="50" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+
         </Grid.RowDefinitions>
-        <Label x:Name="picLabel" 
-               Grid.RowSpan="2"
-               Background="Gray"
-               Width="300"
-               Height="100"
-               Content="Picture goes here"/>
-
-        <Label x:Name="testLabel" 
-               Grid.Row="2"
-               Background="#499"
-               Width="300"
-               Height="50"
-               Content="start"
-               MouseLeftButtonDown="CycleDialogue"/>
-
-        <Label x:Name="testLabe2" 
-               Grid.Row="2"
-               Background="#499"
-               Width="300"
-               Height="50"
+        <Image x:Name="TheBackground"
+            Source="/Images/Front of Building.jpg"
+            Grid.ColumnSpan="3"
+            Grid.RowSpan="4"/>
+        <Rectangle Fill="Gray"
+                   Grid.ColumnSpan="3"
+                   Grid.Row="1"
+                   Grid.RowSpan="3"
+                   Opacity="0.8"
+                   RadiusX="10"
+                   RadiusY="10"
+                   Margin="5,5,11,5">
+        </Rectangle>
+        <Label x:Name="testLabe2"
+                 Content="Secretary: I'm presenting a choice."
+               Visibility="Visible"></Label>
+        <Label x:Name="testLabel"
+               Content="Secretary: I'm saying things."
                Visibility="Hidden"/>
-
+        <Button x:Name="but4"
+                Grid.Row="2"
+                VerticalAlignment="Top"
+                Click="but4_choice"
+                MouseEnter="Button_Choice4_MouseEnter_1"
+                MouseLeave="Button_Choice4_MouseEnter_1"
+                Visibility="Hidden"
+                Content="fhwgdwgdas"
+                Margin="10,5,15,0"/>
         <Button x:Name="but1"
-                Grid.Row="3"
-                Width="300"
-                Height="50"
-                Visibility="Hidden"
-                Click="but1_choice"/>
-
+               Grid.Row="2"
+                VerticalAlignment="Bottom"
+                Click="but1_choice"
+                MouseEnter="Button_Choice1_MouseEnter_1"
+                MouseLeave="Button_Choice1_MouseEnter_1"
+                Visibility="Visible"
+                Content="skjdl" Margin="10,0,15,5"/>
         <Button x:Name="but2"
-                Grid.Row="4"
-                Width="300"
-                Height="50"
-                Visibility="Hidden"
-                Click="but2_choice"/>
-
+               Grid.Row="3"
+                Click="but2_choice"
+                VerticalAlignment="Top"
+                MouseEnter="Button_Choice2_MouseEnter_1"
+                MouseLeave="Button_Choice2_MouseEnter_1"
+                Visibility="Visible"
+                Content="slkdjfhslkjd" Margin="10,0,15,0"/>
         <Button x:Name="but3"
-                Grid.Row="5"
-                Width="300"
-                Height="50"
-                Visibility="Hidden"
-                Click="but3_choice"/>
+               Grid.Row="3"
+                VerticalAlignment="Bottom"
+                Click="but3_choice"
+                MouseEnter="Button_Choice3_MouseEnter_1"
+                MouseLeave="Button_Choice3_MouseEnter_1"
+                Content="sdlkfhdsfkj"
+                Visibility="Visible" Margin="10,0,15,10"/>
+
     </Grid>
 </UserControl>

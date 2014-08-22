@@ -72,7 +72,7 @@ namespace NeumontAssassinV2.Missions
             "I lifted my knife to the man on the right’s neck and raised my silenced pistol the the base of the dealer’s head all within a fraction of a second",
             "My knife moved smoothly across the mans neck making quick work of him as i pulled the trigger in my left hand.",
             "I felt my bullet find its mark (Its kinda hard to miss from this close)",
-            "They both fell to the ground, but i did not have time to stand around and admire my handiwork",
+            "They both fell to the ground, but I did not have time to stand around and admire my handiwork",
             "I headed back to HQ without a hitch",
             //attack fail
             "Oh boy… The dealer definitely knows I’m coming…",
@@ -176,7 +176,7 @@ namespace NeumontAssassinV2.Missions
 
         public void choice_InitalDumpster()
         {
-            testLabe2.Content = "What shoul I pick...";
+            testLabe2.Content = "What should I pick...";
             testLabe2.Visibility = Visibility.Visible;
             if (person.Player_Agility > 3)
             {
@@ -207,7 +207,7 @@ namespace NeumontAssassinV2.Missions
         }
         public void choice_Dealertalk1()
         {
-            testLabe2.Content = "Drugload: You buying?";
+            testLabe2.Content = "Dealer: You buying?";
             testLabe2.Visibility = Visibility.Visible;
 
             but1.Content = "No. You’re buying. A one-way ticket to deadville. Population: You";
@@ -307,5 +307,57 @@ namespace NeumontAssassinV2.Missions
             but3.Visibility = Visibility.Hidden;
             userchoice++;
         }
+
+        private void but4_choice(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        //Button Styling
+        private void Button_Choice4_MouseEnter_1(object sender, MouseEventArgs e)
+        {
+            if (this.but4.Foreground.Equals(Brushes.Black))
+            {
+                this.but4.Foreground = (Brushes.White);
+            }
+            else
+            {
+                this.but4.Foreground = (Brushes.Black);
+            }
+        }
+        private void Button_Choice3_MouseEnter_1(object sender, MouseEventArgs e)
+        {
+            if (this.but3.Foreground.Equals(Brushes.Black))
+            {
+                this.but3.Foreground = (Brushes.White);
+            }
+            else
+            {
+                this.but3.Foreground = (Brushes.Black);
+            }
+        }
+        private void Button_Choice2_MouseEnter_1(object sender, MouseEventArgs e)
+        {
+            if (this.but2.Foreground.Equals(Brushes.Black))
+            {
+                this.but2.Foreground = (Brushes.White);
+            }
+            else
+            {
+                this.but2.Foreground = (Brushes.Black);
+            }
+        }
+        private void Button_Choice1_MouseEnter_1(object sender, MouseEventArgs e)
+        {
+            if (this.but1.Foreground.Equals(Brushes.Black))
+            {
+                this.but1.Foreground = (Brushes.White);
+            }
+            else
+            {
+                this.but1.Foreground = (Brushes.Black);
+            }
+        }
+        //End Button Styling
     }
 }
