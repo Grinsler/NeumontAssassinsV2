@@ -83,3 +83,7 @@ C:\Users\Mitchel Mendez\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\ob
 C:\Users\Mitchel Mendez\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\ScreenControls\WeeklyTraining.g.cs
 C:\Users\Mitchel Mendez\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Mitchel Mendez\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\NeumontAssassinV2_MarkupCompile.lref
+C:\Users\Martin Hileman\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\ScreenControls\MainMenu.baml
+C:\Users\Martin Hileman\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\ScreenControls\WeeklyTraining.baml
+C:\Users\Martin Hileman\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\ScreenControls\MainMenu.g.cs
+C:\Users\Martin Hileman\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\ScreenControls\WeeklyTraining.g.cs
