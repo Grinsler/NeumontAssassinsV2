@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using NeumontAssassinV2.Models;
+using System.Windows.Media.Animation;
 
 namespace NeumontAssassinV2.Missions
 {
@@ -23,6 +24,10 @@ namespace NeumontAssassinV2.Missions
     {
         public Person player = new Person();
         public Random rand = new Random();
+                                
+
+        Uri imgsrc;
+        BitmapImage bmp;
 
         int counter = 0;
         int choiceCounter = 1;
@@ -163,9 +168,256 @@ namespace NeumontAssassinV2.Missions
         };
         #endregion
 
+        //Methods to change the background:
+        #region BackgroundChanges
+
+        private void ImageFadeOut_Completed_AngryJames(object sender, EventArgs e)
+        {
+            imgsrc = new Uri("pack://application:,,,/Images/AngryJames.jpg");
+            bmp = new BitmapImage(imgsrc);
+            TheBackground.Source = bmp;
+            Storyboard SFadeIn = new Storyboard();
+            DoubleAnimation FadeIn = new DoubleAnimation();
+            FadeIn.From = 0.0;                                                       
+            FadeIn.To = 1.0;
+            FadeIn.Duration = new Duration(TimeSpan.FromSeconds(.5));
+            SFadeIn.Children.Add(FadeIn);
+            Storyboard.SetTargetName(FadeIn, TheBackground.Name);
+            Storyboard.SetTargetProperty(FadeIn, new PropertyPath(Image.OpacityProperty));
+            SFadeIn.Begin(this);
+        }
+        private void ImageFadeOut_Completed_CharsmaSuccess(object sender, EventArgs e)
+        {
+            imgsrc = new Uri("pack://application:,,,/Images/CharsmaSuccess.jpg");
+            bmp = new BitmapImage(imgsrc);
+            TheBackground.Source = bmp;
+            Storyboard SFadeIn = new Storyboard();
+            DoubleAnimation FadeIn = new DoubleAnimation();
+            FadeIn.From = 0.0;                                                       
+            FadeIn.To = 1.0;
+            FadeIn.Duration = new Duration(TimeSpan.FromSeconds(.5));
+            SFadeIn.Children.Add(FadeIn);
+            Storyboard.SetTargetName(FadeIn, TheBackground.Name);
+            Storyboard.SetTargetProperty(FadeIn, new PropertyPath(Image.OpacityProperty));
+            SFadeIn.Begin(this);
+        }
+        private void ImageFadeOut_Completed_DeadJames(object sender, EventArgs e)
+        {
+            imgsrc = new Uri("pack://application:,,,/Images/DeadJames.jpg");
+            bmp = new BitmapImage(imgsrc);
+            TheBackground.Source = bmp;
+            Storyboard SFadeIn = new Storyboard();
+            DoubleAnimation FadeIn = new DoubleAnimation();
+            FadeIn.From = 0.0;                                                       
+            FadeIn.To = 1.0;
+            FadeIn.Duration = new Duration(TimeSpan.FromSeconds(.5));
+            SFadeIn.Children.Add(FadeIn);
+            Storyboard.SetTargetName(FadeIn, TheBackground.Name);
+            Storyboard.SetTargetProperty(FadeIn, new PropertyPath(Image.OpacityProperty));
+            SFadeIn.Begin(this);
+        }
+        private void ImageFadeOut_Completed_DexerityJump(object sender, EventArgs e)
+        {
+            imgsrc = new Uri("pack://application:,,,/Images/DexerityJump.jpg");
+            bmp = new BitmapImage(imgsrc);
+            TheBackground.Source = bmp;
+            Storyboard SFadeIn = new Storyboard();
+            DoubleAnimation FadeIn = new DoubleAnimation();
+            FadeIn.From = 0.0;                                                       
+            FadeIn.To = 1.0;
+            FadeIn.Duration = new Duration(TimeSpan.FromSeconds(.5));
+            SFadeIn.Children.Add(FadeIn);
+            Storyboard.SetTargetName(FadeIn, TheBackground.Name);
+            Storyboard.SetTargetProperty(FadeIn, new PropertyPath(Image.OpacityProperty));
+            SFadeIn.Begin(this);
+        }
+        private void ImageFadeOut_Completed_DrugLordAndFriend(object sender, EventArgs e)
+        {
+            imgsrc = new Uri("pack://application:,,,/Images/DrugLordAndFriend.jpg");
+            bmp = new BitmapImage(imgsrc);
+            TheBackground.Source = bmp;
+            Storyboard SFadeIn = new Storyboard();
+            DoubleAnimation FadeIn = new DoubleAnimation();
+            FadeIn.From = 0.0;
+            FadeIn.To = 1.0;
+            FadeIn.Duration = new Duration(TimeSpan.FromSeconds(.5));
+            SFadeIn.Children.Add(FadeIn);
+            Storyboard.SetTargetName(FadeIn, TheBackground.Name);
+            Storyboard.SetTargetProperty(FadeIn, new PropertyPath(Image.OpacityProperty));
+            SFadeIn.Begin(this);
+        }
+        private void ImageFadeOut_Completed_DrugLordAndFriendDead(object sender, EventArgs e)
+        {
+            imgsrc = new Uri("pack://application:,,,/Images/DrugLordAndFriendDead.jpg");
+            bmp = new BitmapImage(imgsrc);
+            TheBackground.Source = bmp;
+            Storyboard SFadeIn = new Storyboard();
+            DoubleAnimation FadeIn = new DoubleAnimation();
+            FadeIn.From = 0.0;
+            FadeIn.To = 1.0;
+            FadeIn.Duration = new Duration(TimeSpan.FromSeconds(.5));
+            SFadeIn.Children.Add(FadeIn);
+            Storyboard.SetTargetName(FadeIn, TheBackground.Name);
+            Storyboard.SetTargetProperty(FadeIn, new PropertyPath(Image.OpacityProperty));
+            SFadeIn.Begin(this);
+        }
+        private void ImageFadeOut_Completed_DrugLordAndFriendSeperate(object sender, EventArgs e)
+        {
+            imgsrc = new Uri("pack://application:,,,/Images/DrugLordAndFriendSeperate.jpg");
+            bmp = new BitmapImage(imgsrc);
+            TheBackground.Source = bmp;
+            Storyboard SFadeIn = new Storyboard();
+            DoubleAnimation FadeIn = new DoubleAnimation();
+            FadeIn.From = 0.0;
+            FadeIn.To = 1.0;
+            FadeIn.Duration = new Duration(TimeSpan.FromSeconds(.5));
+            SFadeIn.Children.Add(FadeIn);
+            Storyboard.SetTargetName(FadeIn, TheBackground.Name);
+            Storyboard.SetTargetProperty(FadeIn, new PropertyPath(Image.OpacityProperty));
+            SFadeIn.Begin(this);
+        }
+        private void ImageFadeOut_Completed_DrugLordAppear(object sender, EventArgs e)
+        {
+            imgsrc = new Uri("pack://application:,,,/Images/DrugLordAppearance.jpg");
+            bmp = new BitmapImage(imgsrc);
+            TheBackground.Source = bmp;
+            Storyboard SFadeIn = new Storyboard();
+            DoubleAnimation FadeIn = new DoubleAnimation();
+            FadeIn.From = 0.0;
+            FadeIn.To = 1.0;
+            FadeIn.Duration = new Duration(TimeSpan.FromSeconds(.5));
+            SFadeIn.Children.Add(FadeIn);
+            Storyboard.SetTargetName(FadeIn, TheBackground.Name);
+            Storyboard.SetTargetProperty(FadeIn, new PropertyPath(Image.OpacityProperty));
+            SFadeIn.Begin(this);
+        }
+        private void ImageFadeOut_Completed_DrugLordDead(object sender, EventArgs e)
+        {
+            imgsrc = new Uri("pack://application:,,,/Images/DrugLordDead.jpg");
+            bmp = new BitmapImage(imgsrc);
+            TheBackground.Source = bmp;
+            Storyboard SFadeIn = new Storyboard();
+            DoubleAnimation FadeIn = new DoubleAnimation();
+            FadeIn.From = 0.0;
+            FadeIn.To = 1.0;
+            FadeIn.Duration = new Duration(TimeSpan.FromSeconds(.5));
+            SFadeIn.Children.Add(FadeIn);
+            Storyboard.SetTargetName(FadeIn, TheBackground.Name);
+            Storyboard.SetTargetProperty(FadeIn, new PropertyPath(Image.OpacityProperty));
+            SFadeIn.Begin(this);
+        }
+        private void ImageFadeOut_Completed_DrugLordKnows(object sender, EventArgs e)
+        {
+            imgsrc = new Uri("pack://application:,,,/Images/DrugLordKnows.jpg");
+            bmp = new BitmapImage(imgsrc);
+            TheBackground.Source = bmp;
+            Storyboard SFadeIn = new Storyboard();
+            DoubleAnimation FadeIn = new DoubleAnimation();
+            FadeIn.From = 0.0;
+            FadeIn.To = 1.0;
+            FadeIn.Duration = new Duration(TimeSpan.FromSeconds(.5));
+            SFadeIn.Children.Add(FadeIn);
+            Storyboard.SetTargetName(FadeIn, TheBackground.Name);
+            Storyboard.SetTargetProperty(FadeIn, new PropertyPath(Image.OpacityProperty));
+            SFadeIn.Begin(this);
+        }
+        private void ImageFadeOut_Completed_DrugLordSuprised(object sender, EventArgs e)
+        {
+            imgsrc = new Uri("pack://application:,,,/Images/DrugLordSuprised.jpg");
+            bmp = new BitmapImage(imgsrc);
+            TheBackground.Source = bmp;
+            Storyboard SFadeIn = new Storyboard();
+            DoubleAnimation FadeIn = new DoubleAnimation();
+            FadeIn.From = 0.0;
+            FadeIn.To = 1.0;
+            FadeIn.Duration = new Duration(TimeSpan.FromSeconds(.5));
+            SFadeIn.Children.Add(FadeIn);
+            Storyboard.SetTargetName(FadeIn, TheBackground.Name);
+            Storyboard.SetTargetProperty(FadeIn, new PropertyPath(Image.OpacityProperty));
+            SFadeIn.Begin(this);
+        }
+        private void ImageFadeOut_Completed_DrugLordUncertain(object sender, EventArgs e)
+        {
+            imgsrc = new Uri("pack://application:,,,/Images/DrugLordUncertain.jpg");
+            bmp = new BitmapImage(imgsrc);
+            TheBackground.Source = bmp;
+            Storyboard SFadeIn = new Storyboard();
+            DoubleAnimation FadeIn = new DoubleAnimation();
+            FadeIn.From = 0.0;
+            FadeIn.To = 1.0;
+            FadeIn.Duration = new Duration(TimeSpan.FromSeconds(.5));
+            SFadeIn.Children.Add(FadeIn);
+            Storyboard.SetTargetName(FadeIn, TheBackground.Name);
+            Storyboard.SetTargetProperty(FadeIn, new PropertyPath(Image.OpacityProperty));
+            SFadeIn.Begin(this);
+        }
+        private void ImageFadeOut_Completed_DrugLordUnspecting(object sender, EventArgs e)
+        {
+            imgsrc = new Uri("pack://application:,,,/Images/DrugLordUnspecting.jpg");
+            bmp = new BitmapImage(imgsrc);
+            TheBackground.Source = bmp;
+            Storyboard SFadeIn = new Storyboard();
+            DoubleAnimation FadeIn = new DoubleAnimation();
+            FadeIn.From = 0.0;
+            FadeIn.To = 1.0;
+            FadeIn.Duration = new Duration(TimeSpan.FromSeconds(.5));
+            SFadeIn.Children.Add(FadeIn);
+            Storyboard.SetTargetName(FadeIn, TheBackground.Name);
+            Storyboard.SetTargetProperty(FadeIn, new PropertyPath(Image.OpacityProperty));
+            SFadeIn.Begin(this);
+        }
+        private void ImageFadeOut_Completed_Dumpser(object sender, EventArgs e)
+        {
+            imgsrc = new Uri("pack://application:,,,/Images/Dumpster.jpg");
+            bmp = new BitmapImage(imgsrc);
+            TheBackground.Source = bmp;
+            Storyboard SFadeIn = new Storyboard();
+            DoubleAnimation FadeIn = new DoubleAnimation();
+            FadeIn.From = 0.0;
+            FadeIn.To = 1.0;
+            FadeIn.Duration = new Duration(TimeSpan.FromSeconds(.5));
+            SFadeIn.Children.Add(FadeIn);
+            Storyboard.SetTargetName(FadeIn, TheBackground.Name);
+            Storyboard.SetTargetProperty(FadeIn, new PropertyPath(Image.OpacityProperty));
+            SFadeIn.Begin(this);
+        }
+        private void ImageFadeOut_Completed_FightMe(object sender, EventArgs e)
+        {
+            imgsrc = new Uri("pack://application:,,,/Images/FightMe.jpg");
+            bmp = new BitmapImage(imgsrc);
+            TheBackground.Source = bmp;
+            Storyboard SFadeIn = new Storyboard();
+            DoubleAnimation FadeIn = new DoubleAnimation();
+            FadeIn.From = 0.0;
+            FadeIn.To = 1.0;
+            FadeIn.Duration = new Duration(TimeSpan.FromSeconds(.5));
+            SFadeIn.Children.Add(FadeIn);
+            Storyboard.SetTargetName(FadeIn, TheBackground.Name);
+            Storyboard.SetTargetProperty(FadeIn, new PropertyPath(Image.OpacityProperty));
+            SFadeIn.Begin(this);
+        }
+        private void ImageFadeOut_Completed_YouAreDead(object sender, EventArgs e)
+        {
+            imgsrc = new Uri("pack://application:,,,/Images/YouAreDead.jpg");
+            bmp = new BitmapImage(imgsrc);
+            TheBackground.Source = bmp;
+            Storyboard SFadeIn = new Storyboard();
+            DoubleAnimation FadeIn = new DoubleAnimation();
+            FadeIn.From = 0.0;
+            FadeIn.To = 1.0;
+            FadeIn.Duration = new Duration(TimeSpan.FromSeconds(.5));
+            SFadeIn.Children.Add(FadeIn);
+            Storyboard.SetTargetName(FadeIn, TheBackground.Name);
+            Storyboard.SetTargetProperty(FadeIn, new PropertyPath(Image.OpacityProperty));
+            SFadeIn.Begin(this);
+        }
+        #endregion
+
         //================================CycleDialogue==================================
         private void CycleDialogue(object sender, MouseButtonEventArgs e)
         {
+            
+
             if (logs[counter].Equals("Line_28"))
             {
                 counter = 28;
@@ -189,18 +441,74 @@ namespace NeumontAssassinV2.Missions
                 switch (choiceCounter)
                 {
                     case 1:
+                        //UserChoice = 1;
+                        Storyboard SFadeOut = new Storyboard();
+                        DoubleAnimation FadeOut = new DoubleAnimation();
+                        SFadeOut.Completed += new EventHandler(ImageFadeOut_Completed_Dumpser);
+                        FadeOut.From = 1.0;
+                        FadeOut.To = 0.0;
+                        FadeOut.Duration = new Duration(TimeSpan.FromSeconds(.5));
+                        SFadeOut.Children.Add(FadeOut);
+                        Storyboard.SetTargetName(FadeOut, TheBackground.Name);
+                        Storyboard.SetTargetProperty(FadeOut, new PropertyPath(Image.OpacityProperty));
+
+                        SFadeOut.Begin(this);                        
+
                         choice1_Dumpster();
                         break;
                     case 2:
+                        Storyboard SFadeOut2 = new Storyboard();
+                        SFadeOut2.Completed += new EventHandler(ImageFadeOut_Completed_DrugLordAndFriend);
+
+                        DoubleAnimation FadeOut2 = new DoubleAnimation();                        
+                        FadeOut2.From = 1.0;
+                        FadeOut2.To = 0.0;
+                        FadeOut2.Duration = new Duration(TimeSpan.FromSeconds(.5));
+                        SFadeOut2.Children.Add(FadeOut2);
+                        Storyboard.SetTargetName(FadeOut2, TheBackground.Name);
+                        Storyboard.SetTargetProperty(FadeOut2, new PropertyPath(Image.OpacityProperty));
+
+                        SFadeOut2.Begin(this); 
                         choice2_Kill_Or_Wait();
                         break;
                     case 3:
+                        Storyboard SFadeOut3 = new Storyboard();
+                        DoubleAnimation FadeOut3 = new DoubleAnimation();
+                        SFadeOut3.Completed += new EventHandler(ImageFadeOut_Completed_DrugLordUnspecting);
+                        FadeOut3.From = 1.0;
+                        FadeOut3.To = 0.0;
+                        FadeOut3.Duration = new Duration(TimeSpan.FromSeconds(.5));
+                        SFadeOut3.Children.Add(FadeOut3);
+                        Storyboard.SetTargetName(FadeOut3, TheBackground.Name);
+                        Storyboard.SetTargetProperty(FadeOut3, new PropertyPath(Image.OpacityProperty));
                         choice3_Faults1();
                         break;
                     case 4:
+                        Storyboard SFadeOut4 = new Storyboard();
+                        DoubleAnimation FadeOut4 = new DoubleAnimation();
+                        SFadeOut4.Completed += new EventHandler(ImageFadeOut_Completed_DrugLordAndFriend);
+                        FadeOut4.From = 1.0;
+                        FadeOut4.To = 0.0;
+                        FadeOut4.Duration = new Duration(TimeSpan.FromSeconds(.5));
+                        SFadeOut4.Children.Add(FadeOut4);
+                        Storyboard.SetTargetName(FadeOut4, TheBackground.Name);
+                        Storyboard.SetTargetProperty(FadeOut4, new PropertyPath(Image.OpacityProperty));
+
                         choice4_Faults0();
                         break;
                     case 5:
+                         Storyboard SFadeOut5 = new Storyboard();
+                        DoubleAnimation FadeOut5 = new DoubleAnimation();
+                        SFadeOut5.Completed += new EventHandler(ImageFadeOut_Completed_DrugLordSuprised);
+                        FadeOut5.From = 1.0;
+                        FadeOut5.To = 0.0;
+                        FadeOut5.Duration = new Duration(TimeSpan.FromSeconds(.5));
+                        SFadeOut5.Children.Add(FadeOut5);
+                        Storyboard.SetTargetName(FadeOut5, TheBackground.Name);
+                        Storyboard.SetTargetProperty(FadeOut5, new PropertyPath(Image.OpacityProperty));
+
+                        SFadeOut5.Begin(this);
+
                         choice5_HowToKill();
                         break;
                 }
@@ -327,6 +635,8 @@ namespace NeumontAssassinV2.Missions
             faultCounter = 0;
             userchoice = 0;
             choiceCounter = 1;
+
+
         }
         //===================--Buttons--===============================================
         private void but1_choice(object sender, RoutedEventArgs e)
