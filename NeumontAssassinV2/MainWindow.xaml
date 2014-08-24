@@ -4,6 +4,6 @@
         xmlns:con="clr-namespace:NeumontAssassinV2.ScreenControls"
         Title="International Secret Intelligence Service: Kawaii no Desu" Height="635" Width="810" ResizeMode="NoResize">
     <Grid x:Name="MainGrid">
-        <con:MissionControlTemplate></con:MissionControlTemplate>
+        
     </Grid>
 </Window>

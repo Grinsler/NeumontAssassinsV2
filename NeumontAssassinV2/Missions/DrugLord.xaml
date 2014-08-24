@@ -84,8 +84,8 @@
 
         </Grid.RowDefinitions>
         <Image x:Name="TheBackground"
-            Source="/Images/Front of Building.jpg"
             Grid.ColumnSpan="3"
+               Source="/Images/secretary.jpg"
             Grid.RowSpan="4"/>
         <Rectangle Fill="Gray"
                    Grid.ColumnSpan="3"
@@ -96,45 +96,49 @@
                    RadiusY="10"
                    Margin="5,5,11,5">
         </Rectangle>
-        <Label x:Name="testLabe2"
-                 Content="Secretary: I'm presenting a choice."
-               Visibility="Visible"></Label>
         <Label x:Name="testLabel"
-               Content="Secretary: I'm saying things."
-               Visibility="Hidden"/>
-        <Button x:Name="but4"
+               Height="200"
+               Content="GO"
+               Grid.Row="1"
+               Grid.RowSpan="4"
+               MouseLeftButtonDown="CycleDialogue"/>
+        <Label x:Name="testLabe2"
+               Height="50"
+               Visibility="Hidden"
+               />
+        
+        <Button x:Name="but1"
                 Grid.Row="2"
                 VerticalAlignment="Top"
+                Click="but1_choice"
+                MouseEnter="Button_Choice1_MouseEnter_1"
+                MouseLeave="Button_Choice1_MouseEnter_1"
+                Visibility="Hidden"
+                Margin="10,5,15,0"/>
+        <Button x:Name="but2"
+               Grid.Row="2"
+                VerticalAlignment="Bottom"
+                Click="but2_choice"
+                MouseEnter="Button_Choice2_MouseEnter_1"
+                MouseLeave="Button_Choice2_MouseEnter_1"
+                Visibility="Hidden"
+                Margin="10,0,15,5"/>
+        <Button x:Name="but3"
+               Grid.Row="3"
+                Click="but3_choice"
+                VerticalAlignment="Top"
+                MouseEnter="Button_Choice3_MouseEnter_1"
+                MouseLeave="Button_Choice3_MouseEnter_1"
+                Visibility="Hidden"
+                Margin="10,0,15,0"/>
+        <Button x:Name="but4"
+               Grid.Row="3"
+                VerticalAlignment="Bottom"
                 Click="but4_choice"
                 MouseEnter="Button_Choice4_MouseEnter_1"
                 MouseLeave="Button_Choice4_MouseEnter_1"
                 Visibility="Hidden"
-                Content="fhwgdwgdas"
-                Margin="10,5,15,0"/>
-        <Button x:Name="but1"
-               Grid.Row="2"
-                VerticalAlignment="Bottom"
-                Click="but1_choice"
-                MouseEnter="Button_Choice1_MouseEnter_1"
-                MouseLeave="Button_Choice1_MouseEnter_1"
-                Visibility="Visible"
-                Content="skjdl" Margin="10,0,15,5"/>
-        <Button x:Name="but2"
-               Grid.Row="3"
-                Click="but2_choice"
-                VerticalAlignment="Top"
-                MouseEnter="Button_Choice2_MouseEnter_1"
-                MouseLeave="Button_Choice2_MouseEnter_1"
-                Visibility="Visible"
-                Content="slkdjfhslkjd" Margin="10,0,15,0"/>
-        <Button x:Name="but3"
-               Grid.Row="3"
-                VerticalAlignment="Bottom"
-                Click="but3_choice"
-                MouseEnter="Button_Choice3_MouseEnter_1"
-                MouseLeave="Button_Choice3_MouseEnter_1"
-                Content="sdlkfhdsfkj"
-                Visibility="Visible" Margin="10,0,15,10"/>
+                Margin="10,0,15,10"/>
 
     </Grid>
 </UserControl>

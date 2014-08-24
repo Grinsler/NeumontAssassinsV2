@@ -45,34 +45,34 @@ namespace NeumontAssassinV2.Missions
         public List<string> logs = new List<string>
         {
             //backgroud info
-            "Cevon: Good, you made it. Your first target is a local drug dealer. He and his gang have been causing trouble for our agents operating in the area.",
-            "Cevon: They’re just common rabble really. Your mission is to take out the dealer, and any of his thugs if necessary.",
+            "Cevon: Good, you made it. Your first target is a local drug dealer. \nHe and his gang have been causing trouble for our agents operating in the area.",
+            "Cevon: They’re just common rabble really. \nYour mission is to take out the dealer, and any of his thugs if necessary.",
             "Cevon: Take out the dealer: it can’t be any simpler than that",
-            "Cevon: Down by 1337 street; in the back alley of Path and Exile.",
+            "Cevon: Down by 1337 street, in the back alley of Path and Exile.",
             "Player: Affirmative.",
             "Cevon: “Get going then.",
             "Player: This is it. I can’t afford to mess this up..",
             
-            //-------------dumpster choice---------------
+            //-------------dumpster choice--------------------------------------------
             "Choice",
             //agility Path==============
             //agility success Starts: Index 8
             "Thats right, I should utilize my athleticism here.",
-            "I swiftly scaled over the dumpster and over the fence, landing down into the construction site. \nIt’s Sunday, so the workers are all at home. I have to make my way to the other side of the site and climb over the fence blocking the main street...",
-            "Luckily no one seemed to notice.",
+            "I swiftly scaled over the dumpster and over the fence, landing down into the construction site. \nLuck it’s Sunday, so the workers are all at home. I have to make my way to the other side of the site and climb over that fence blocking the main street...",
+            "Ahh, no one seemed to notice.",
             /*Jump to line*/"Line_28",
             //agility fail Starts: Index 12
             "Argh, I definitely botched that jump - leg hurts… Shouldn’t be too much trouble once I get past the gate.",
-            "That didn’t go as planned... Hope no one noticed me.",
+            "That didn’t go as planned... Hope no one noticed me...",
             /*Jump to line*/"Line_28",
 
             //fight path=================
             //fight success Starts: Index 15
             "Player: Sorry you gonna have to move bud... *PUNCH*",
-            "HAHA floored 'im, good thing I spent so much time building my muscles. \nGuy didn’t even know what was coming.",
+            "HAHAHA, floored 'im, good thing I spent so much time building my muscles. \nGuy didn’t even know what was coming.",
             /*Jump to line*/"Line_28",
             //fight fail Starts: Index 18
-            "Let see whar you got... HIIYAA",
+            "Player: Let see what you got... HIIYAA",
             "The guard blocks your punches and knocks you in the stomach. \nThankfully, before he can finish the job, you are able to run passed him. They may be alerted now...",
             /*Jump to line*/"Line_28",
 
@@ -84,27 +84,27 @@ namespace NeumontAssassinV2.Missions
             //talk fail Starts: Index 24
             "Look, I don’t want any trouble man, just let me pass alright?",
             "Gang member: I don’t think so, you’re not goin’ anywhere, chump!",
-            "The guard blocks your punches and punches you right in the gut. \nThankfully, before he can get off another blow, you are able to slip passed him. They may be alerted now...",
+            "The guard blocks your punch and nails you right in the gut. \nThankfully, before he can get off another blow, you are able to slip passed him. \nThey may be alerted now...",
             /*Jump to line*/"Line_28",
 
             //---------1st attack chance--------------
             //Starts: Index 28
             "There he is! The Druglord..",
-            "My target, the dealer, is right there walking with another gangmember. I don’t think they’ve noticed me yet.",
+            "My target, the dealer, is right there walking with another gangmember. \nI don’t think they’ve noticed me yet.",
             "Choice",//go to choice_1stKillChance
 
             //Attack Path===========
             //attack success Starts: index 31
             "I moved like lightning. All this training has payed off",
-            "I lifted my knife to the man on the right’s neck and raised my silenced pistol the the base of the dealer’s head all within a fraction of a second",
-            "My knife moved smoothly across the mans neck making quick work of him as I pulled the trigger in my left hand.",
+            "I lifted my knife to the man on the right’s neck and raised my \nsilenced pistol to the base of the dealer’s head all within a fraction of a second",
+            "My knife moved smoothly across the mans neck making quick work \nof him as I pulled the gun trigger in my left hand.",
             "I felt my bullet find its mark (Its kinda hard to miss from this close)",
-            "They both fell to the ground, but I did not have time to stand around and admire my handiwork",
-            "I headed back to HQ without a another hitch",
+            "They both fell to the ground, \nbut I did not have time to stand around and admire my handiwork",
+            "Now I can head back to HQ without a hitch",
             "END",
             //attack fail and death Starts: index 38
             "What the-?!... I slipped...",
-            "Your mission has been compromised and you have been killed [Click to return to the beginning of the mission]",
+            "Your mission has been compromised and you have been killed",
             "DEAD",
              
             //Wait Path(dealer on his own) index 41===========
@@ -118,22 +118,17 @@ namespace NeumontAssassinV2.Missions
 
             //Fault = 0 line 45
             "I could Rush him here or I could walk up like a customer...",
-            "Choice", //choice4_Faults0
-
-            //Rush Path=============
-            //line 47
-            "Player: Lets go!",
-            "rush_check",
+            "Choice","","", //choice4_Faults0
 
             //rush success Line 49
-            "*SLICE* \nHm. He was frailer than I was expecting. One knife to the throat and he’s done for. \nWell, better head back to base.",
+            "*SLICE* \nHmm... \nThat was easier than I was expecting. One knife to the throat and he was done for. \nWell, better head back to base.",
             "END",
 
             //rush fail Line 51
             "Player: HIYAA...",
-            "Druglord: HAHA too slow",
-            "The Druglord and his minions jump you.",
-            "Your mission has been compromised and you have been killed [Click to return to the beginning of the mission]",
+            "Druglord: HAHAHA, too slow!",
+            "The Druglord and his minions jump and incapacitate you.",
+            "Your mission has been compromised and you have been killed",
             "DEAD",
 
             //Walk up Path ================== Line 56
@@ -141,8 +136,8 @@ namespace NeumontAssassinV2.Missions
             "Choice", //choice5_HowToKill
 
             //AGIL kill line 58
-            "Your hand moves to you dagger and in the blink of a eye you blade is unshethed and finds its taget,",
-            "deep in the druglords chest.",
+            "Your hand moves to your dagger and in the blink of a eye the blade is unshethed and finds its taget,",
+            "Embedded deep into the druglords chest.",
             "Player: Keep the change.",
             "END",
             //STR kill line 62
@@ -152,16 +147,16 @@ namespace NeumontAssassinV2.Missions
             "END",
             //CHA kill line 66
             "Player: Look man, selling drugs isn't something you should be doin. Youre better than that.",
-            "Druglord: Look i dont need you tellin me how to live my life.",
+            "Druglord: Look I dont need you tellin' me how to live my life.",
             "Player: Just saying, one day you may end up dyin for it...",
             "Druglord: Well I'll deal with who ever want to kill me when that day com...",
-            "Your knife finds the druglord's throat.",
+            "*gurgle* \nYour knife finds the druglord's throat.",
             "Player: Should have listened to me...",
             "Player: Time to head back",
             "END",
             //INT kill line 74
             "You pull out you silenced pistol and place it against the druglord's head. He's too stunned to move.",
-            "*PEW*... He collapses against the wall.",
+            "*PPCCKK*... He collapses against the wall.",
             "Player: Sorry, you just got put out of bussiness.",
             "END"
             
@@ -173,7 +168,7 @@ namespace NeumontAssassinV2.Missions
 
         private void ImageFadeOut_Completed_AngryJames(object sender, EventArgs e)
         {
-            imgsrc = new Uri("pack://application:,,,/Images/AngryJames.jpg");
+            imgsrc = new Uri("pack://application:,,,/Images/DrugLord/AngryJames.jpg");
             bmp = new BitmapImage(imgsrc);
             TheBackground.Source = bmp;
             Storyboard SFadeIn = new Storyboard();
@@ -188,7 +183,7 @@ namespace NeumontAssassinV2.Missions
         }
         private void ImageFadeOut_Completed_CharsmaSuccess(object sender, EventArgs e)
         {
-            imgsrc = new Uri("pack://application:,,,/Images/CharsmaSuccess.jpg");
+            imgsrc = new Uri("pack://application:,,,/Images/DrugLord/CharsmaSuccess.jpg");
             bmp = new BitmapImage(imgsrc);
             TheBackground.Source = bmp;
             Storyboard SFadeIn = new Storyboard();
@@ -203,7 +198,7 @@ namespace NeumontAssassinV2.Missions
         }
         private void ImageFadeOut_Completed_DeadJames(object sender, EventArgs e)
         {
-            imgsrc = new Uri("pack://application:,,,/Images/DeadJames.jpg");
+            imgsrc = new Uri("pack://application:,,,/Images/DrugLord/DeadJames.jpg");
             bmp = new BitmapImage(imgsrc);
             TheBackground.Source = bmp;
             Storyboard SFadeIn = new Storyboard();
@@ -218,7 +213,7 @@ namespace NeumontAssassinV2.Missions
         }
         private void ImageFadeOut_Completed_DexerityJump(object sender, EventArgs e)
         {
-            imgsrc = new Uri("pack://application:,,,/Images/DexerityJump.jpg");
+            imgsrc = new Uri("pack://application:,,,/Images/DrugLord/DexerityJump.jpg");
             bmp = new BitmapImage(imgsrc);
             TheBackground.Source = bmp;
             Storyboard SFadeIn = new Storyboard();
@@ -233,7 +228,7 @@ namespace NeumontAssassinV2.Missions
         }
         private void ImageFadeOut_Completed_DrugLordAndFriend(object sender, EventArgs e)
         {
-            imgsrc = new Uri("pack://application:,,,/Images/DrugLordAndFriend.jpg");
+            imgsrc = new Uri("pack://application:,,,/Images/DrugLord/DrugLordAndFriend.jpg");
             bmp = new BitmapImage(imgsrc);
             TheBackground.Source = bmp;
             Storyboard SFadeIn = new Storyboard();
@@ -248,7 +243,7 @@ namespace NeumontAssassinV2.Missions
         }
         private void ImageFadeOut_Completed_DrugLordAndFriendDead(object sender, EventArgs e)
         {
-            imgsrc = new Uri("pack://application:,,,/Images/DrugLordAndFriendDead.jpg");
+            imgsrc = new Uri("pack://application:,,,/Images/DrugLord/DrugLordAndFriendDead.jpg");
             bmp = new BitmapImage(imgsrc);
             TheBackground.Source = bmp;
             Storyboard SFadeIn = new Storyboard();
@@ -263,7 +258,7 @@ namespace NeumontAssassinV2.Missions
         }
         private void ImageFadeOut_Completed_DrugLordAndFriendSeperate(object sender, EventArgs e)
         {
-            imgsrc = new Uri("pack://application:,,,/Images/DrugLordAndFriendSeperate.jpg");
+            imgsrc = new Uri("pack://application:,,,/Images/DrugLord/DrugLordAndFriendSeperate.jpg");
             bmp = new BitmapImage(imgsrc);
             TheBackground.Source = bmp;
             Storyboard SFadeIn = new Storyboard();
@@ -278,7 +273,7 @@ namespace NeumontAssassinV2.Missions
         }
         private void ImageFadeOut_Completed_DrugLordAppear(object sender, EventArgs e)
         {
-            imgsrc = new Uri("pack://application:,,,/Images/DrugLordAppearance.jpg");
+            imgsrc = new Uri("pack://application:,,,/Images/DrugLord/DrugLordAppearance.jpg");
             bmp = new BitmapImage(imgsrc);
             TheBackground.Source = bmp;
             Storyboard SFadeIn = new Storyboard();
@@ -293,7 +288,7 @@ namespace NeumontAssassinV2.Missions
         }
         private void ImageFadeOut_Completed_DrugLordDead(object sender, EventArgs e)
         {
-            imgsrc = new Uri("pack://application:,,,/Images/DrugLordDead.jpg");
+            imgsrc = new Uri("pack://application:,,,/Images/DrugLord/DrugLordDead.jpg");
             bmp = new BitmapImage(imgsrc);
             TheBackground.Source = bmp;
             Storyboard SFadeIn = new Storyboard();
@@ -308,7 +303,7 @@ namespace NeumontAssassinV2.Missions
         }
         private void ImageFadeOut_Completed_DrugLordKnows(object sender, EventArgs e)
         {
-            imgsrc = new Uri("pack://application:,,,/Images/DrugLordKnows.jpg");
+            imgsrc = new Uri("pack://application:,,,/Images/DrugLord/DrugLordKnows.jpg");
             bmp = new BitmapImage(imgsrc);
             TheBackground.Source = bmp;
             Storyboard SFadeIn = new Storyboard();
@@ -323,7 +318,7 @@ namespace NeumontAssassinV2.Missions
         }
         private void ImageFadeOut_Completed_DrugLordSuprised(object sender, EventArgs e)
         {
-            imgsrc = new Uri("pack://application:,,,/Images/DrugLordSuprised.jpg");
+            imgsrc = new Uri("pack://application:,,,/Images/DrugLord/DrugLordSuprised.jpg");
             bmp = new BitmapImage(imgsrc);
             TheBackground.Source = bmp;
             Storyboard SFadeIn = new Storyboard();
@@ -338,7 +333,7 @@ namespace NeumontAssassinV2.Missions
         }
         private void ImageFadeOut_Completed_DrugLordUncertain(object sender, EventArgs e)
         {
-            imgsrc = new Uri("pack://application:,,,/Images/DrugLordUncertain.jpg");
+            imgsrc = new Uri("pack://application:,,,/Images/DrugLord/DrugLordUncertain.jpg");
             bmp = new BitmapImage(imgsrc);
             TheBackground.Source = bmp;
             Storyboard SFadeIn = new Storyboard();
@@ -353,7 +348,7 @@ namespace NeumontAssassinV2.Missions
         }
         private void ImageFadeOut_Completed_DrugLordUnspecting(object sender, EventArgs e)
         {
-            imgsrc = new Uri("pack://application:,,,/Images/DrugLordUnspecting.jpg");
+            imgsrc = new Uri("pack://application:,,,/Images/DrugLord/DrugLordUnspecting.jpg");
             bmp = new BitmapImage(imgsrc);
             TheBackground.Source = bmp;
             Storyboard SFadeIn = new Storyboard();
@@ -368,7 +363,7 @@ namespace NeumontAssassinV2.Missions
         }
         private void ImageFadeOut_Completed_Dumpser(object sender, EventArgs e)
         {
-            imgsrc = new Uri("pack://application:,,,/Images/Dumpster.jpg");
+            imgsrc = new Uri("pack://application:,,,/Images/DrugLord/Dumpster.jpg");
             bmp = new BitmapImage(imgsrc);
             TheBackground.Source = bmp;
             Storyboard SFadeIn = new Storyboard();
@@ -383,7 +378,7 @@ namespace NeumontAssassinV2.Missions
         }
         private void ImageFadeOut_Completed_FightMe(object sender, EventArgs e)
         {
-            imgsrc = new Uri("pack://application:,,,/Images/FightMe.jpg");
+            imgsrc = new Uri("pack://application:,,,/Images/DrugLord/FightMe.jpg");
             bmp = new BitmapImage(imgsrc);
             TheBackground.Source = bmp;
             Storyboard SFadeIn = new Storyboard();
@@ -398,7 +393,7 @@ namespace NeumontAssassinV2.Missions
         }
         private void ImageFadeOut_Completed_YouAreDead(object sender, EventArgs e)
         {
-            imgsrc = new Uri("pack://application:,,,/Images/YouAreDead.jpg");
+            imgsrc = new Uri("pack://application:,,,/Images/DrugLord/YouAreDead.jpg");
             bmp = new BitmapImage(imgsrc);
             TheBackground.Source = bmp;
             Storyboard SFadeIn = new Storyboard();
@@ -420,6 +415,17 @@ namespace NeumontAssassinV2.Missions
 
             if (logs[counter].Equals("Line_28"))
             {
+                Storyboard SFadeOutLine28 = new Storyboard();
+                DoubleAnimation FadeOut28 = new DoubleAnimation();
+                SFadeOutLine28.Completed += new EventHandler(ImageFadeOut_Completed_DrugLordAndFriend);
+                FadeOut28.From = 1.0;
+                FadeOut28.To = 0.0;
+                FadeOut28.Duration = new Duration(TimeSpan.FromSeconds(.5));
+                SFadeOutLine28.Children.Add(FadeOut28);
+                Storyboard.SetTargetName(FadeOut28, TheBackground.Name);
+                Storyboard.SetTargetProperty(FadeOut28, new PropertyPath(Image.OpacityProperty));
+
+                SFadeOutLine28.Begin(this); 
                 counter = 28;
             }
             else if (logs[counter].Equals("END"))
@@ -434,14 +440,70 @@ namespace NeumontAssassinV2.Missions
             {
                 death();
             }
+            //===============================================
+            #region regularTextPictreChange
+                //MAKE CEVON APEAR AT INDEX 0
+            //else if (logs[counter].Equals(logs[15]))
+            //{
+            //    Storyboard start = new Storyboard();
+            //    DoubleAnimation startfade = new DoubleAnimation();
+            //    start.Completed += new EventHandler(ImageFadeOut_Completed_AngryJames);
+            //    startfade.From = 1.0;
+            //    startfade.To = 0.0;
+            //    startfade.Duration = new Duration(TimeSpan.FromSeconds(.5));
+            //    start.Children.Add(startfade);
+            //    Storyboard.SetTargetName(startfade, TheBackground.Name);
+            //    Storyboard.SetTargetProperty(startfade, new PropertyPath(Image.OpacityProperty));
 
-            if (logs[counter].Equals("Choice"))
+            //    start.Begin(this);
+
+            //    testLabel.Content = logs[counter];
+            //    counter++;
+            //}
+
+            else if (logs[counter].Equals(logs[15]))
+            {
+                Storyboard str1pic = new Storyboard();
+                DoubleAnimation FadeOutstr1 = new DoubleAnimation();
+                str1pic.Completed += new EventHandler(ImageFadeOut_Completed_AngryJames);
+                FadeOutstr1.From = 1.0;
+                FadeOutstr1.To = 0.0;
+                FadeOutstr1.Duration = new Duration(TimeSpan.FromSeconds(.5));
+                str1pic.Children.Add(FadeOutstr1);
+                Storyboard.SetTargetName(FadeOutstr1, TheBackground.Name);
+                Storyboard.SetTargetProperty(FadeOutstr1, new PropertyPath(Image.OpacityProperty));
+
+                str1pic.Begin(this); 
+
+                testLabel.Content = logs[counter];
+                counter++;
+            }
+
+            else if (logs[counter].Equals(logs[16]))
+            {
+                Storyboard str2pic = new Storyboard();
+                DoubleAnimation FadeOutstr2 = new DoubleAnimation();
+                str2pic.Completed += new EventHandler(ImageFadeOut_Completed_DeadJames);
+                FadeOutstr2.From = 1.0;
+                FadeOutstr2.To = 0.0;
+                FadeOutstr2.Duration = new Duration(TimeSpan.FromSeconds(.5));
+                str2pic.Children.Add(FadeOutstr2);
+                Storyboard.SetTargetName(FadeOutstr2, TheBackground.Name);
+                Storyboard.SetTargetProperty(FadeOutstr2, new PropertyPath(Image.OpacityProperty));
+
+                str2pic.Begin(this);
+
+                testLabel.Content = logs[counter];
+                counter++;
+            }
+            #endregion
+            //=============================================
+            else if (logs[counter].Equals("Choice"))
             {
                 testLabel.Visibility = Visibility.Hidden;
                 switch (choiceCounter)
                 {
                     case 1:
-                        //UserChoice = 1;
                         Storyboard SFadeOut = new Storyboard();
                         DoubleAnimation FadeOut = new DoubleAnimation();
                         SFadeOut.Completed += new EventHandler(ImageFadeOut_Completed_Dumpser);
@@ -457,18 +519,6 @@ namespace NeumontAssassinV2.Missions
                         choice1_Dumpster();
                         break;
                     case 2:
-                        Storyboard SFadeOut2 = new Storyboard();
-                        SFadeOut2.Completed += new EventHandler(ImageFadeOut_Completed_DrugLordAndFriend);
-
-                        DoubleAnimation FadeOut2 = new DoubleAnimation();                        
-                        FadeOut2.From = 1.0;
-                        FadeOut2.To = 0.0;
-                        FadeOut2.Duration = new Duration(TimeSpan.FromSeconds(.5));
-                        SFadeOut2.Children.Add(FadeOut2);
-                        Storyboard.SetTargetName(FadeOut2, TheBackground.Name);
-                        Storyboard.SetTargetProperty(FadeOut2, new PropertyPath(Image.OpacityProperty));
-
-                        SFadeOut2.Begin(this); 
                         choice2_Kill_Or_Wait();
                         break;
                     case 3:
@@ -514,7 +564,13 @@ namespace NeumontAssassinV2.Missions
                 }
                 choiceCounter++;
             }
+
+            //else if()
+            //{
+
+            //}
             // Regular dialogue 
+
             else
             {
                 testLabel.Content = logs[counter];
@@ -537,8 +593,9 @@ namespace NeumontAssassinV2.Missions
             but3.Content = "Persuade the gang member";
             
             but2.Visibility = Visibility.Visible;
-            but3.Visibility = Visibility.Visible;    
+            but3.Visibility = Visibility.Visible;
 
+            
         }
 
         public void choice2_Kill_Or_Wait()
@@ -603,6 +660,9 @@ namespace NeumontAssassinV2.Missions
                 but4.Content = "Convince him to quit selling drugs, then kill him while he’s unaware";
             }
         }
+        /// <summary>
+        /// Demo end of mission FIX LATER
+        /// </summary>
         public void end()
         {
             testLabe2.Content = "END";
@@ -629,6 +689,9 @@ namespace NeumontAssassinV2.Missions
             }
         }
 
+        /// <summary>
+        /// DEMO DEATH FIX LATER
+        /// </summary>
         public void death()
         {
             counter = 0;
@@ -656,7 +719,7 @@ namespace NeumontAssassinV2.Missions
                     userchoice++;
                     break;
                 case 1:
-                    if (rand.Next(0, 10) >= 5)
+                    if (player.Player_Agility + rand.Next(0, 10) >= 10)
                     {
                         counter = 31;
                     }
@@ -804,5 +867,55 @@ namespace NeumontAssassinV2.Missions
             but3.Visibility = Visibility.Hidden;
             but4.Visibility = Visibility.Hidden;
         }
+
+        //==============button enter=====================
+        private void Button_Choice3_MouseEnter_1(object sender, MouseEventArgs e)
+        {
+            if (this.but3.Foreground.Equals(Brushes.Black))
+            {
+                this.but3.Foreground = (Brushes.White);
+            }
+            else
+            {
+                this.but3.Foreground = (Brushes.Black);
+            }
+        }
+        private void Button_Choice2_MouseEnter_1(object sender, MouseEventArgs e)
+        {
+            if (this.but2.Foreground.Equals(Brushes.Black))
+            {
+                this.but2.Foreground = (Brushes.White);
+            }
+            else
+            {
+                this.but2.Foreground = (Brushes.Black);
+            }
+        }
+        private void Button_Choice1_MouseEnter_1(object sender, MouseEventArgs e)
+        {
+            if (this.but1.Foreground.Equals(Brushes.Black))
+            {
+                this.but1.Foreground = (Brushes.White);
+            }
+            else
+            {
+                this.but1.Foreground = (Brushes.Black);
+            }
+        }
+        private void Button_Choice4_MouseEnter_1(object sender, MouseEventArgs e)
+        {
+            if (this.but4.Foreground.Equals(Brushes.Black))
+            {
+                this.but4.Foreground = (Brushes.White);
+            }
+            else
+            {
+                this.but4.Foreground = (Brushes.Black);
+            }
+        }
+
     }
+
+    
+
 }
