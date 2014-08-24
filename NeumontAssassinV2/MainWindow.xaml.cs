@@ -28,10 +28,10 @@ namespace NeumontAssassinV2
             //MainGrid.Children.Clear();
             Person p = new Person();
             ////for testing purposes:
-            p.Player_Agility = -100;
-            p.Player_Charisma = -100;
-            p.Player_Intellegence = -100;
-            p.Player_Strength = -100;
+            p.Player_Agility = 3;
+            p.Player_Charisma = 5;
+            p.Player_Intellegence = 5;
+            p.Player_Strength = 5;
             p.Player_Name = "Test1";
             DrugLord dl = new DrugLord(p);
             MainGrid.Children.Add(dl);

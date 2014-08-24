@@ -84,7 +84,7 @@ namespace NeumontAssassinV2.Missions
             //talk fail Starts: Index 24
             "Look, I don’t want any trouble man, just let me pass alright?",
             "Gang member: I don’t think so, you’re not goin’ anywhere, chump!",
-            "The guard blocks your punch and nails you right in the gut. \nThankfully, before he can get off another blow, you are able to slip passed him. \nThey may be alerted now...",
+            "The guard blocks your punch and nails you right in the gut. \nThankfully, before he can get off another blow,\n you are able to slip passed him. \n But they may be alerted now...",
             /*Jump to line*/"Line_28",
 
             //---------1st attack chance--------------
@@ -165,7 +165,51 @@ namespace NeumontAssassinV2.Missions
 
         //Methods to change the background:
         #region BackgroundChanges
-
+        private void ImageFadeOut_Completed_Secretary(object sender, EventArgs e)
+        {
+            imgsrc = new Uri("pack://application:,,,/Images/secretary.jpg");
+            bmp = new BitmapImage(imgsrc);
+            TheBackground.Source = bmp;
+            Storyboard SFadeInSec = new Storyboard();
+            DoubleAnimation FadeInSec = new DoubleAnimation();
+            FadeInSec.From = 0.0;
+            FadeInSec.To = 1.0;
+            FadeInSec.Duration = new Duration(TimeSpan.FromSeconds(.5));
+            SFadeInSec.Children.Add(FadeInSec);
+            Storyboard.SetTargetName(FadeInSec, TheBackground.Name);
+            Storyboard.SetTargetProperty(FadeInSec, new PropertyPath(Image.OpacityProperty));
+            SFadeInSec.Begin(this);
+        }
+        private void ImageFadeOut_Completed_HQ(object sender, EventArgs e)
+        {
+            imgsrc = new Uri("pack://application:,,,/Images/Front of Building.jpg");
+            bmp = new BitmapImage(imgsrc);
+            TheBackground.Source = bmp;
+            Storyboard SFadeInSec = new Storyboard();
+            DoubleAnimation FadeInSec = new DoubleAnimation();
+            FadeInSec.From = 0.0;
+            FadeInSec.To = 1.0;
+            FadeInSec.Duration = new Duration(TimeSpan.FromSeconds(.5));
+            SFadeInSec.Children.Add(FadeInSec);
+            Storyboard.SetTargetName(FadeInSec, TheBackground.Name);
+            Storyboard.SetTargetProperty(FadeInSec, new PropertyPath(Image.OpacityProperty));
+            SFadeInSec.Begin(this);
+        }
+        private void ImageFadeOut_Completed_MainMenu(object sender, EventArgs e)
+        {
+            imgsrc = new Uri("pack://application:,,,/Images/MainMenuBack.jpg");
+            bmp = new BitmapImage(imgsrc);
+            TheBackground.Source = bmp;
+            Storyboard SFadeInSec = new Storyboard();
+            DoubleAnimation FadeInSec = new DoubleAnimation();
+            FadeInSec.From = 0.0;
+            FadeInSec.To = 1.0;
+            FadeInSec.Duration = new Duration(TimeSpan.FromSeconds(.5));
+            SFadeInSec.Children.Add(FadeInSec);
+            Storyboard.SetTargetName(FadeInSec, TheBackground.Name);
+            Storyboard.SetTargetProperty(FadeInSec, new PropertyPath(Image.OpacityProperty));
+            SFadeInSec.Begin(this);
+        }
         private void ImageFadeOut_Completed_AngryJames(object sender, EventArgs e)
         {
             imgsrc = new Uri("pack://application:,,,/Images/DrugLord/AngryJames.jpg");
@@ -442,24 +486,24 @@ namespace NeumontAssassinV2.Missions
             }
             //===============================================
             #region regularTextPictreChange
-                //MAKE CEVON APEAR AT INDEX 0
-            //else if (logs[counter].Equals(logs[15]))
-            //{
-            //    Storyboard start = new Storyboard();
-            //    DoubleAnimation startfade = new DoubleAnimation();
-            //    start.Completed += new EventHandler(ImageFadeOut_Completed_AngryJames);
-            //    startfade.From = 1.0;
-            //    startfade.To = 0.0;
-            //    startfade.Duration = new Duration(TimeSpan.FromSeconds(.5));
-            //    start.Children.Add(startfade);
-            //    Storyboard.SetTargetName(startfade, TheBackground.Name);
-            //    Storyboard.SetTargetProperty(startfade, new PropertyPath(Image.OpacityProperty));
+            //MAKE CEVON APEAR AT INDEX 0
+            else if (logs[counter].Equals(logs[0]) || logs[counter].Equals(logs[76]))
+            {
+                Storyboard start = new Storyboard();
+                DoubleAnimation startfade = new DoubleAnimation();
+                start.Completed += new EventHandler(ImageFadeOut_Completed_Secretary);
+                startfade.From = 1.0;
+                startfade.To = 0.0;
+                startfade.Duration = new Duration(TimeSpan.FromSeconds(.5));
+                start.Children.Add(startfade);
+                Storyboard.SetTargetName(startfade, TheBackground.Name);
+                Storyboard.SetTargetProperty(startfade, new PropertyPath(Image.OpacityProperty));
 
-            //    start.Begin(this);
+                start.Begin(this);
 
-            //    testLabel.Content = logs[counter];
-            //    counter++;
-            //}
+                testLabel.Content = logs[counter];
+                counter++;
+            }
 
             else if (logs[counter].Equals(logs[15]))
             {
@@ -492,6 +536,143 @@ namespace NeumontAssassinV2.Missions
                 Storyboard.SetTargetProperty(FadeOutstr2, new PropertyPath(Image.OpacityProperty));
 
                 str2pic.Begin(this);
+
+                testLabel.Content = logs[counter];
+                counter++;
+            }
+            
+            else if (logs[counter].Equals(logs[18]) || logs[counter].Equals(logs[24]) )
+            {
+                Storyboard str2pic = new Storyboard();
+                DoubleAnimation FadeOutstr2 = new DoubleAnimation();
+                str2pic.Completed += new EventHandler(ImageFadeOut_Completed_FightMe);
+                FadeOutstr2.From = 1.0;
+                FadeOutstr2.To = 0.0;
+                FadeOutstr2.Duration = new Duration(TimeSpan.FromSeconds(.5));
+                str2pic.Children.Add(FadeOutstr2);
+                Storyboard.SetTargetName(FadeOutstr2, TheBackground.Name);
+                Storyboard.SetTargetProperty(FadeOutstr2, new PropertyPath(Image.OpacityProperty));
+
+                str2pic.Begin(this);
+
+                testLabel.Content = logs[counter];
+                counter++;
+            }
+            else if (logs[counter].Equals(logs[21]) )
+            {
+                Storyboard charPic = new Storyboard();
+                DoubleAnimation charFade = new DoubleAnimation();
+                charPic.Completed += new EventHandler(ImageFadeOut_Completed_CharsmaSuccess);
+                charFade.From = 1.0;
+                charFade.To = 0.0;
+                charFade.Duration = new Duration(TimeSpan.FromSeconds(.5));
+                charPic.Children.Add(charFade);
+                Storyboard.SetTargetName(charFade, TheBackground.Name);
+                Storyboard.SetTargetProperty(charFade, new PropertyPath(Image.OpacityProperty));
+
+                charPic.Begin(this);
+
+                testLabel.Content = logs[counter];
+                counter++;
+            }
+            else if (logs[counter].Equals(logs[31]))
+            {
+                Storyboard str2pic = new Storyboard();
+                DoubleAnimation FadeOutstr2 = new DoubleAnimation();
+                str2pic.Completed += new EventHandler(ImageFadeOut_Completed_DrugLordAndFriendDead);
+                FadeOutstr2.From = 1.0;
+                FadeOutstr2.To = 0.0;
+                FadeOutstr2.Duration = new Duration(TimeSpan.FromSeconds(.5));
+                str2pic.Children.Add(FadeOutstr2);
+                Storyboard.SetTargetName(FadeOutstr2, TheBackground.Name);
+                Storyboard.SetTargetProperty(FadeOutstr2, new PropertyPath(Image.OpacityProperty));
+
+                str2pic.Begin(this);
+
+                testLabel.Content = logs[counter];
+                counter++;
+            }
+            else if(logs[counter].Equals(logs[38]))
+            {
+                Storyboard DeathPic = new Storyboard();
+                DoubleAnimation DeathFade = new DoubleAnimation();
+                DeathPic.Completed += new EventHandler(ImageFadeOut_Completed_YouAreDead);
+                DeathFade.From = 1.0;
+                DeathFade.To = 0.0;
+                DeathFade.Duration = new Duration(TimeSpan.FromSeconds(.5));
+                DeathPic.Children.Add(DeathFade);
+                Storyboard.SetTargetName(DeathFade, TheBackground.Name);
+                Storyboard.SetTargetProperty(DeathFade, new PropertyPath(Image.OpacityProperty));
+
+                DeathPic.Begin(this);
+
+                testLabel.Content = logs[counter];
+                counter++;
+            }
+            else if (logs[counter].Equals(logs[41]))
+            {
+                Storyboard DeathPic = new Storyboard();
+                DoubleAnimation DeathFade = new DoubleAnimation();
+                DeathPic.Completed += new EventHandler(ImageFadeOut_Completed_DrugLordAndFriendSeperate);
+                DeathFade.From = 1.0;
+                DeathFade.To = 0.0;
+                DeathFade.Duration = new Duration(TimeSpan.FromSeconds(.5));
+                DeathPic.Children.Add(DeathFade);
+                Storyboard.SetTargetName(DeathFade, TheBackground.Name);
+                Storyboard.SetTargetProperty(DeathFade, new PropertyPath(Image.OpacityProperty));
+
+                DeathPic.Begin(this);
+
+                testLabel.Content = logs[counter];
+                counter++;
+            }
+            else if (logs[counter].Equals(logs[43]))
+            {
+                Storyboard DeathPic = new Storyboard();
+                DoubleAnimation DeathFade = new DoubleAnimation();
+                DeathPic.Completed += new EventHandler(ImageFadeOut_Completed_DrugLordUncertain);
+                DeathFade.From = 1.0;
+                DeathFade.To = 0.0;
+                DeathFade.Duration = new Duration(TimeSpan.FromSeconds(.5));
+                DeathPic.Children.Add(DeathFade);
+                Storyboard.SetTargetName(DeathFade, TheBackground.Name);
+                Storyboard.SetTargetProperty(DeathFade, new PropertyPath(Image.OpacityProperty));
+
+                DeathPic.Begin(this);
+
+                testLabel.Content = logs[counter];
+                counter++;
+            }
+            else if (logs[counter].Equals(logs[49]) || logs[counter].Equals(logs[58]) || logs[counter].Equals(logs[62]) || logs[counter].Equals(logs[66]) || logs[counter].Equals(logs[74]))
+            {
+                Storyboard DeathPic2 = new Storyboard();
+                DoubleAnimation DeathFade2 = new DoubleAnimation();
+                DeathPic2.Completed += new EventHandler(ImageFadeOut_Completed_DrugLordDead);
+                DeathFade2.From = 1.0;
+                DeathFade2.To = 0.0;
+                DeathFade2.Duration = new Duration(TimeSpan.FromSeconds(.5));
+                DeathPic2.Children.Add(DeathFade2);
+                Storyboard.SetTargetName(DeathFade2, TheBackground.Name);
+                Storyboard.SetTargetProperty(DeathFade2, new PropertyPath(Image.OpacityProperty));
+
+                DeathPic2.Begin(this);
+
+                testLabel.Content = logs[counter];
+                counter++;
+            }
+            else if (logs[counter].Equals(logs[51]))
+            {
+                Storyboard DeathPic = new Storyboard();
+                DoubleAnimation DeathFade = new DoubleAnimation();
+                DeathPic.Completed += new EventHandler(ImageFadeOut_Completed_DrugLordKnows);
+                DeathFade.From = 1.0;
+                DeathFade.To = 0.0;
+                DeathFade.Duration = new Duration(TimeSpan.FromSeconds(.5));
+                DeathPic.Children.Add(DeathFade);
+                Storyboard.SetTargetName(DeathFade, TheBackground.Name);
+                Storyboard.SetTargetProperty(DeathFade, new PropertyPath(Image.OpacityProperty));
+
+                DeathPic.Begin(this);
 
                 testLabel.Content = logs[counter];
                 counter++;
@@ -629,8 +810,6 @@ namespace NeumontAssassinV2.Missions
             but1.Visibility = Visibility.Visible;
             but2.Visibility = Visibility.Visible;
         }
-
-        
 
         public void choice5_HowToKill()
         {

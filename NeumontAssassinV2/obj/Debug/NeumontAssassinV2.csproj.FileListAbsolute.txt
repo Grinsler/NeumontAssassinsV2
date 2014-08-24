@@ -50,7 +50,6 @@ C:\Users\Martin Hileman\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\ob
 C:\Users\Martin Hileman\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\ScreenControls\MissionControlTemplate.baml
 C:\Users\Martin Hileman\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\Missions\DrugLord.g.cs
 C:\Users\Martin Hileman\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\ScreenControls\MissionControlTemplate.g.cs
-C:\Users\Martin Hileman\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Martin Hileman\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\NeumontAssassinV2_MarkupCompile.lref
 C:\Users\Daniel Taylor\Documents\Visual Studio 2012\APPDEV PROJECT\NeumontAssassinsV2\NeumontAssassinV2\bin\Debug\NeumontAssassinV2.exe.config
 C:\Users\Daniel Taylor\Documents\Visual Studio 2012\APPDEV PROJECT\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\NeumontAssassinV2.exe
