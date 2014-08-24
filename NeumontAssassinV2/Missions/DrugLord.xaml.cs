@@ -141,15 +141,15 @@ namespace NeumontAssassinV2.Missions
             "Player: Keep the change.",
             "END",
             //STR kill line 62
-            "Bofore he could move, you grab his head with both hands and slammed it onto the wall as hard as you can.",
+            "Bofore he could move, \nyou grab his head with both hands and slammed it onto the wall as hard as you can.",
             "*HRAAGGH*",
             "Player: That finished the job. Better head back.",
             "END",
             //CHA kill line 66
-            "Player: Look man, selling drugs isn't something you should be doin. Youre better than that.",
+            "Player: Look man, selling drugs isn't something you should be doin. \nYoure better than that.",
             "Druglord: Look I dont need you tellin' me how to live my life.",
             "Player: Just saying, one day you may end up dyin for it...",
-            "Druglord: Well I'll deal with who ever want to kill me when that day com...",
+            "Druglord: Well I'll deal with who ever wants to kill me when that day com...",
             "*gurgle* \nYour knife finds the druglord's throat.",
             "Player: Should have listened to me...",
             "Player: Time to head back",
@@ -646,7 +646,7 @@ namespace NeumontAssassinV2.Missions
                 testLabel.Content = logs[counter];
                 counter++;
             }
-            else if (logs[counter].Equals(logs[49]) || logs[counter].Equals(logs[58]) || logs[counter].Equals(logs[62]) || logs[counter].Equals(logs[66]) || logs[counter].Equals(logs[74]))
+            else if (logs[counter].Equals(logs[49]) || logs[counter].Equals(logs[58]) || logs[counter].Equals(logs[62]) || logs[counter].Equals(logs[70]) || logs[counter].Equals(logs[74]))
             {
                 Storyboard DeathPic2 = new Storyboard();
                 DoubleAnimation DeathFade2 = new DoubleAnimation();
