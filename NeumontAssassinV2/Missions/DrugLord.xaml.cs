@@ -76,11 +76,11 @@ namespace NeumontAssassinV2.Missions
             //agility Path==============
             //agility success Starts: Index 8
             "Thats right, I should utilize my athleticism here.",
-            "I swiftly scaled over the dumpster and over the fence, landing down into the construction site. \nLuck it’s Sunday, so the workers are all at home. I have to make my way to the other side of the site and climb over that fence blocking the main street...",
+            "I swiftly scaled over the dumpster and over the fence, \nlanding down into the construction site. \nLuck it’s Sunday, so the workers are all at home. \nI have to make my way to the other side of the site and \nclimb over that fence blocking the main street...",
             "Ahh, no one seemed to notice.",
             /*Jump to line*/"Line_28",
             //agility fail Starts: Index 12
-            "Argh, I definitely botched that jump - leg hurts… Shouldn’t be too much trouble once I get past the gate.",
+            "Argh, I definitely botched that jump - leg hurts… \nShouldn’t be too much trouble once I get past the gate.",
             "That didn’t go as planned... Hope no one noticed me...",
             /*Jump to line*/"Line_28",
 
@@ -91,12 +91,12 @@ namespace NeumontAssassinV2.Missions
             /*Jump to line*/"Line_28",
             //fight fail Starts: Index 18
             "Player: Let see what you got... HIIYAA",
-            "The guard blocks your punches and knocks you in the stomach. \nThankfully, before he can finish the job, you are able to run passed him. They may be alerted now...",
+            "The guard blocks your punches and knocks you in the stomach. \nThankfully, before he can finish the job, \nyou are able to run passed him. They may be alerted now...",
             /*Jump to line*/"Line_28",
 
             //talk Path==================
             //talk success Starts: Index 21
-            "Player: Look, I don’t want any trouble son, *flex*, just let me pass and there won't be any... \"accidents\".",
+            "Player: Look, I don’t want any trouble son, *flex* \njust let me pass and there won't be any... \n\"accidents\".",
             "Gang member: Alright, alright. You can pass, man. I don't want no trouble...",
             /*Jump to line*/"Line_28",
             //talk fail Starts: Index 24
@@ -131,11 +131,11 @@ namespace NeumontAssassinV2.Missions
             //change scene
             
             //Fault + 1 Starts: index 43
-            "Uh-oh, I think the dealer is expecting me. Oh well, guess I should try taking him by surprise.",
+            "Uh-oh, I think the dealer is expecting me. \nOh well, I should still try taking him by surprise though...",
             "Choice", //choice3_Faults1
 
             //Fault = 0 line 45
-            "I could Rush him here or I could walk up like a customer...",
+            "Great, now I could Rush him here or I could walk up like a customer...",
             "Choice","","", //choice4_Faults0
 
             //rush success Line 49
@@ -154,26 +154,26 @@ namespace NeumontAssassinV2.Missions
             "Choice", //choice5_HowToKill
 
             //AGIL kill line 58
-            "Your hand moves to your dagger and in the blink of a eye the blade is unshethed and finds its taget,",
+            "Your hand moves to your dagger and in the blink of a eye the blade is \nunshethed and finds its taget,",
             "Embedded deep into the druglords chest.",
             "Player: Keep the change.",
             "END",
             //STR kill line 62
-            "Bofore he could move, you grab his head with both hands and slammed it onto the wall as hard as you can.",
+            "Bofore he could move, \nyou grab his head with both hands and slammed it onto the wall as hard as you can.",
             "*HRAAGGH*",
             "Player: That finished the job. Better head back.",
             "END",
             //CHA kill line 66
-            "Player: Look man, selling drugs isn't something you should be doin. Youre better than that.",
+            "Player: Look man, selling drugs isn't something you should be doin. \nYoure better than that.",
             "Druglord: Look I dont need you tellin' me how to live my life.",
             "Player: Just saying, one day you may end up dyin for it...",
-            "Druglord: Well I'll deal with who ever want to kill me when that day com...",
+            "Druglord: Well I'll deal with who ever wants to kill me when that day com...",
             "*gurgle* \nYour knife finds the druglord's throat.",
             "Player: Should have listened to me...",
             "Player: Time to head back",
             "END",
             //INT kill line 74
-            "You pull out you silenced pistol and place it against the druglord's head. He's too stunned to move.",
+            "You pull out you silenced pistol and place it against the druglord's head. \nHe's too stunned to move.",
             "*PPCCKK*... He collapses against the wall.",
             "Player: Sorry, you just got put out of bussiness.",
             "END"
@@ -487,7 +487,11 @@ namespace NeumontAssassinV2.Missions
                 Storyboard.SetTargetProperty(FadeOut28, new PropertyPath(Image.OpacityProperty));
 
                 SFadeOutLine28.Begin(this); 
+
                 counter = 28;
+                testLabel.Content = logs[counter];
+                counter++;
+
             }
             else if (logs[counter].Equals("END"))
             {
@@ -504,7 +508,7 @@ namespace NeumontAssassinV2.Missions
             //===============================================
             #region regularTextPictreChange
             //MAKE CEVON APEAR AT INDEX 0
-            else if (logs[counter].Equals(logs[0]) || logs[counter].Equals(logs[76]))
+            else if (logs[counter].Equals(logs[0]))
             {
                 Storyboard start = new Storyboard();
                 DoubleAnimation startfade = new DoubleAnimation();
@@ -535,7 +539,6 @@ namespace NeumontAssassinV2.Missions
                 Storyboard.SetTargetProperty(FadeOutstr1, new PropertyPath(Image.OpacityProperty));
 
                 str1pic.Begin(this); 
-
                 testLabel.Content = logs[counter];
                 counter++;
             }
@@ -639,7 +642,7 @@ namespace NeumontAssassinV2.Missions
                 Storyboard.SetTargetProperty(DeathFade, new PropertyPath(Image.OpacityProperty));
 
                 DeathPic.Begin(this);
-
+                
                 testLabel.Content = logs[counter];
                 counter++;
             }
@@ -660,7 +663,7 @@ namespace NeumontAssassinV2.Missions
                 testLabel.Content = logs[counter];
                 counter++;
             }
-            else if (logs[counter].Equals(logs[49]) || logs[counter].Equals(logs[58]) || logs[counter].Equals(logs[62]) || logs[counter].Equals(logs[66]) || logs[counter].Equals(logs[74]))
+            else if (logs[counter].Equals(logs[49]) || logs[counter].Equals(logs[58]) || logs[counter].Equals(logs[62]) || logs[counter].Equals(logs[70]) || logs[counter].Equals(logs[74]))
             {
                 Storyboard DeathPic2 = new Storyboard();
                 DoubleAnimation DeathFade2 = new DoubleAnimation();
@@ -729,18 +732,21 @@ namespace NeumontAssassinV2.Missions
                         SFadeOut3.Children.Add(FadeOut3);
                         Storyboard.SetTargetName(FadeOut3, TheBackground.Name);
                         Storyboard.SetTargetProperty(FadeOut3, new PropertyPath(Image.OpacityProperty));
+                        SFadeOut3.Begin(this);
+
                         choice3_Faults1();
                         break;
                     case 4:
                         Storyboard SFadeOut4 = new Storyboard();
                         DoubleAnimation FadeOut4 = new DoubleAnimation();
-                        SFadeOut4.Completed += new EventHandler(ImageFadeOut_Completed_DrugLordAndFriend);
+                        SFadeOut4.Completed += new EventHandler(ImageFadeOut_Completed_DrugLordAppear);
                         FadeOut4.From = 1.0;
                         FadeOut4.To = 0.0;
                         FadeOut4.Duration = new Duration(TimeSpan.FromSeconds(.5));
                         SFadeOut4.Children.Add(FadeOut4);
                         Storyboard.SetTargetName(FadeOut4, TheBackground.Name);
                         Storyboard.SetTargetProperty(FadeOut4, new PropertyPath(Image.OpacityProperty));
+                        SFadeOut4.Begin(this);
 
                         choice4_Faults0();
                         break;
@@ -806,6 +812,7 @@ namespace NeumontAssassinV2.Missions
             but1.Visibility = Visibility.Visible;
             but2.Visibility = Visibility.Visible;
         }
+
         public void choice3_Faults1()
         {
             testLabe2.Content = "Drugload: You buying?";
@@ -834,23 +841,21 @@ namespace NeumontAssassinV2.Missions
             testLabe2.Visibility = Visibility.Visible;
             
 
-            if (player.Player_Agility > 5)
+            if (player.Player_Agility >= 5)
             {
                 but1.Content = "Knife him";
                 but1.Visibility = Visibility.Visible;
             }
-            if(player.Player_Intellegence > 5)
-            {
-                but2.Visibility = Visibility.Visible;
-                but2.Content = "Quickly pull out a silenced pistol and shoot him in the head";
-            }
+            
+            but2.Visibility = Visibility.Visible;
+            but2.Content = "Quickly pull out a silenced pistol and shoot him in the head";
 
-            if (player.Player_Strength > 5)
+            if (player.Player_Strength >= 5)
             {
                 but3.Visibility = Visibility.Visible;
                 but3.Content = "Slam him against the back of the wall and crack his skull open";
             }
-            if (player.Player_Charisma > 5)
+            if (player.Player_Charisma >= 5)
             {
                 but4.Visibility = Visibility.Visible;
                 but4.Content = "Convince him to quit selling drugs, then kill him while he’s unaware";
@@ -960,7 +965,6 @@ namespace NeumontAssassinV2.Missions
             but2.Visibility = Visibility.Hidden;
             but3.Visibility = Visibility.Hidden;
             but4.Visibility = Visibility.Hidden;
-            
         }
 
         private void but2_choice(object sender, RoutedEventArgs e)
@@ -1109,6 +1113,5 @@ namespace NeumontAssassinV2.Missions
                 this.but4.Foreground = (Brushes.Black);
             }
         }
-
     }
 }

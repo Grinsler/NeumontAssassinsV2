@@ -33,7 +33,7 @@ namespace NeumontAssassinV2
             //MainGrid.Children.Clear();
             Person p = new Person(); 
             ////for testing purposes:
-            p.Player_Agility = 3;
+            p.Player_Agility = 5;
             p.Player_Charisma = 5;
             p.Player_Intellegence = 5;
             p.Player_Strength = 5;
