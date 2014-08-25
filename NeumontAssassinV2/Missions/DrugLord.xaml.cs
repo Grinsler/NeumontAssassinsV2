@@ -23,8 +23,6 @@ namespace NeumontAssassinV2.Missions
     /// </summary>
     public partial class DrugLord : UserControl
     {
-        //hello        
-        GameState load = new GameState();
         public Person player = new Person();
         public Random rand = new Random();                      
 
@@ -35,23 +33,6 @@ namespace NeumontAssassinV2.Missions
         int choiceCounter = 1;
         int userchoice = 0;
         int faultCounter = 0;
-
-        private void New_Click_1(object sender, RoutedEventArgs e)
-        {
-            //create a new person and delete the old one from the file.
-        }
-
-        private void Continue_Click_1(object sender, RoutedEventArgs e)
-        {
-            load.LoadUser();
-            load.LoadWeek();
-            //I need to then go to the weekly trainning xaml.
-        }
-
-        private void Exit_Click_1(object sender, ExecutedRoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
 
         public DrugLord(Person p)
         {
