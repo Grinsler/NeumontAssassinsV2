@@ -62,7 +62,7 @@ namespace NeumontAssassinV2.Missions
             "Ahh, no one seemed to notice.",
             /*Jump to line*/"Line_28",
             //agility fail Starts: Index 12
-            "Argh, I definitely botched that jump - leg hurts… Shouldn’t be too much trouble once I get past the gate.",
+            "Argh, I definitely botched that jump - leg hurts… \nShouldn’t be too much trouble once I get past the gate.",
             "That didn’t go as planned... Hope no one noticed me...",
             /*Jump to line*/"Line_28",
 
