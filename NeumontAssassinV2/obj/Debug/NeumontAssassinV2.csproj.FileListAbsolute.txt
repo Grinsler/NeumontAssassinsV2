@@ -67,7 +67,6 @@ C:\Users\Daniel Taylor\Documents\Visual Studio 2012\APPDEV PROJECT\NeumontAssass
 C:\Users\Daniel Taylor\Documents\Visual Studio 2012\APPDEV PROJECT\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\ScreenControls\MissionControlTemplate.g.cs
 C:\Users\Daniel Taylor\Documents\Visual Studio 2012\APPDEV PROJECT\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\ScreenControls\WeeklyTraining.g.cs
 C:\Users\Daniel Taylor\Documents\Visual Studio 2012\APPDEV PROJECT\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\App.g.cs
-C:\Users\Daniel Taylor\Documents\Visual Studio 2012\APPDEV PROJECT\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Daniel Taylor\Documents\Visual Studio 2012\APPDEV PROJECT\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\NeumontAssassinV2_MarkupCompile.cache
 C:\Users\Daniel Taylor\Documents\Visual Studio 2012\APPDEV PROJECT\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\NeumontAssassinV2_MarkupCompile.lref
 C:\Users\Daniel Taylor\Documents\Visual Studio 2012\APPDEV PROJECT\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\MainWindow.baml
@@ -110,3 +109,5 @@ C:\Users\James Taylor\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\
 C:\Users\James Taylor\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\NeumontAssassinV2.pdb
 C:\Users\Mitchel Mendez\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\ScreenControls\PreQuestions.baml
 C:\Users\Mitchel Mendez\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\ScreenControls\PreQuestions.g.cs
+C:\Users\Daniel Taylor\Documents\Visual Studio 2012\APPDEV PROJECT\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\ScreenControls\PreQuestions.baml
+C:\Users\Daniel Taylor\Documents\Visual Studio 2012\APPDEV PROJECT\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\ScreenControls\PreQuestions.g.cs

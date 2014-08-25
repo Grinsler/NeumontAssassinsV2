@@ -84,7 +84,7 @@
 
         </Grid.RowDefinitions>
         <Image x:Name="TheBackground"
-            Source="/Images/Front of Building.jpg"
+            Source="/Images/interrogation.jpg"
             Grid.ColumnSpan="3"
             Grid.RowSpan="4"/>
         <Rectangle Fill="Gray"
