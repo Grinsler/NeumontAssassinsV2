@@ -18,8 +18,9 @@ namespace NeumontAssassinV2.ScreenControls
     /// <summary>
     /// Interaction logic for MainMenu.xaml
     /// </summary>
-    public partial class MainMenu : UserControl
+    public partial class MainMenu : Window
     {
+        GameState load = new GameState();
         public MainMenu()
         {
             InitializeComponent();
@@ -27,12 +28,14 @@ namespace NeumontAssassinV2.ScreenControls
         
         private void New_Click_1(object sender, RoutedEventArgs e)
         {
-
+            //create a new person and delete the old one from the file.
         }
 
         private void Continue_Click_1(object sender, RoutedEventArgs e)
         {
-
+            load.LoadUser();
+            load.LoadWeek();
+            //I need to then go to the weekly trainning xaml.
         }
 
         private void Exit_Click_1(object sender, ExecutedRoutedEventArgs e)

@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using NeumontAssassinV2.Missions;
 using NeumontAssassinV2.Models;
+using NeumontAssassinV2.ScreenControls;
 
 namespace NeumontAssassinV2
 {
@@ -22,19 +23,27 @@ namespace NeumontAssassinV2
     /// </summary>
     public partial class MainWindow : Window
     {
+        PreQuestions question;
+        DrugLord dl;
+        WeeklyTraining train;
+
         public MainWindow()
         {
             InitializeComponent();
             //MainGrid.Children.Clear();
-            Person p = new Person();
+            Person p = new Person(); 
             ////for testing purposes:
             p.Player_Agility = 3;
             p.Player_Charisma = 5;
             p.Player_Intellegence = 5;
             p.Player_Strength = 5;
             p.Player_Name = "Test1";
-            DrugLord dl = new DrugLord(p);
+            train = new WeeklyTraining();
+            question = new PreQuestions();
+            dl = new DrugLord(p);
             MainGrid.Children.Add(dl);
+            //MainGrid.Children.Add(question);
+            //MainGrid.Children.Remove(question);
         }
     }
 }

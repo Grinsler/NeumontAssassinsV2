@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Martin Hileman\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\
+C:\Users\James Taylor\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\
 NeumontAssassinV2
 none
 false
 DEBUG;TRACE
-C:\Users\Martin Hileman\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\App.xaml
-5-1117241382
+C:\Users\James Taylor\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\App.xaml
+686990732
 
-15609769810
-12-114506869
-MainWindow.xaml;Missions\DrugLord.xaml;ScreenControls\MainMenu.xaml;ScreenControls\MissionControlTemplate.xaml;ScreenControls\WeeklyTraining.xaml;
+171641778570
+141012385901
+MainWindow.xaml;Missions\DrugLord.xaml;ScreenControls\MainMenu.xaml;ScreenControls\MissionControlTemplate.xaml;ScreenControls\PreQuestions.xaml;ScreenControls\WeeklyTraining.xaml;
 
-False
+True
 

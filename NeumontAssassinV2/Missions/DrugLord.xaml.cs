@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using NeumontAssassinV2.Models;
 using System.Windows.Media.Animation;
+using NeumontAssassinV2.ScreenControls;
 
 namespace NeumontAssassinV2.Missions
 {
@@ -22,9 +23,10 @@ namespace NeumontAssassinV2.Missions
     /// </summary>
     public partial class DrugLord : UserControl
     {
+        //hello        
+        GameState load = new GameState();
         public Person player = new Person();
-        public Random rand = new Random();
-                                
+        public Random rand = new Random();                      
 
         Uri imgsrc;
         BitmapImage bmp;
@@ -34,12 +36,28 @@ namespace NeumontAssassinV2.Missions
         int userchoice = 0;
         int faultCounter = 0;
 
+        private void New_Click_1(object sender, RoutedEventArgs e)
+        {
+            //create a new person and delete the old one from the file.
+        }
+
+        private void Continue_Click_1(object sender, RoutedEventArgs e)
+        {
+            load.LoadUser();
+            load.LoadWeek();
+            //I need to then go to the weekly trainning xaml.
+        }
+
+        private void Exit_Click_1(object sender, ExecutedRoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
         public DrugLord(Person p)
         {
             InitializeComponent();
             player = p;
         }
-        
 
         #region Dialogue
         public List<string> logs = new List<string>
@@ -456,7 +474,6 @@ namespace NeumontAssassinV2.Missions
         private void CycleDialogue(object sender, MouseButtonEventArgs e)
         {
             
-
             if (logs[counter].Equals("Line_28"))
             {
                 Storyboard SFadeOutLine28 = new Storyboard();
@@ -1094,7 +1111,4 @@ namespace NeumontAssassinV2.Missions
         }
 
     }
-
-    
-
 }

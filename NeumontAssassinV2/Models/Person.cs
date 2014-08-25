@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace NeumontAssassinV2.Models
 {
+    [Serializable]
     public class Person
     {
         public string Player_Name { get; set; }

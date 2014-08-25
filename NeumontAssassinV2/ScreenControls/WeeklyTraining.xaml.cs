@@ -27,8 +27,11 @@ namespace NeumontAssassinV2.ScreenControls
         {
             InitializeComponent();
             this.DataContext = this;
+            save.SaveUser();
+            save.SaveWeek();
         }
 
+        GameState save = new GameState();
         private ObservableCollection<Trainning> Train = new ObservableCollection<Trainning>
         {
             new Trainning("Go to the Gym (+Str)"),
