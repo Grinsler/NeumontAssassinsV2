@@ -41,6 +41,13 @@ namespace NeumontAssassinV2.ScreenControls
             load.LoadUser();
             load.LoadWeek();
             //I need to then go to the weekly trainning xaml.
+
+            //here's the code for that, but shouldn't the continue pick up at introducing the mission?:
+            MainWindow mw = new MainWindow();
+            mw.Content = new PreQuestions();
+            App.Current.MainWindow.Close();
+            App.Current.MainWindow = mw;
+            mw.Show();
         }
 
         private void Exit_Click_1(object sender, ExecutedRoutedEventArgs e)
