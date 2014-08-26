@@ -58,6 +58,7 @@ namespace NeumontAssassinV2.ScreenControls
 
         private void Questions()
         {
+            //create a method to change the label to introduce and explain the prequestions
             if (count == 1)
             {
                 this.Label_Choices.Content = "You are confronted by a guard for trespassing, your face isn’t familiar. What do you do?";
