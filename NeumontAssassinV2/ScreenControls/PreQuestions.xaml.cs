@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NeumontAssassinV2.Missions;
+using NeumontAssassinV2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,7 +28,7 @@ namespace NeumontAssassinV2.ScreenControls
             InitializeComponent();
         }
 
-        public int count = 0;
+        public int count = 1;
         public int testing { get; set; }
         public int UserChoice { get; set; }
         Uri imgsrc;
@@ -52,15 +54,11 @@ namespace NeumontAssassinV2.ScreenControls
         //===============================================================================
 
         //====================================Buttons====================================
-        private void ButtonChoice1(object sender, RoutedEventArgs e)
-        {
-            UserChoice = 1;
-            Questions();
-        }
+        
 
         private void Questions()
         {
-            if (count == 0)
+            if (count == 1)
             {
                 this.Label_Choices.Content = "You are confronted by a guard for trespassing, your face isn’t familiar. What do you do?";
             }
@@ -78,40 +76,58 @@ namespace NeumontAssassinV2.ScreenControls
             }
             count++;
             Choices();
+            
         }
 
         private void Choices()
         {
-            if (Label_Choices.Content.Equals("You are confronted by a guard for trespassing, your face isn’t familiar. What do you do?"))
+            if (count == 1)
             {
                 this.Button_Choice1.Content = "Run past him while lifting the credentials and communication device from his belt.";
                 this.Button_Choice2.Content = "Run. Run far away.";
                 this.Button_Choice3.Content = "Tell the guard you are a consultant and have been granted access by the boss.";
                 this.Button_Choice4.Content = "Takedown the guard with brute force.";
             }
-            else if (Label_Choices.Content.Equals("You are tailing your target at dusk, he turns to look behind him. What would you do next."))
+            else if (count == 2)
             {
                 this.Button_Choice1.Content = "Quickly roll into a nearby alley and break line of sight.";
                 this.Button_Choice2.Content = "Use your hacking device to turn off the street lights.";
                 this.Button_Choice3.Content = "Act like just another average person on the street.";
                 this.Button_Choice4.Content = "Run up to him and dispatch him right there.";
             }
-            else if (Label_Choices.Content.Equals("You’ve just finished up a long day of work. You want to unwind. What is your first decision?"))
+            else if (count == 3)
             {
                 this.Button_Choice1.Content = "Jog around the block";
                 this.Button_Choice2.Content = "Read comic books";
                 this.Button_Choice3.Content = "Go for a drink at the bar.";
                 this.Button_Choice4.Content = "Lift weights.";
             }
-            else if (Label_Choices.Content.Equals("What is your preferred weapon of choice?"))
-            {
-                this.Button_Choice1.Content = "Piano wire";
-                this.Button_Choice2.Content = "My computer";
-                this.Button_Choice3.Content = "All I need is my looks.";
-                this.Button_Choice4.Content = "My fists";
-            }
+            //else if (Label_Choices.Content.Equals("What is your preferred weapon of choice?"))
+            //{
+            //    this.Button_Choice1.Content = "Piano wire";
+            //    this.Button_Choice2.Content = "My computer";
+            //    this.Button_Choice3.Content = "All I need is my looks.";
+            //    this.Button_Choice4.Content = "My fists";
+            //}
         }
+        private void Choice2()
+        {
+            this.Button_Choice1.Content = "Piano wire";
+            this.Button_Choice2.Content = "My computer";
+            this.Button_Choice3.Content = "All I need is my looks.";
+            this.Button_Choice4.Content = "My fists";
 
+            MainWindow mw = new MainWindow();
+            mw.Content = new DrugLord(new Person());
+            App.Current.MainWindow.Close();
+            App.Current.MainWindow = mw;
+            mw.Show();                      
+        }
+        private void ButtonChoice1(object sender, RoutedEventArgs e)
+        {
+            UserChoice = 1;
+            Questions();
+        }
         private void ButtonChoice2(object sender, RoutedEventArgs e)
         {
             UserChoice = 2;
@@ -127,7 +143,17 @@ namespace NeumontAssassinV2.ScreenControls
         private void ButtonChoice4(object sender, RoutedEventArgs e)
         {
             UserChoice = 4;
-            Questions();
+
+            if (count < 4)
+            {
+                Questions();
+            }
+            else
+            {
+                Choice2();
+            }
+            
+
         }
 
         public void MissionDialog(string setup, string but1, string but2, string but3)
