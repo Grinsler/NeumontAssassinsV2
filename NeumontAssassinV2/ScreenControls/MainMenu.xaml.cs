@@ -18,7 +18,7 @@ namespace NeumontAssassinV2.ScreenControls
     /// <summary>
     /// Interaction logic for MainMenu.xaml
     /// </summary>
-    public partial class MainMenu : Window
+    public partial class MainMenu : UserControl
     {
         GameState load = new GameState();
         public MainMenu()
@@ -29,6 +29,11 @@ namespace NeumontAssassinV2.ScreenControls
         private void New_Click_1(object sender, RoutedEventArgs e)
         {
             //create a new person and delete the old one from the file.
+            MainWindow mw = new MainWindow();
+            mw.Content = new PreQuestions();
+            App.Current.MainWindow.Close();
+            App.Current.MainWindow = mw;
+            mw.Show();
         }
 
         private void Continue_Click_1(object sender, RoutedEventArgs e)
