@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NeumontAssassinV2.Missions;
+using NeumontAssassinV2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,9 +23,30 @@ namespace NeumontAssassinV2.ScreenControls
     public partial class MainMenu : UserControl
     {
         GameState load = new GameState();
+        PreQuestions question;
+        DrugLord dl;
+        public Training t { get; set; }
+        public WeeklyTraining WeekTrain { get; set; }
+        public Person p { get; set; }
+
         public MainMenu()
         {
+            //MainGrid.Children.Clear();
+            p = new Person();
+            ////for testing purposes:
+            p.Player_Agility = 5;
+            p.Player_Charisma = 5;
+            p.Player_Intellegence = 5;
+            p.Player_Strength = 5;
+            p.Player_Name = "Test1";
             InitializeComponent();
+            t = new Training();
+            WeekTrain = new WeeklyTraining(this);
+            question = new PreQuestions();
+            dl = new DrugLord(p);
+            MainGrid.Children.Add(dl);
+            //MainGrid.Children.Add(question);
+            //MainGrid.Children.Remove(question);
         }
         
         private void New_Click_1(object sender, RoutedEventArgs e)

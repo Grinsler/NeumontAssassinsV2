@@ -22,7 +22,7 @@
             <MenuItem Header="Exit"
                       Command="Close"/>
         </Menu>
-        <Grid>
+        <Grid x:Name="MainGrid">
             <Grid.Resources>
                 <Style TargetType="Button">
                     <Setter Property="Background" Value="DarkRed"/>

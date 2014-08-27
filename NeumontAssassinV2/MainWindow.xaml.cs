@@ -23,23 +23,23 @@ namespace NeumontAssassinV2
     /// </summary>
     public partial class MainWindow : Window
     {
-        MainMenu mm;
-
         public MainWindow()
         {
             InitializeComponent();
+            /*
             mm = new MainMenu();
             MainGrid.Children.Clear();
-            //Person p = new Person(); 
+            Person p = new Person(); 
             //for testing purposes:
-            //p.Player_Agility = 5;
-            //p.Player_Charisma = 5;
+            p.Player_Agility = 5;
+            p.Player_Charisma = 5;
             //p.Player_Intellegence = 5;
             //p.Player_Strength = 5;
             //p.Player_Name = "Test1";                      
             MainGrid.Children.Add(mm);
             //MainGrid.Children.Add(question);
             //MainGrid.Children.Remove(question);
+             * */
         }
     }
 }

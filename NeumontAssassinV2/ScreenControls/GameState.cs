@@ -12,16 +12,15 @@ namespace NeumontAssassinV2.ScreenControls
 {
     public class GameState
     {
-        Person person = new Person();
-        Trainning train = new Trainning();
-
+        private MainMenu train { get; set; }
+        private MainMenu MyWindow { get; set; }
         IFormatter format = new BinaryFormatter();
         string PlayerURL = "AssassinsPlayer.bin";
         string WeekURL = "AssassinsWeek.bin";
         Stream stream;
 
         /// <summary>
-        /// This method saves the player instance of the game, it also save the trainning stats.
+        /// This method saves the player instance of the game, it also saves the trainning stats.
         /// </summary>
         public void SaveUser()
         {
@@ -30,7 +29,7 @@ namespace NeumontAssassinV2.ScreenControls
 
             try
             {
-                format.Serialize(stream, person);
+                format.Serialize(stream, MyWindow.p);
             }
             catch (IOException e)
             {
@@ -46,26 +45,25 @@ namespace NeumontAssassinV2.ScreenControls
 
             try
             {
-                format.Serialize(stream, train);
+                format.Serialize(stream, train.t);
             }
             catch (IOException e)
             {
                 Console.WriteLine(e);
             }
             stream.Close();
-
         }
 
         public void LoadWeek()
         {
             stream = new FileStream(WeekURL, FileMode.Create, FileAccess.Write, FileShare.None);
-            Trainning _Train = (Trainning)format.Deserialize(stream);
-            _Train = train;
-            _Train._Agility = train._Agility;
-            _Train._Charisma = train._Charisma;
-            _Train._Intelligence = train._Intelligence;
-            _Train._Strength = train._Strength;
-            _Train._TrainningType = train._TrainningType;
+            Training _Train = (Training)format.Deserialize(stream);
+            _Train = train.t;
+            _Train._Agility = train.t._Agility;
+            _Train._Charisma = train.t._Charisma;
+            _Train._Intelligence = train.t._Intelligence;
+            _Train._Strength = train.t._Strength;
+            _Train._TrainningType = train.t._TrainningType;
             stream.Close();
             Console.WriteLine(_Train._Agility);
             Console.WriteLine(_Train._Charisma);
@@ -78,12 +76,12 @@ namespace NeumontAssassinV2.ScreenControls
         {
             stream = new FileStream(PlayerURL, FileMode.Open, FileAccess.Read, FileShare.Read);
             Person _Person = (Person)format.Deserialize(stream);
-            _Person = person;
-            _Person.Player_Strength = person.Player_Strength;
-            _Person.Player_Agility = person.Player_Agility;
-            _Person.Player_Charisma = person.Player_Charisma;
-            _Person.Player_Intellegence = person.Player_Intellegence;
-            _Person.Player_Name = person.Player_Name;
+            _Person = MyWindow.p;
+            _Person.Player_Strength = MyWindow.p.Player_Strength;
+            _Person.Player_Agility = MyWindow.p.Player_Agility;
+            _Person.Player_Charisma = MyWindow.p.Player_Charisma;
+            _Person.Player_Intellegence = MyWindow.p.Player_Intellegence;
+            _Person.Player_Name = MyWindow.p.Player_Name;
             stream.Close();
             Console.WriteLine(_Person.Player_Strength);
             Console.WriteLine(_Person.Player_Agility);

@@ -23,26 +23,35 @@ namespace NeumontAssassinV2.ScreenControls
     /// </summary>
     public partial class WeeklyTraining : UserControl, INotifyPropertyChanged
     {
-        public WeeklyTraining()
+        public WeeklyTraining(MainMenu window)
         {
+            this.MyWindow = window;
             InitializeComponent();
+            TrainningOptions();
             this.DataContext = this;
             save.SaveUser();
             save.SaveWeek();
         }
 
+        private int count = 1;
+        //Person person = new Person();
         GameState save = new GameState();
-        private ObservableCollection<Trainning> Train = new ObservableCollection<Trainning>
+        private MainMenu MyWindow { get; set; }
+
+        private ObservableCollection<Training> Train = new ObservableCollection<Training>
         {
-            new Trainning("Go to the Gym (+Str)"),
-            new Trainning("Go for a jog (+Agi)"),
-            new Trainning("Read books (+Int)"),
-            new Trainning("Go to the Bar (+Cha)")
+            new Training("Go to the Gym (+Str)"),
+            new Training("Go for a jog (+Agi)"),
+            new Training("Read books (+Int)"),
+            new Training("Go to the Bar (+Cha)")
         };
 
-        public ObservableCollection<Trainning> _Train
+        public ObservableCollection<Training> _Train
         {
-            get { return Train; }
+            get
+            {
+                return Train;
+            }
             set
             {
                 Train = value;
@@ -60,9 +69,67 @@ namespace NeumontAssassinV2.ScreenControls
             }
         }
 
+        private void TrainningOptions()
+        {
+            ComboBox1.SelectedIndex = -1;
+            ComboBox2.SelectedIndex = -1;
+            ComboBox3.SelectedIndex = -1;
+            ComboBox4.SelectedIndex = -1;
+            ComboBox5.SelectedIndex = -1;
+            ComboBox6.SelectedIndex = -1;
+
+            if (count == 2)
+            {
+                this.Week.Content = "Week Two";
+            }
+            if (count == 3)
+            {
+                this.Week.Content = "Week Three";
+            }
+        }
+
+        private void ApplyStats()
+        {
+            int selectedIndex = ComboBox1.SelectedIndex;
+            if ((ComboBox1.SelectedIndex == 0) || (ComboBox2.SelectedIndex == 0) || (ComboBox3.SelectedIndex == 0) || (ComboBox4.SelectedIndex == 0) || (ComboBox5.SelectedIndex == 0) || (ComboBox6.SelectedIndex == 0))
+            {
+                this.MyWindow.p.Player_Strength += 1;            
+            }
+            if ((ComboBox1.SelectedIndex == 1) || (ComboBox2.SelectedIndex == 1) || (ComboBox3.SelectedIndex == 1) || (ComboBox4.SelectedIndex == 1) || (ComboBox5.SelectedIndex == 1) || (ComboBox6.SelectedIndex == 1))
+            {
+                this.MyWindow.p.Player_Agility += 1;
+            }
+            if ((ComboBox1.SelectedIndex == 2) || (ComboBox2.SelectedIndex == 2) || (ComboBox3.SelectedIndex == 2) || (ComboBox4.SelectedIndex == 2) || (ComboBox5.SelectedIndex == 2) || (ComboBox6.SelectedIndex == 2))
+            {
+                this.MyWindow.p.Player_Intellegence += 1;
+            }
+            if ((ComboBox1.SelectedIndex == 3) || (ComboBox2.SelectedIndex == 3) || (ComboBox3.SelectedIndex == 3) || (ComboBox4.SelectedIndex == 3) || (ComboBox5.SelectedIndex == 3) || (ComboBox6.SelectedIndex == 3))
+            {
+                this.MyWindow.p.Player_Charisma += 1;
+            }
+        }
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            if ((ComboBox1.SelectedIndex == -1) || (ComboBox2.SelectedIndex == -1) || (ComboBox3.SelectedIndex == -1) || (ComboBox4.SelectedIndex == -1) || (ComboBox5.SelectedIndex == -1) || (ComboBox6.SelectedIndex == -1))
+            {
+                MessageBox.Show("Please Make Sure All Training This Week Is Done.");
+            }
+            else
+            {
+                ApplyStats();
+                this.TrainButton.Content = "Training Applied";
+                this.MissionButton.Visibility = Visibility.Visible;
+            }
+        }
 
+        private void Mission_Click_1(object sender, RoutedEventArgs e)
+        {
+            //When they click mission, a GUI of the First Mission should popup
+            this.MissionButton.Visibility = Visibility.Hidden;
+            this.TrainButton.Content = "Train";
+            count++;
+            TrainningOptions();
         }
     }
 }

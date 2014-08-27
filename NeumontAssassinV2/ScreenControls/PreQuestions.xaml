@@ -84,7 +84,7 @@
 
         </Grid.RowDefinitions>
         <Image x:Name="TheBackground"
-            Source="/Images/interrogation.jpg"
+            Source="/Images/Front of Building.jpg"
             Grid.ColumnSpan="3"
             Grid.RowSpan="4"/>
         <Rectangle Fill="Gray"
@@ -112,7 +112,7 @@
                 Visibility="Visible"
                 Margin="10,5,15,0"/>
         <Button x:Name="Button_Choice1"
-               Grid.Row="2"
+                Grid.Row="2"
                 VerticalAlignment="Bottom"
                 Click="ButtonChoice1"
                 Content="Sneak past the guards and cameras."
@@ -121,7 +121,7 @@
                 Visibility="Visible"
                 Margin="10,0,15,5"/>
         <Button x:Name="Button_Choice2"
-               Grid.Row="3"
+                Grid.Row="3"
                 Click="ButtonChoice2"
                 VerticalAlignment="Top"
                 MouseEnter="Button_Choice2_MouseEnter_1"
@@ -130,7 +130,7 @@
                 Content="Intercept guard communications and wait for an opening to get in easily."
                 Margin="10,0,15,0"/>
         <Button x:Name="Button_Choice3"
-               Grid.Row="3"
+                Grid.Row="3"
                 VerticalAlignment="Bottom"
                 Click="ButtonChoice3"
                 Content="Convince a guard you need access by saying you're a technical consultant."

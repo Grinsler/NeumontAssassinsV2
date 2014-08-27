@@ -1012,7 +1012,6 @@ namespace NeumontAssassinV2.Missions
                         faultCounter++;
                     }
 
-
                     userchoice++;
                     break;
                 case 4:
