@@ -8,8 +8,8 @@
     <UserControl.CommandBindings>
         <CommandBinding Command="New"
                         Executed="New_Click_1"/>
-        <!--<CommandBinding Command="Load"
-                        Executed="Continue_Click_1"/>-->
+        <CommandBinding Command="Open"
+                        Executed="Continue_Click_1"/>
         <CommandBinding Command="Close"
                         Executed="Exit_Click_1"/>
     </UserControl.CommandBindings>
@@ -18,7 +18,7 @@
             <MenuItem Header="New"
                       Command="New"/>
             <MenuItem Header="Continue"
-                      Command="New"/>
+                      Command="Open"/>
             <MenuItem Header="Exit"
                       Command="Close"/>
         </Menu>
