@@ -34,7 +34,7 @@ namespace NeumontAssassinV2.ScreenControls
             //save.SaveWeek();
         }
 
-        private MainMenu menu { get; set; }
+        Person _User = new Person();
         private int count = 1;
         private int MissionLevel = 1;
         //Person person = new Person();
@@ -95,19 +95,19 @@ namespace NeumontAssassinV2.ScreenControls
             int selectedIndex = ComboBox1.SelectedIndex;
             if ((ComboBox1.SelectedIndex == 0) || (ComboBox2.SelectedIndex == 0) || (ComboBox3.SelectedIndex == 0) || (ComboBox4.SelectedIndex == 0) || (ComboBox5.SelectedIndex == 0) || (ComboBox6.SelectedIndex == 0))
             {
-                this.menu.User.Player_Strength += 1;
+                this._User.Player_Strength += 1;
             }
             if ((ComboBox1.SelectedIndex == 1) || (ComboBox2.SelectedIndex == 1) || (ComboBox3.SelectedIndex == 1) || (ComboBox4.SelectedIndex == 1) || (ComboBox5.SelectedIndex == 1) || (ComboBox6.SelectedIndex == 1))
             {
-                this.menu.User.Player_Agility += 1;
+                this._User.Player_Agility += 1;
             }
             if ((ComboBox1.SelectedIndex == 2) || (ComboBox2.SelectedIndex == 2) || (ComboBox3.SelectedIndex == 2) || (ComboBox4.SelectedIndex == 2) || (ComboBox5.SelectedIndex == 2) || (ComboBox6.SelectedIndex == 2))
             {
-                this.menu.User.Player_Intellegence += 1;
+                this._User.Player_Intellegence += 1;
             }
             if ((ComboBox1.SelectedIndex == 3) || (ComboBox2.SelectedIndex == 3) || (ComboBox3.SelectedIndex == 3) || (ComboBox4.SelectedIndex == 3) || (ComboBox5.SelectedIndex == 3) || (ComboBox6.SelectedIndex == 3))
             {
-                this.menu.User.Player_Charisma += 1;
+                this._User.Player_Charisma += 1;
             }
         }
 
@@ -127,16 +127,27 @@ namespace NeumontAssassinV2.ScreenControls
 
         private void Missions()
         {
+            if (count == 0)
+            {
+                MainWindow mw = new MainWindow();
+                mw.Content = new WeeklyTraining();
+                App.Current.MainWindow.Close();
+                App.Current.MainWindow = mw;
+                mw.Show();
+            }
             if (MissionLevel == 1)
             {
+                //this is supposed to take you to the second mission after!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                /*
                 MainWindow mw = new MainWindow();
                 mw.Content = new DrugLord(new Person());
                 App.Current.MainWindow.Close();
                 App.Current.MainWindow = mw;
                 mw.Show();
+                 * */
             }
             //dont forget to add the inotify property chanaged event.
-            menu.User.MissionLevel = MissionLevel;
+            _User.MissionLevel = MissionLevel;
             MissionLevel++;
         }
 

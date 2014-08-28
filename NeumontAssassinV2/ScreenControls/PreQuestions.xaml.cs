@@ -35,6 +35,14 @@ namespace NeumontAssassinV2.ScreenControls
         BitmapImage bmp;
         private MainMenu menu { get; set; }
 
+        protected Person _User = new Person();
+        public Person User
+        {
+            get { return _User; }
+            set { _User = value; }
+        }
+
+
         //=========================Image Transition Demo=================================
         private void ImageFadeOut_Completed(object sender, EventArgs e)
         {
@@ -113,7 +121,7 @@ namespace NeumontAssassinV2.ScreenControls
             count++;
             if (count == 5)
             {
-                GoToweeklyTraining();
+                GoToFirstMission();
             }
         }
 
@@ -121,29 +129,29 @@ namespace NeumontAssassinV2.ScreenControls
         {
             if (UserChoice == 1)
             {
-                menu.User.Player_Strength += 1;
-                menu.User.Player_Agility -= 1;
+                _User.Player_Strength += 1;
+                _User.Player_Agility -= 1;
             }
             else if (UserChoice == 2)
             {
-                menu.User.Player_Agility += 1;
-                menu.User.Player_Strength -= 1;
+                _User.Player_Agility += 1;
+                _User.Player_Strength -= 1;
             }
             else if (UserChoice == 3)
             {
-                menu.User.Player_Intellegence += 1;
-                menu.User.Player_Charisma -= 1;
+                _User.Player_Intellegence += 1;
+                _User.Player_Charisma -= 1;
             }
             else if (UserChoice == 4)
             {
-                menu.User.Player_Charisma += 1;
-                menu.User.Player_Intellegence -= 1;
+                _User.Player_Charisma += 1;
+                _User.Player_Intellegence -= 1;
             }
         }
 
-        private void GoToweeklyTraining()
+        private void GoToFirstMission()
         {
-            Label_Choices.Content = "You Have Now Completed Your First Exam, Good Luck Out There.";
+            Label_Choices.Content = "You Have Now Completed Your First Exam, Heres Your First Mission.";
             Button_Choice1.Visibility = Visibility.Hidden;
             Button_Choice2.Visibility = Visibility.Hidden;
             Button_Choice3.Visibility = Visibility.Hidden;
@@ -178,7 +186,7 @@ namespace NeumontAssassinV2.ScreenControls
         private void ButtonChoice6(object sender, RoutedEventArgs e)
         {
             MainWindow mw = new MainWindow();
-            mw.Content = new WeeklyTraining();
+            mw.Content = new DrugLord(new Person());
             App.Current.MainWindow.Close();
             App.Current.MainWindow = mw;
             mw.Show();

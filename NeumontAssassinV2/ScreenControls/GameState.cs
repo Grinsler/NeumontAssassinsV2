@@ -12,9 +12,8 @@ namespace NeumontAssassinV2.ScreenControls
 {
     public class GameState
     {
-        private MainMenu menu { get; set; }
         Training train = new Training();
-
+        PreQuestions CurrentUser = new PreQuestions();
         IFormatter format = new BinaryFormatter();
         string PlayerURL = "AssassinsPlayer.bin";
         string WeekURL = "AssassinsWeek.bin";
@@ -30,12 +29,12 @@ namespace NeumontAssassinV2.ScreenControls
 
             try
             {
-                format.Serialize(stream, menu.User.Player_Agility);
-                format.Serialize(stream, menu.User.MissionLevel);
-                format.Serialize(stream, menu.User.Player_Charisma);
-                format.Serialize(stream, menu.User.Player_Intellegence);
-                format.Serialize(stream, menu.User.Player_Name);
-                format.Serialize(stream, menu.User.Player_Strength);
+                format.Serialize(stream, CurrentUser.User.Player_Agility);
+                format.Serialize(stream, CurrentUser.User.MissionLevel);
+                format.Serialize(stream, CurrentUser.User.Player_Charisma);
+                format.Serialize(stream, CurrentUser.User.Player_Intellegence);
+                format.Serialize(stream, CurrentUser.User.Player_Name);
+                format.Serialize(stream, CurrentUser.User.Player_Strength);
             }
             catch (IOException e)
             {
@@ -83,12 +82,12 @@ namespace NeumontAssassinV2.ScreenControls
         {
             stream = new FileStream(PlayerURL, FileMode.Open, FileAccess.Read, FileShare.Read);
             Person _Person = (Person)format.Deserialize(stream);
-            _Person.Player_Strength = menu.User.Player_Strength;
-            _Person.Player_Agility = menu.User.Player_Agility;
-            _Person.Player_Charisma = menu.User.Player_Charisma;
-            _Person.Player_Intellegence = menu.User.Player_Intellegence;
-            _Person.Player_Name = menu.User.Player_Name;
-            _Person.MissionLevel = menu.User.MissionLevel;
+            _Person.Player_Strength = CurrentUser.User.Player_Strength;
+            _Person.Player_Agility = CurrentUser.User.Player_Agility;
+            _Person.Player_Charisma = CurrentUser.User.Player_Charisma;
+            _Person.Player_Intellegence = CurrentUser.User.Player_Intellegence;
+            _Person.Player_Name = CurrentUser.User.Player_Name;
+            _Person.MissionLevel = CurrentUser.User.MissionLevel;
             stream.Close();
             Console.WriteLine(_Person.Player_Strength);
             Console.WriteLine(_Person.Player_Agility);

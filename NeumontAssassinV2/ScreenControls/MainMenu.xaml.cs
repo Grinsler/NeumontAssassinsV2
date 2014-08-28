@@ -22,11 +22,9 @@ namespace NeumontAssassinV2.ScreenControls
     public partial class MainMenu : UserControl
     {
         GameState load = new GameState();
-        public Person User = new Person();
 
         public MainMenu()
         {
-            User = new Person();
             InitializeComponent();
         }
         

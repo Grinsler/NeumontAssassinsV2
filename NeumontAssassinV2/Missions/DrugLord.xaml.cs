@@ -853,7 +853,6 @@ namespace NeumontAssassinV2.Missions
             but1.Visibility = Visibility.Hidden;
             but2.Visibility = Visibility.Hidden;
             but3.Visibility = Visibility.Hidden;
-            
         }
 
         public void faultCheck()
