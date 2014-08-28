@@ -34,8 +34,9 @@ namespace NeumontAssassinV2.ScreenControls
             //save.SaveWeek();
         }
 
-        MainMenu menu = new MainMenu();
+        private MainMenu menu { get; set; }
         private int count = 1;
+        private int MissionLevel = 1;
         //Person person = new Person();
         GameState save = new GameState();
 
@@ -124,18 +125,28 @@ namespace NeumontAssassinV2.ScreenControls
             }
         }
 
+        private void Missions()
+        {
+            if (MissionLevel == 1)
+            {
+                MainWindow mw = new MainWindow();
+                mw.Content = new DrugLord(new Person());
+                App.Current.MainWindow.Close();
+                App.Current.MainWindow = mw;
+                mw.Show();
+            }
+            //dont forget to add the inotify property chanaged event.
+            menu.User.MissionLevel = MissionLevel;
+            MissionLevel++;
+        }
+
         private void Mission_Click_1(object sender, RoutedEventArgs e)
         {
             this.MissionButton.Visibility = Visibility.Hidden;
             this.TrainButton.Content = "Train";
             count++;
             TrainningOptions();
-
-            MainWindow mw = new MainWindow();
-            mw.Content = new DrugLord(new Person());
-            App.Current.MainWindow.Close();
-            App.Current.MainWindow = mw;
-            mw.Show();      
+            Missions();
         }
     }
 }

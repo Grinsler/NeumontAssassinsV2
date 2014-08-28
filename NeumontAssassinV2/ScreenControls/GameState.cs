@@ -12,7 +12,7 @@ namespace NeumontAssassinV2.ScreenControls
 {
     public class GameState
     {
-        Person person = new Person();
+        private MainMenu menu { get; set; }
         Training train = new Training();
 
         IFormatter format = new BinaryFormatter();
@@ -21,7 +21,7 @@ namespace NeumontAssassinV2.ScreenControls
         Stream stream;
 
         /// <summary>
-        /// This method saves the player instance of the game, it also save the trainning stats.
+        /// This method saves the player instance of the game, it also saves the trainning stats.
         /// </summary>
         public void SaveUser()
         {
@@ -30,7 +30,12 @@ namespace NeumontAssassinV2.ScreenControls
 
             try
             {
-                format.Serialize(stream, person);
+                format.Serialize(stream, menu.User.Player_Agility);
+                format.Serialize(stream, menu.User.MissionLevel);
+                format.Serialize(stream, menu.User.Player_Charisma);
+                format.Serialize(stream, menu.User.Player_Intellegence);
+                format.Serialize(stream, menu.User.Player_Name);
+                format.Serialize(stream, menu.User.Player_Strength);
             }
             catch (IOException e)
             {
@@ -78,12 +83,12 @@ namespace NeumontAssassinV2.ScreenControls
         {
             stream = new FileStream(PlayerURL, FileMode.Open, FileAccess.Read, FileShare.Read);
             Person _Person = (Person)format.Deserialize(stream);
-            _Person = person;
-            _Person.Player_Strength = person.Player_Strength;
-            _Person.Player_Agility = person.Player_Agility;
-            _Person.Player_Charisma = person.Player_Charisma;
-            _Person.Player_Intellegence = person.Player_Intellegence;
-            _Person.Player_Name = person.Player_Name;
+            _Person.Player_Strength = menu.User.Player_Strength;
+            _Person.Player_Agility = menu.User.Player_Agility;
+            _Person.Player_Charisma = menu.User.Player_Charisma;
+            _Person.Player_Intellegence = menu.User.Player_Intellegence;
+            _Person.Player_Name = menu.User.Player_Name;
+            _Person.MissionLevel = menu.User.MissionLevel;
             stream.Close();
             Console.WriteLine(_Person.Player_Strength);
             Console.WriteLine(_Person.Player_Agility);

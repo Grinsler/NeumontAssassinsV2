@@ -22,7 +22,7 @@ namespace NeumontAssassinV2.ScreenControls
     public partial class MainMenu : UserControl
     {
         GameState load = new GameState();
-        public Person User { get; set; }
+        public Person User = new Person();
 
         public MainMenu()
         {
@@ -37,7 +37,6 @@ namespace NeumontAssassinV2.ScreenControls
 
         private void NewStart()
         {
-            //create a new person and delete the old one from the file.
             MainWindow mw = new MainWindow();
             mw.Content = new PreQuestions();
             App.Current.MainWindow.Close();
@@ -49,11 +48,8 @@ namespace NeumontAssassinV2.ScreenControls
         {
             //load.LoadUser();
             //load.LoadWeek();
-            //I need to then go to the weekly trainning xaml.
-
-            //here's the code for that
             MainWindow mw = new MainWindow();
-            //chnage the content if we switch where the load will take the player
+            //change the content if we switch where the load will take the player
             mw.Content = new WeeklyTraining();
             App.Current.MainWindow.Close();
             App.Current.MainWindow = mw;

@@ -33,7 +33,7 @@ namespace NeumontAssassinV2.ScreenControls
         public int UserChoice { get; set; }
         Uri imgsrc;
         BitmapImage bmp;
-        MainMenu menu = new MainMenu();
+        private MainMenu menu { get; set; }
 
         //=========================Image Transition Demo=================================
         private void ImageFadeOut_Completed(object sender, EventArgs e)
@@ -143,7 +143,7 @@ namespace NeumontAssassinV2.ScreenControls
 
         private void GoToweeklyTraining()
         {
-            Label_Choices.Content = "You Have Now Completed Your First Exam, Good Luck Out There. ";
+            Label_Choices.Content = "You Have Now Completed Your First Exam, Good Luck Out There.";
             Button_Choice1.Visibility = Visibility.Hidden;
             Button_Choice2.Visibility = Visibility.Hidden;
             Button_Choice3.Visibility = Visibility.Hidden;
@@ -151,19 +151,6 @@ namespace NeumontAssassinV2.ScreenControls
             Button_Choice6.Visibility = Visibility.Visible;
         }
 
-        private void Choice2()
-        {
-            this.Button_Choice1.Content = "Piano wire";
-            this.Button_Choice2.Content = "My computer";
-            this.Button_Choice3.Content = "All I need is my looks.";
-            this.Button_Choice4.Content = "My fists";
-
-            MainWindow mw = new MainWindow();
-            mw.Content = new DrugLord(new Person());
-            App.Current.MainWindow.Close();
-            App.Current.MainWindow = mw;
-            mw.Show();                      
-        }
         private void ButtonChoice1(object sender, RoutedEventArgs e)
         {
             UserChoice = 1;
