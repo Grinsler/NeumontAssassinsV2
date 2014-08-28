@@ -65,19 +65,17 @@ namespace NeumontAssassinV2.ScreenControls
             }
             if (count == 2)
             {
-                this.Label_Choices.Content = "You are tailing your target at dusk, he turns to look behind him. What would you do next.";
+                this.Label_Choices.Content = "You are tailing your target at dusk, he turns to look behind. What would you do next.";
             }
             if (count == 3)
             {
-                this.Label_Choices.Content = "You’ve just finished up a long day of work. You want to unwind. What is your first decision?";
+                this.Label_Choices.Content = "You’ve just finished up a long day of work. What's your first decision?";
             }
             if (count == 4)
             {
                 this.Label_Choices.Content = "What is your preferred weapon of choice?";
             }
-            count++;
-            Choices();
-            
+            Choices();        
         }
 
         private void Choices()
@@ -103,14 +101,30 @@ namespace NeumontAssassinV2.ScreenControls
                 this.Button_Choice3.Content = "Go for a drink at the bar.";
                 this.Button_Choice4.Content = "Lift weights.";
             }
-            //else if (Label_Choices.Content.Equals("What is your preferred weapon of choice?"))
-            //{
-            //    this.Button_Choice1.Content = "Piano wire";
-            //    this.Button_Choice2.Content = "My computer";
-            //    this.Button_Choice3.Content = "All I need is my looks.";
-            //    this.Button_Choice4.Content = "My fists";
-            //}
+            else if (count == 4)
+            {
+                this.Button_Choice1.Content = "Piano wire";
+                this.Button_Choice2.Content = "My computer";
+                this.Button_Choice3.Content = "All I need is my looks.";
+                this.Button_Choice4.Content = "My fists";
+            }
+            count++;
+            if (count == 5)
+            {
+                GoToweeklyTraining();
+            }
         }
+
+        private void GoToweeklyTraining()
+        {
+            Label_Choices.Content = "You Have Now Completed Your First Exam, Good Luck Out There. ";
+            Button_Choice1.Visibility = Visibility.Hidden;
+            Button_Choice2.Visibility = Visibility.Hidden;
+            Button_Choice3.Visibility = Visibility.Hidden;
+            Button_Choice4.Visibility = Visibility.Hidden;
+            Button_Choice6.Visibility = Visibility.Visible;
+        }
+
         private void Choice2()
         {
             this.Button_Choice1.Content = "Piano wire";
@@ -144,17 +158,17 @@ namespace NeumontAssassinV2.ScreenControls
         private void ButtonChoice4(object sender, RoutedEventArgs e)
         {
             UserChoice = 4;
+            Questions();
+        }
 
-            if (count < 4)
-            {
-                Questions();
-            }
-            else
-            {
-                Choice2();
-            }
-            
 
+        private void ButtonChoice6(object sender, RoutedEventArgs e)
+        {
+            MainWindow mw = new MainWindow();
+            mw.Content = new WeeklyTraining();
+            App.Current.MainWindow.Close();
+            App.Current.MainWindow = mw;
+            mw.Show();
         }
 
         public void MissionDialog(string setup, string but1, string but2, string but3)

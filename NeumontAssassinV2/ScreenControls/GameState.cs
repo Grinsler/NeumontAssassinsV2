@@ -13,7 +13,7 @@ namespace NeumontAssassinV2.ScreenControls
     public class GameState
     {
         Person person = new Person();
-        Trainning train = new Trainning();
+        Training train = new Training();
 
         IFormatter format = new BinaryFormatter();
         string PlayerURL = "AssassinsPlayer.bin";
@@ -59,7 +59,7 @@ namespace NeumontAssassinV2.ScreenControls
         public void LoadWeek()
         {
             stream = new FileStream(WeekURL, FileMode.Create, FileAccess.Write, FileShare.None);
-            Trainning _Train = (Trainning)format.Deserialize(stream);
+            Training _Train = (Training)format.Deserialize(stream);
             _Train = train;
             _Train._Agility = train._Agility;
             _Train._Charisma = train._Charisma;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NeumontAssassinV2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,12 +22,20 @@ namespace NeumontAssassinV2.ScreenControls
     public partial class MainMenu : UserControl
     {
         GameState load = new GameState();
+        public Person User { get; set; }
+
         public MainMenu()
         {
+            User = new Person();
             InitializeComponent();
         }
         
         private void New_Click_1(object sender, RoutedEventArgs e)
+        {
+            NewStart();
+        }
+
+        private void NewStart()
         {
             //create a new person and delete the old one from the file.
             MainWindow mw = new MainWindow();
@@ -36,10 +45,10 @@ namespace NeumontAssassinV2.ScreenControls
             mw.Show();
         }
 
-        private void Continue_Click_1(object sender, RoutedEventArgs e)
+        private void CountinueStart()
         {
-            load.LoadUser();
-            load.LoadWeek();
+            //load.LoadUser();
+            //load.LoadWeek();
             //I need to then go to the weekly trainning xaml.
 
             //here's the code for that
@@ -49,6 +58,11 @@ namespace NeumontAssassinV2.ScreenControls
             App.Current.MainWindow.Close();
             App.Current.MainWindow = mw;
             mw.Show();
+        }
+
+        private void Continue_Click_1(object sender, RoutedEventArgs e)
+        {
+            CountinueStart();
         }
 
         private void Exit_Click_1(object sender, ExecutedRoutedEventArgs e)
