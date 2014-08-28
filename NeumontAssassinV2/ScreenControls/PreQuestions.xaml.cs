@@ -33,6 +33,7 @@ namespace NeumontAssassinV2.ScreenControls
         public int UserChoice { get; set; }
         Uri imgsrc;
         BitmapImage bmp;
+        MainMenu menu = new MainMenu();
 
         //=========================Image Transition Demo=================================
         private void ImageFadeOut_Completed(object sender, EventArgs e)
@@ -108,10 +109,35 @@ namespace NeumontAssassinV2.ScreenControls
                 this.Button_Choice3.Content = "All I need is my looks.";
                 this.Button_Choice4.Content = "My fists";
             }
+            ApplyPreQuestions();
             count++;
             if (count == 5)
             {
                 GoToweeklyTraining();
+            }
+        }
+
+        private void ApplyPreQuestions()
+        {
+            if (UserChoice == 1)
+            {
+                menu.User.Player_Strength += 1;
+                menu.User.Player_Agility -= 1;
+            }
+            else if (UserChoice == 2)
+            {
+                menu.User.Player_Agility += 1;
+                menu.User.Player_Strength -= 1;
+            }
+            else if (UserChoice == 3)
+            {
+                menu.User.Player_Intellegence += 1;
+                menu.User.Player_Charisma -= 1;
+            }
+            else if (UserChoice == 4)
+            {
+                menu.User.Player_Charisma += 1;
+                menu.User.Player_Intellegence -= 1;
             }
         }
 
