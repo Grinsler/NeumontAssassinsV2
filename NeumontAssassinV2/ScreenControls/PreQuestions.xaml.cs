@@ -119,7 +119,7 @@ namespace NeumontAssassinV2.ScreenControls
             this.Button_Choice4.Content = "My fists";
 
             MainWindow mw = new MainWindow();
-            mw.Content = new DrugLord(new Person());
+            mw.Content = new DrugLord(new Person { Player_Agility = 5, Player_Charisma = 5, Player_Intellegence = 3, Player_Strength = 10, MissionLevel = 0, Player_Name = "test1" });
             App.Current.MainWindow.Close();
             App.Current.MainWindow = mw;
             mw.Show();                      
