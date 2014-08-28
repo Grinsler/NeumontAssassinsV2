@@ -5,15 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              Height="600" Width="800">
-    <Grid Height="600" VerticalAlignment="Bottom">
+    <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Images/WeeklyTrainingBack.jpg"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="199*"/>
-            <ColumnDefinition Width="327*"/>
-            <ColumnDefinition Width="74*"/>
-            <ColumnDefinition Width="199*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -45,95 +44,82 @@
                 <Setter Property="Height" Value="1*"/>
             </Style>
         </Grid.Resources>
-        <Label Grid.Column="1"
-                   x:Name="Week"
+            <Label Grid.Column="1"
                    HorizontalAlignment="Center"
-                   VerticalAlignment="Top" Height="43" Margin="58.8,0,60.4,0" Width="208">Week One</Label>
-        <ComboBox x:Name="ComboBox1" 
+                   VerticalAlignment="Top">Weekly Training</Label>
+            <ComboBox x:Name="ComboBox1" 
                       ItemsSource="{Binding Path=_Train}" 
-                      Grid.Row="1" Grid.ColumnSpan="2" Height="Auto" Margin="199,17.8,7.4,17.4">
-            <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
+                      Grid.Row="1"
+                      Grid.Column="1">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
                         <Label Content="{Binding _TrainningType}"
                                    FontFamily="Arial"/>
                     </StackPanel>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
-        </ComboBox>
-        <StackPanel  Grid.Row="0" Grid.Column="3" Margin="0.2,0,0,0.2">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock FontFamily="Matura MT Script Capitals">Strength:</TextBlock>
-                <TextBlock x:Name="Strength" Text="{Binding Path=MyWindow.p.Player_Strength}"></TextBlock>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock FontFamily="Matura MT Script Capitals">Agility:</TextBlock>
-                <TextBlock Text="{Binding Path=MyWindow.p.Player_Agility}"></TextBlock>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock FontFamily="Matura MT Script Capitals">Intelligence:</TextBlock>
-                <TextBlock Text="{Binding Path=MyWindow.p.Player_Intelligence}"></TextBlock>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock FontFamily="Matura MT Script Capitals">Charisma:</TextBlock>
-                <TextBlock Text="{Binding Path=MyWindow.p.Player_Charisma}"></TextBlock>
-            </StackPanel>
-        </StackPanel>
-        <ComboBox x:Name="ComboBox2" 
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <ComboBox x:Name="ComboBox2" 
                       ItemsSource="{Binding Path=_Train}" 
                       ScrollViewer.CanContentScroll="False"
-                      Grid.Row="2" Grid.ColumnSpan="2" Height="Auto" Margin="199,17.6,7.4,17.6">
-            <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
+                      Grid.Row="2"
+                      Grid.Column="1">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
                         <Label Content="{Binding _TrainningType}"
                                    FontFamily="Arial"/>
                     </StackPanel>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
-        </ComboBox>
-        <ComboBox 
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <ComboBox 
                 x:Name="ComboBox3" 
                 ItemsSource="{Binding Path=_Train}" 
                 ScrollViewer.CanContentScroll="False"
-                      Grid.Row="3" Grid.ColumnSpan="2" Height="Auto" Margin="199,17.4,7.4,17.8">
-            <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
+                      Grid.Row="3"
+                      Grid.Column="1">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
                         <Label Content="{Binding _TrainningType}"
                                    FontFamily="Arial"/>
                     </StackPanel>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
-        </ComboBox>
-        <ComboBox x:Name="ComboBox4" 
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <ComboBox x:Name="ComboBox4" 
                       ItemsSource="{Binding Path=_Train}" 
                       ScrollViewer.CanContentScroll="False"
-                      Grid.Row="4" Grid.ColumnSpan="2" Height="Auto" Margin="199,17.2,7.4,18">
-            <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
+                      Grid.Row="4"
+                      Grid.Column="1">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
                         <Label Content="{Binding _TrainningType}"
                                    FontFamily="Arial"/>
                     </StackPanel>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
-        </ComboBox>
-        <ComboBox x:Name="ComboBox5" 
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <ComboBox x:Name="ComboBox5" 
                       ItemsSource="{Binding Path=_Train}" 
                       ScrollViewer.CanContentScroll="False"
-                      Grid.Row="5" Grid.ColumnSpan="2" Height="Auto" Margin="199,17,7.4,17.4">
-            <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <Label Content="{Binding _TrainningType}"
+                      Grid.Row="5"
+                      Grid.Column="1">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Label Content="{Binding _TrainningType}"
                                    FontFamily="Arial"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
         </ComboBox>
         <ComboBox x:Name="ComboBox6" 
-                      Grid.Row="6" Grid.ColumnSpan="2" Height="Auto" Margin="199,17.6,7.4,17.6">
+                      Grid.Row="6"
+                      Grid.Column="1">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -145,28 +131,18 @@
         </ComboBox>
 
         <Button Click="Button_Click_1"
-                x:Name="TrainButton"
+                Grid.Column="1"
                 Grid.Row="7"
                 Height="35"
                 FontFamily="Matura MT Script Capitals"
                 VerticalAlignment="Center"
                 Background="Transparent"
-                FontSize="25" Grid.ColumnSpan="2" Margin="199,19.4,7.4,20">Train!</Button>
-        <Button Click="Mission_Click_1"
-                x:Name="MissionButton"
-                Grid.Column="2"
-                Grid.Row="7"
-                Height="35"
-                FontFamily="Matura MT Script Capitals"
-                VerticalAlignment="Center"
-                Visibility="Hidden"
-                Background="Transparent"
-                FontSize="25" Grid.ColumnSpan="3">Go To Mission</Button>
-        <Label Grid.Row="1" Height="43">Monday</Label>
-        <Label Grid.Row="2" Height="44">Tuesday</Label>
-        <Label Grid.Row="3" Height="43">Wednesday</Label>
-        <Label Grid.Row="4" Height="43">Thursday</Label>
-        <Label Grid.Row="5" Height="43">Friday</Label>
-        <Label Grid.Row="6" Height="44">Saturday</Label>
+                FontSize="25">Train!</Button>
+            <Label Grid.Row="1">Monday</Label>
+            <Label Grid.Row="2">Tuesday</Label>
+            <Label Grid.Row="3">Wednesday</Label>
+            <Label Grid.Row="4">Thursday</Label>
+            <Label Grid.Row="5">Friday</Label>
+            <Label Grid.Row="6">Saturday</Label>
     </Grid>
 </UserControl>

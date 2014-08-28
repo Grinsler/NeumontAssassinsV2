@@ -15,7 +15,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using NeumontAssassinV2.Models;
-using NeumontAssassinV2.Missions;
 
 namespace NeumontAssassinV2.ScreenControls
 {
@@ -26,34 +25,31 @@ namespace NeumontAssassinV2.ScreenControls
     {
         public WeeklyTraining()
         {
-
             InitializeComponent();
-            TrainningOptions();
             this.DataContext = this;
-            //save.SaveUser();
-            //save.SaveWeek();
+            save.SaveUser();
+            save.SaveWeek();
         }
 
+<<<<<<< HEAD
         Person _User = new Person();
         private int count = 1;
         private int MissionLevel = 1;
         //Person person = new Person();
+=======
+>>>>>>> 96bb176bf1c060b7c8d89260f200301f4e96567d
         GameState save = new GameState();
-
-        private ObservableCollection<Training> Train = new ObservableCollection<Training>
+        private ObservableCollection<Trainning> Train = new ObservableCollection<Trainning>
         {
-            new Training("Go to the Gym (+Str)"),
-            new Training("Go for a jog (+Agi)"),
-            new Training("Read books (+Int)"),
-            new Training("Go to the Bar (+Cha)")
+            new Trainning("Go to the Gym (+Str)"),
+            new Trainning("Go for a jog (+Agi)"),
+            new Trainning("Read books (+Int)"),
+            new Trainning("Go to the Bar (+Cha)")
         };
 
-        public ObservableCollection<Training> _Train
+        public ObservableCollection<Trainning> _Train
         {
-            get
-            {
-                return Train;
-            }
+            get { return Train; }
             set
             {
                 Train = value;
@@ -71,6 +67,7 @@ namespace NeumontAssassinV2.ScreenControls
             }
         }
 
+<<<<<<< HEAD
         private void TrainningOptions()
         {
             ComboBox1.SelectedIndex = -1;
@@ -150,15 +147,11 @@ namespace NeumontAssassinV2.ScreenControls
             _User.MissionLevel = MissionLevel;
             MissionLevel++;
         }
-
-        private void Mission_Click_1(object sender, RoutedEventArgs e)
+=======
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            this.MissionButton.Visibility = Visibility.Hidden;
-            this.TrainButton.Content = "Train";
-            count++;
-            TrainningOptions();
-            Missions();
+>>>>>>> 96bb176bf1c060b7c8d89260f200301f4e96567d
+
         }
     }
 }
-

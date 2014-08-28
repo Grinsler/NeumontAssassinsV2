@@ -477,6 +477,19 @@ namespace NeumontAssassinV2.Missions
             else if (logs[counter].Equals("END"))
             {
                 end();
+                MainWindow mw = new MainWindow();
+                if (faultCounter == 0)
+                {
+                    mw.Content = new MissionRewards(0, player);
+                }
+                else
+                {
+                    mw.Content = new MissionRewards(1, player);
+                }
+                App.Current.MainWindow.Close();
+                App.Current.MainWindow = mw;
+                mw.Show();
+
             }
             else if (logs[counter].Equals("FaultCheck"))
             {
@@ -485,6 +498,7 @@ namespace NeumontAssassinV2.Missions
             else if (logs[counter].Equals("DEAD"))
             {
                 death();
+               
             }
             //===============================================
             #region regularTextPictreChange

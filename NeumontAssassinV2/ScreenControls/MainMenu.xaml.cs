@@ -1,5 +1,4 @@
-﻿using NeumontAssassinV2.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +21,10 @@ namespace NeumontAssassinV2.ScreenControls
     public partial class MainMenu : UserControl
     {
         GameState load = new GameState();
+<<<<<<< HEAD
 
+=======
+>>>>>>> 96bb176bf1c060b7c8d89260f200301f4e96567d
         public MainMenu()
         {
             InitializeComponent();
@@ -30,11 +32,7 @@ namespace NeumontAssassinV2.ScreenControls
         
         private void New_Click_1(object sender, RoutedEventArgs e)
         {
-            NewStart();
-        }
-
-        private void NewStart()
-        {
+            //create a new person and delete the old one from the file.
             MainWindow mw = new MainWindow();
             mw.Content = new PreQuestions();
             App.Current.MainWindow.Close();
@@ -42,21 +40,19 @@ namespace NeumontAssassinV2.ScreenControls
             mw.Show();
         }
 
-        private void CountinueStart()
+        private void Continue_Click_1(object sender, RoutedEventArgs e)
         {
-            //load.LoadUser();
-            //load.LoadWeek();
+            load.LoadUser();
+            load.LoadWeek();
+            //I need to then go to the weekly trainning xaml.
+
+            //here's the code for that
             MainWindow mw = new MainWindow();
-            //change the content if we switch where the load will take the player
+            //chnage the content if we switch where the load will take the player
             mw.Content = new WeeklyTraining();
             App.Current.MainWindow.Close();
             App.Current.MainWindow = mw;
             mw.Show();
-        }
-
-        private void Continue_Click_1(object sender, RoutedEventArgs e)
-        {
-            CountinueStart();
         }
 
         private void Exit_Click_1(object sender, ExecutedRoutedEventArgs e)

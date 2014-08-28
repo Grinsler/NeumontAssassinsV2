@@ -33,7 +33,6 @@ namespace NeumontAssassinV2.ScreenControls
         public int UserChoice { get; set; }
         Uri imgsrc;
         BitmapImage bmp;
-        private MainMenu menu { get; set; }
 
         protected Person _User = new Person();
         public Person User
@@ -74,17 +73,19 @@ namespace NeumontAssassinV2.ScreenControls
             }
             if (count == 2)
             {
-                this.Label_Choices.Content = "You are tailing your target at dusk, he turns to look behind. What would you do next.";
+                this.Label_Choices.Content = "You are tailing your target at dusk, he turns to look behind him. What would you do next.";
             }
             if (count == 3)
             {
-                this.Label_Choices.Content = "You’ve just finished up a long day of work. What's your first decision?";
+                this.Label_Choices.Content = "You’ve just finished up a long day of work. You want to unwind. What is your first decision?";
             }
             if (count == 4)
             {
                 this.Label_Choices.Content = "What is your preferred weapon of choice?";
             }
-            Choices();        
+            count++;
+            Choices();
+            
         }
 
         private void Choices()
@@ -110,6 +111,7 @@ namespace NeumontAssassinV2.ScreenControls
                 this.Button_Choice3.Content = "Go for a drink at the bar.";
                 this.Button_Choice4.Content = "Lift weights.";
             }
+<<<<<<< HEAD
             else if (count == 4)
             {
                 this.Button_Choice1.Content = "Piano wire";
@@ -123,10 +125,19 @@ namespace NeumontAssassinV2.ScreenControls
             {
                 GoToFirstMission();
             }
+=======
+            //else if (Label_Choices.Content.Equals("What is your preferred weapon of choice?"))
+            //{
+            //    this.Button_Choice1.Content = "Piano wire";
+            //    this.Button_Choice2.Content = "My computer";
+            //    this.Button_Choice3.Content = "All I need is my looks.";
+            //    this.Button_Choice4.Content = "My fists";
+            //}
+>>>>>>> 96bb176bf1c060b7c8d89260f200301f4e96567d
         }
-
-        private void ApplyPreQuestions()
+        private void Choice2()
         {
+<<<<<<< HEAD
             if (UserChoice == 1)
             {
                 _User.Player_Strength += 1;
@@ -157,8 +168,19 @@ namespace NeumontAssassinV2.ScreenControls
             Button_Choice3.Visibility = Visibility.Hidden;
             Button_Choice4.Visibility = Visibility.Hidden;
             Button_Choice6.Visibility = Visibility.Visible;
-        }
+=======
+            this.Button_Choice1.Content = "Piano wire";
+            this.Button_Choice2.Content = "My computer";
+            this.Button_Choice3.Content = "All I need is my looks.";
+            this.Button_Choice4.Content = "My fists";
 
+            MainWindow mw = new MainWindow();
+            mw.Content = new DrugLord(new Person { Player_Agility = 5, Player_Charisma = 5, Player_Intellegence = 3, Player_Strength = 10, MissionLevel = 0, Player_Name = "test1" });
+            App.Current.MainWindow.Close();
+            App.Current.MainWindow = mw;
+            mw.Show();                      
+>>>>>>> 96bb176bf1c060b7c8d89260f200301f4e96567d
+        }
         private void ButtonChoice1(object sender, RoutedEventArgs e)
         {
             UserChoice = 1;
@@ -179,10 +201,18 @@ namespace NeumontAssassinV2.ScreenControls
         private void ButtonChoice4(object sender, RoutedEventArgs e)
         {
             UserChoice = 4;
-            Questions();
-        }
 
+            if (count < 4)
+            {
+                Questions();
+            }
+            else
+            {
+                Choice2();
+            }
+            
 
+<<<<<<< HEAD
         private void ButtonChoice6(object sender, RoutedEventArgs e)
         {
             MainWindow mw = new MainWindow();
@@ -190,6 +220,8 @@ namespace NeumontAssassinV2.ScreenControls
             App.Current.MainWindow.Close();
             App.Current.MainWindow = mw;
             mw.Show();
+=======
+>>>>>>> 96bb176bf1c060b7c8d89260f200301f4e96567d
         }
 
         public void MissionDialog(string setup, string but1, string but2, string but3)

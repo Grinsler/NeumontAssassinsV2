@@ -137,14 +137,5 @@
                 MouseEnter="Button_Choice3_MouseEnter_1"
                 MouseLeave="Button_Choice3_MouseEnter_1"
                 Visibility="Visible" Margin="10,0,15,10"/>
-        <Button x:Name="Button_Choice6"
-               Grid.Row="3"
-                VerticalAlignment="Bottom"
-                Click="ButtonChoice6"
-                Content="Next"
-                Visibility="Hidden"
-                MouseEnter="Button_Choice3_MouseEnter_1"
-                MouseLeave="Button_Choice3_MouseEnter_1"
-                Margin="10,0,15,10"/>
     </Grid>
 </UserControl>
