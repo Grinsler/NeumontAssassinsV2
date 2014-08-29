@@ -23,8 +23,9 @@ namespace NeumontAssassinV2.ScreenControls
     /// </summary>
     public partial class PreQuestions : UserControl
     {
-        public PreQuestions()
+        public PreQuestions(Person person)
         {
+            _User = person;
             InitializeComponent();
         }
 
@@ -33,14 +34,7 @@ namespace NeumontAssassinV2.ScreenControls
         public int UserChoice { get; set; }
         Uri imgsrc;
         BitmapImage bmp;
-
-        protected Person _User = new Person();
-        public Person User
-        {
-            get { return _User; }
-            set { _User = value; }
-        }
-
+        private Person _User = new Person();
 
         //=========================Image Transition Demo=================================
         private void ImageFadeOut_Completed(object sender, EventArgs e)
@@ -66,7 +60,6 @@ namespace NeumontAssassinV2.ScreenControls
 
         private void Questions()
         {
-            //create a method to change the label to introduce and explain the prequestions
             if (count == 1)
             {
                 this.Label_Choices.Content = "You are confronted by a guard for trespassing, your face isn’t familiar. What do you do?";
@@ -83,9 +76,7 @@ namespace NeumontAssassinV2.ScreenControls
             {
                 this.Label_Choices.Content = "What is your preferred weapon of choice?";
             }
-            count++;
             Choices();
-            
         }
 
         private void Choices()
@@ -111,7 +102,6 @@ namespace NeumontAssassinV2.ScreenControls
                 this.Button_Choice3.Content = "Go for a drink at the bar.";
                 this.Button_Choice4.Content = "Lift weights.";
             }
-<<<<<<< HEAD
             else if (count == 4)
             {
                 this.Button_Choice1.Content = "Piano wire";
@@ -119,67 +109,103 @@ namespace NeumontAssassinV2.ScreenControls
                 this.Button_Choice3.Content = "All I need is my looks.";
                 this.Button_Choice4.Content = "My fists";
             }
-            ApplyPreQuestions();
-            count++;
-            if (count == 5)
+            else if (count == 5)
             {
-                GoToFirstMission();
+                ShowButtonSix();
             }
-=======
-            //else if (Label_Choices.Content.Equals("What is your preferred weapon of choice?"))
-            //{
-            //    this.Button_Choice1.Content = "Piano wire";
-            //    this.Button_Choice2.Content = "My computer";
-            //    this.Button_Choice3.Content = "All I need is my looks.";
-            //    this.Button_Choice4.Content = "My fists";
-            //}
->>>>>>> 96bb176bf1c060b7c8d89260f200301f4e96567d
+            ApplyPreQuestions();
         }
-        private void Choice2()
+
+        private void ApplyPreQuestions()
         {
-<<<<<<< HEAD
             if (UserChoice == 1)
             {
-                _User.Player_Strength += 1;
-                _User.Player_Agility -= 1;
+                if (_User.Player_Strength < 0)
+                {
+                    _User.Player_Strength = 0;
+                }
+                else if (_User.Player_Agility < 0)
+                {
+                    _User.Player_Agility = 0;
+                }
+                else if (_User.Player_Strength > 10)
+                {
+                    _User.Player_Strength = 10;
+                }
+                else if (_User.Player_Agility > 10)
+                {
+                    _User.Player_Agility = 10;
+                }
+                else
+                {
+                    _User.Player_Strength += 1;
+                    _User.Player_Agility -= 1;
+                }
             }
             else if (UserChoice == 2)
             {
-                _User.Player_Agility += 1;
-                _User.Player_Strength -= 1;
+                if (_User.Player_Strength < 0)
+                {
+                    _User.Player_Strength = 0;
+                }
+                else if (_User.Player_Agility < 0)
+                {
+                    _User.Player_Agility = 0;
+                }
+                else if (_User.Player_Strength > 10)
+                {
+                    _User.Player_Strength = 10;
+                }
+                else if (_User.Player_Agility > 10)
+                {
+                    _User.Player_Agility = 10;
+                }
+                else
+                {
+                    _User.Player_Agility += 1;
+                    _User.Player_Strength -= 1;
+                }
             }
             else if (UserChoice == 3)
             {
-                _User.Player_Intellegence += 1;
-                _User.Player_Charisma -= 1;
+                if (_User.Player_Intellegence < 0)
+                {
+                    _User.Player_Intellegence= 0;
+                }
+                else if (_User.Player_Charisma < 0)
+                {
+                    _User.Player_Charisma = 0;
+                }
+                else if (_User.Player_Intellegence > 10)
+                {
+                    _User.Player_Intellegence = 10;
+                }
+                else if (_User.Player_Charisma > 10)
+                {
+                    _User.Player_Charisma = 10;
+                }
+                else
+                {
+                    _User.Player_Intellegence += 1;
+                    _User.Player_Charisma -= 1;
+                }
             }
             else if (UserChoice == 4)
             {
                 _User.Player_Charisma += 1;
                 _User.Player_Intellegence -= 1;
             }
+            count++;
         }
 
-        private void GoToFirstMission()
+        private void ShowButtonSix()
         {
             Label_Choices.Content = "You Have Now Completed Your First Exam, Heres Your First Mission.";
             Button_Choice1.Visibility = Visibility.Hidden;
             Button_Choice2.Visibility = Visibility.Hidden;
             Button_Choice3.Visibility = Visibility.Hidden;
             Button_Choice4.Visibility = Visibility.Hidden;
-            Button_Choice6.Visibility = Visibility.Visible;
-=======
-            this.Button_Choice1.Content = "Piano wire";
-            this.Button_Choice2.Content = "My computer";
-            this.Button_Choice3.Content = "All I need is my looks.";
-            this.Button_Choice4.Content = "My fists";
-
-            MainWindow mw = new MainWindow();
-            mw.Content = new DrugLord(new Person { Player_Agility = 5, Player_Charisma = 5, Player_Intellegence = 3, Player_Strength = 10, MissionLevel = 0, Player_Name = "test1" });
-            App.Current.MainWindow.Close();
-            App.Current.MainWindow = mw;
-            mw.Show();                      
->>>>>>> 96bb176bf1c060b7c8d89260f200301f4e96567d
+            Button_Choice6.Visibility = Visibility.Visible;                
         }
         private void ButtonChoice1(object sender, RoutedEventArgs e)
         {
@@ -201,27 +227,16 @@ namespace NeumontAssassinV2.ScreenControls
         private void ButtonChoice4(object sender, RoutedEventArgs e)
         {
             UserChoice = 4;
-
-            if (count < 4)
-            {
-                Questions();
-            }
-            else
-            {
-                Choice2();
-            }
+            Questions();
+        }
             
-
-<<<<<<< HEAD
         private void ButtonChoice6(object sender, RoutedEventArgs e)
         {
             MainWindow mw = new MainWindow();
-            mw.Content = new DrugLord(new Person());
+            mw.Content = new DrugLord(_User);
             App.Current.MainWindow.Close();
             App.Current.MainWindow = mw;
-            mw.Show();
-=======
->>>>>>> 96bb176bf1c060b7c8d89260f200301f4e96567d
+            mw.Show();      
         }
 
         public void MissionDialog(string setup, string but1, string but2, string but3)
@@ -230,7 +245,6 @@ namespace NeumontAssassinV2.ScreenControls
             Button_Choice1.Content = but1;
             Button_Choice2.Content = but2;
             Button_Choice3.Content = but3;
-
         }
 
         public void MissionDialog(string setup, string but1, string but2)

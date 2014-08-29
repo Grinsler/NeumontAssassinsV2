@@ -477,6 +477,7 @@ namespace NeumontAssassinV2.Missions
             else if (logs[counter].Equals("END"))
             {
                 end();
+
                 MainWindow mw = new MainWindow();
                 if (faultCounter == 0)
                 {
@@ -486,10 +487,13 @@ namespace NeumontAssassinV2.Missions
                 {
                     mw.Content = new MissionRewards(1, player);
                 }
+                /*
+                mw.Content = new WeeklyTraining(player);
                 App.Current.MainWindow.Close();
                 App.Current.MainWindow = mw;
                 mw.Show();
-
+                 */
+                GoToWeeklyTraining();
             }
             else if (logs[counter].Equals("FaultCheck"))
             {
@@ -866,7 +870,7 @@ namespace NeumontAssassinV2.Missions
             testLabe2.Visibility = Visibility.Visible;
             but1.Visibility = Visibility.Hidden;
             but2.Visibility = Visibility.Hidden;
-            but3.Visibility = Visibility.Hidden;
+            but3.Visibility = Visibility.Hidden;    
         }
 
         public void faultCheck()
@@ -1106,6 +1110,16 @@ namespace NeumontAssassinV2.Missions
             {
                 this.but4.Foreground = (Brushes.Black);
             }
+        }
+
+        private void GoToWeeklyTraining()
+        {
+            //I need to load the previouse stats too, that is done in the begnining of every week.
+            MainWindow mw = new MainWindow();
+            mw.Content = new WeeklyTraining(player);
+            App.Current.MainWindow.Close();
+            App.Current.MainWindow = mw;
+            mw.Show();
         }
     }
 }

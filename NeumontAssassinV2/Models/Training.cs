@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace NeumontAssassinV2.Models
 {
     [Serializable]
-    public class Trainning
+    public class Training
     {
         private string TrainningType;
         private int Strength;
@@ -16,9 +16,9 @@ namespace NeumontAssassinV2.Models
         private int Agility;
         private int Charisma;
 
-        public Trainning() { }
+        public Training() { }
 
-        public Trainning(string trainningType)
+        public Training(string trainningType)
         {
             TrainningType = trainningType;
         }

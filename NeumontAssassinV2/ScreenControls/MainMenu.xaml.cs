@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NeumontAssassinV2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,21 +21,20 @@ namespace NeumontAssassinV2.ScreenControls
     /// </summary>
     public partial class MainMenu : UserControl
     {
-        GameState load = new GameState();
-<<<<<<< HEAD
+        Person person = new Person();
+        GameState load;
 
-=======
->>>>>>> 96bb176bf1c060b7c8d89260f200301f4e96567d
-        public MainMenu()
+        public MainMenu(Person _person)
         {
+            person = _person;
             InitializeComponent();
+            load = new GameState(person);
         }
-        
+
         private void New_Click_1(object sender, RoutedEventArgs e)
         {
-            //create a new person and delete the old one from the file.
             MainWindow mw = new MainWindow();
-            mw.Content = new PreQuestions();
+            mw.Content = new PreQuestions(person);
             App.Current.MainWindow.Close();
             App.Current.MainWindow = mw;
             mw.Show();
@@ -42,14 +42,14 @@ namespace NeumontAssassinV2.ScreenControls
 
         private void Continue_Click_1(object sender, RoutedEventArgs e)
         {
-            load.LoadUser();
-            load.LoadWeek();
+            //load.LoadUser();
+            //load.LoadWeek();
             //I need to then go to the weekly trainning xaml.
 
             //here's the code for that
             MainWindow mw = new MainWindow();
             //chnage the content if we switch where the load will take the player
-            mw.Content = new WeeklyTraining();
+            mw.Content = new WeeklyTraining(person);
             App.Current.MainWindow.Close();
             App.Current.MainWindow = mw;
             mw.Show();

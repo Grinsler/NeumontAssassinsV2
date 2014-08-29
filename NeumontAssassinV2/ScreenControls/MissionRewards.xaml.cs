@@ -95,21 +95,35 @@ namespace NeumontAssassinV2.ScreenControls
         private void but_Str_Click(object sender, RoutedEventArgs e)
         {
             person.Player_Strength++;
+            GoToWeeklyTraining();
         }
 
         private void but_Int_Click(object sender, RoutedEventArgs e)
         {
             person.Player_Intellegence++;
+            GoToWeeklyTraining();
         }
 
         private void but_Agl_Click(object sender, RoutedEventArgs e)
         {
             person.Player_Agility++;
+            GoToWeeklyTraining();
         }
 
         private void but_cha_Click(object sender, RoutedEventArgs e)
         {
             person.Player_Charisma++;
+            GoToWeeklyTraining();
+        }
+
+        private void GoToWeeklyTraining()
+        {
+            //I need to take them to the week they left in and then appply it to this weekly training window
+            MainWindow mw = new MainWindow();
+            mw.Content = new WeeklyTraining(person);
+            App.Current.MainWindow.Close();
+            App.Current.MainWindow = mw;
+            mw.Show();
         }
     }
 }

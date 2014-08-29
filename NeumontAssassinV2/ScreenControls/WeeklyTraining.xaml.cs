@@ -23,33 +23,51 @@ namespace NeumontAssassinV2.ScreenControls
     /// </summary>
     public partial class WeeklyTraining : UserControl, INotifyPropertyChanged
     {
-        public WeeklyTraining()
+        private int count = 1;
+        Person person = new Person();
+        GameState save;
+
+        public WeeklyTraining(Person _Person)
         {
+            person = _Person;
+            save = new GameState(person);
             InitializeComponent();
+            //TrainningOptions();
             this.DataContext = this;
-            save.SaveUser();
-            save.SaveWeek();
+            //save.SaveUser();
+            //save.SaveWeek();
         }
 
-<<<<<<< HEAD
-        Person _User = new Person();
-        private int count = 1;
-        private int MissionLevel = 1;
-        //Person person = new Person();
-=======
->>>>>>> 96bb176bf1c060b7c8d89260f200301f4e96567d
-        GameState save = new GameState();
-        private ObservableCollection<Trainning> Train = new ObservableCollection<Trainning>
+        public void checkUserWeek()
         {
-            new Trainning("Go to the Gym (+Str)"),
-            new Trainning("Go for a jog (+Agi)"),
-            new Trainning("Read books (+Int)"),
-            new Trainning("Go to the Bar (+Cha)")
+            if (count == 1)
+            {
+                this.Week.Content = "Week One";
+            }
+            else if (count == 2)
+            {
+                this.Week.Content = "Week Two";
+            }
+            else if (count == 3)
+            {
+                this.Week.Content = "Week Three";
+            }
+        }
+
+        private ObservableCollection<Training> Train = new ObservableCollection<Training>
+        {
+            new Training("Go to the Gym (+Str)"),
+            new Training("Go for a jog (+Agi)"),
+            new Training("Read books (+Int)"),
+            new Training("Go to the Bar (+Cha)")
         };
 
-        public ObservableCollection<Trainning> _Train
+        public ObservableCollection<Training> _Train
         {
-            get { return Train; }
+            get
+            {
+                return Train;
+            }
             set
             {
                 Train = value;
@@ -67,7 +85,6 @@ namespace NeumontAssassinV2.ScreenControls
             }
         }
 
-<<<<<<< HEAD
         private void TrainningOptions()
         {
             ComboBox1.SelectedIndex = -1;
@@ -77,14 +94,7 @@ namespace NeumontAssassinV2.ScreenControls
             ComboBox5.SelectedIndex = -1;
             ComboBox6.SelectedIndex = -1;
 
-            if (count == 2)
-            {
-                this.Week.Content = "Week Two";
-            }
-            if (count == 3)
-            {
-                this.Week.Content = "Week Three";
-            }
+            checkUserWeek();
         }
 
         private void ApplyStats()
@@ -92,19 +102,64 @@ namespace NeumontAssassinV2.ScreenControls
             int selectedIndex = ComboBox1.SelectedIndex;
             if ((ComboBox1.SelectedIndex == 0) || (ComboBox2.SelectedIndex == 0) || (ComboBox3.SelectedIndex == 0) || (ComboBox4.SelectedIndex == 0) || (ComboBox5.SelectedIndex == 0) || (ComboBox6.SelectedIndex == 0))
             {
-                this._User.Player_Strength += 1;
+                if (person.Player_Strength < 0)
+                {
+                    person.Player_Strength = 0;
+                }
+                else if (person.Player_Strength > 10)
+                {
+                    person.Player_Strength = 10;
+                }
+                else
+                {
+                    this.person.Player_Strength += 1;
+                }
+
             }
             if ((ComboBox1.SelectedIndex == 1) || (ComboBox2.SelectedIndex == 1) || (ComboBox3.SelectedIndex == 1) || (ComboBox4.SelectedIndex == 1) || (ComboBox5.SelectedIndex == 1) || (ComboBox6.SelectedIndex == 1))
             {
-                this._User.Player_Agility += 1;
+                if (person.Player_Agility < 0)
+                {
+                    person.Player_Agility = 0;
+                }
+                else if (person.Player_Agility > 10)
+                {
+                    person.Player_Agility = 10;
+                }
+                else
+                {
+                    this.person.Player_Agility += 1;
+                }
             }
             if ((ComboBox1.SelectedIndex == 2) || (ComboBox2.SelectedIndex == 2) || (ComboBox3.SelectedIndex == 2) || (ComboBox4.SelectedIndex == 2) || (ComboBox5.SelectedIndex == 2) || (ComboBox6.SelectedIndex == 2))
             {
-                this._User.Player_Intellegence += 1;
+                 if (person.Player_Intellegence  < 0)
+                {
+                    person.Player_Intellegence  = 0;
+                }
+                 else if (person.Player_Intellegence > 10)
+                 {
+                     person.Player_Intellegence = 10;
+                 }
+                 else
+                 {
+                     this.person.Player_Intellegence += 1;
+                 }
             }
             if ((ComboBox1.SelectedIndex == 3) || (ComboBox2.SelectedIndex == 3) || (ComboBox3.SelectedIndex == 3) || (ComboBox4.SelectedIndex == 3) || (ComboBox5.SelectedIndex == 3) || (ComboBox6.SelectedIndex == 3))
             {
-                this._User.Player_Charisma += 1;
+                if (person.Player_Charisma  < 0)
+                {
+                    person.Player_Charisma  = 0;
+                }
+                else if (person.Player_Charisma > 10)
+                {
+                    person.Player_Charisma = 10;
+                }
+                else
+                {
+                    this.person.Player_Charisma += 1;
+                }
             }
         }
 
@@ -122,36 +177,13 @@ namespace NeumontAssassinV2.ScreenControls
             }
         }
 
-        private void Missions()
+        private void Mission_Click_1(object sender, RoutedEventArgs e)
         {
-            if (count == 0)
-            {
-                MainWindow mw = new MainWindow();
-                mw.Content = new WeeklyTraining();
-                App.Current.MainWindow.Close();
-                App.Current.MainWindow = mw;
-                mw.Show();
-            }
-            if (MissionLevel == 1)
-            {
-                //this is supposed to take you to the second mission after!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                /*
-                MainWindow mw = new MainWindow();
-                mw.Content = new DrugLord(new Person());
-                App.Current.MainWindow.Close();
-                App.Current.MainWindow = mw;
-                mw.Show();
-                 * */
-            }
-            //dont forget to add the inotify property chanaged event.
-            _User.MissionLevel = MissionLevel;
-            MissionLevel++;
-        }
-=======
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
->>>>>>> 96bb176bf1c060b7c8d89260f200301f4e96567d
-
+            //When they click mission, a GUI of the First Mission should popup
+            this.MissionButton.Visibility = Visibility.Hidden;
+            this.TrainButton.Content = "Train";
+            count++;
+            TrainningOptions();
         }
     }
 }
