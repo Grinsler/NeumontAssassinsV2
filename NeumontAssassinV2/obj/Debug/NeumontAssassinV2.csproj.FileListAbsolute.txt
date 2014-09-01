@@ -118,3 +118,7 @@ C:\Users\Martin Hileman\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\ob
 C:\Users\James Taylor\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\NeumontAssassinV2.csprojResolveAssemblyReference.cache
 C:\Users\James Taylor\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\ScreenControls\MissionRewards.baml
 C:\Users\James Taylor\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\ScreenControls\MissionRewards.g.cs
+C:\Users\Mitchel Mendez\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\Missions\Mission3.baml
+C:\Users\Mitchel Mendez\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\ScreenControls\MissionRewards.baml
+C:\Users\Mitchel Mendez\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\Missions\Mission3.g.cs
+C:\Users\Mitchel Mendez\Documents\GitHub\NeumontAssassinsV2\NeumontAssassinV2\obj\Debug\ScreenControls\MissionRewards.g.cs

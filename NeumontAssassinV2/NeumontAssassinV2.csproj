@@ -56,6 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Missions\Mission3.xaml.cs">
+      <DependentUpon>Mission3.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\Training.cs" />
     <Compile Include="ScreenControls\GameState.cs" />
     <Compile Include="ScreenControls\MainMenu.xaml.cs" />
@@ -82,6 +85,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Missions\DrugLord.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Missions\Mission3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -196,6 +203,51 @@
     <Resource Include="Images\RewardSystem\MissionFail.jpg" />
     <Resource Include="Images\RewardSystem\MissionSemiCompleted.jpg" />
     <Resource Include="Images\RewardSystem\victory.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Mission3\10_stairsHanging.png" />
+    <Resource Include="Images\Mission3\11_stairsfall.png" />
+    <Resource Include="Images\Mission3\12-5_guardPasses.png" />
+    <Resource Include="Images\Mission3\12_stairsfall.png" />
+    <Resource Include="Images\Mission3\13_guardInElevator.png" />
+    <Resource Include="Images\Mission3\14_guardInElevatorHappy.png" />
+    <Resource Include="Images\Mission3\15_guardInElevatorMad.png" />
+    <Resource Include="Images\Mission3\16_ElevatorButtons.jpg" />
+    <Resource Include="Images\Mission3\16_topFloor.png" />
+    <Resource Include="Images\Mission3\17_bin.png" />
+    <Resource Include="Images\Mission3\18_holdingBin.png" />
+    <Resource Include="Images\Mission3\19_throw binBin.png" />
+    <Resource Include="Images\Mission3\1_OutsideBuilding.png" />
+    <Resource Include="Images\Mission3\20_INTPhone.png" />
+    <Resource Include="Images\Mission3\21_INTGuardZap.png" />
+    <Resource Include="Images\Mission3\22_INTNoZap.png" />
+    <Resource Include="Images\Mission3\23_CHAwalkup.png" />
+    <Resource Include="Images\Mission3\24_CHAguardYells.png" />
+    <Resource Include="Images\Mission3\25_AGLRunning.png" />
+    <Resource Include="Images\Mission3\26_AGLLookingUP.png" />
+    <Resource Include="Images\Mission3\27_AGLRunFail.png" />
+    <Resource Include="Images\Mission3\28_AGLgGuardsKillYou.png" />
+    <Resource Include="Images\Mission3\29_DeadGuards.png" />
+    <Resource Include="Images\Mission3\2_sneekOutside.png" />
+    <Resource Include="Images\Mission3\30_DoorOpen.png" />
+    <Resource Include="Images\Mission3\31_MonteAndGuards.png" />
+    <Resource Include="Images\Mission3\32_MonteAtDesk.png" />
+    <Resource Include="Images\Mission3\33_MonteTurnAround.png" />
+    <Resource Include="Images\Mission3\34_MonteHitByKnife.png" />
+    <Resource Include="Images\Mission3\35_MonteDeadByKnife.png" />
+    <Resource Include="Images\Mission3\36_EmptyRoom.png" />
+    <Resource Include="Images\Mission3\37_MonteInBed.png" />
+    <Resource Include="Images\Mission3\38_MonteWakeUp.png" />
+    <Resource Include="Images\Mission3\39_MonteDyingInBed.png" />
+    <Resource Include="Images\Mission3\3_lockpick.png" />
+    <Resource Include="Images\Mission3\40_MonteDeadBed.png" />
+    <Resource Include="Images\Mission3\41_Dead.png" />
+    <Resource Include="Images\Mission3\4_Fail-can.png" />
+    <Resource Include="Images\Mission3\5_ElevatorOrStairs.jpg" />
+    <Resource Include="Images\Mission3\6_stairs.png" />
+    <Resource Include="Images\Mission3\7_stairs2.png" />
+    <Resource Include="Images\Mission3\8_stairspanup.png" />
+    <Resource Include="Images\Mission3\9_stairspanup.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
