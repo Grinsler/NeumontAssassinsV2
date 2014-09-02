@@ -59,6 +59,9 @@
     <Compile Include="Missions\Mission3.xaml.cs">
       <DependentUpon>Mission3.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Missions\Mission2.xaml.cs">
+      <DependentUpon>Mission2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\Training.cs" />
     <Compile Include="ScreenControls\GameState.cs" />
     <Compile Include="ScreenControls\MainMenu.xaml.cs" />
@@ -89,6 +92,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Missions\Mission3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Missions\Mission2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
